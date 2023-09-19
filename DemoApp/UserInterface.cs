@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DemoApp
 {
-    public partial class Form2 : Form
+    public partial class UserInterface : Form
     {
-        public Form2()
+        public UserInterface()
         {
             InitializeComponent();
         }
