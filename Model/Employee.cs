@@ -29,5 +29,6 @@ namespace Model
 
             [BsonElement("password")]
             public bool Password { get; set; }
+        
     }
 }
