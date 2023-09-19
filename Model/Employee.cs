@@ -7,16 +7,16 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Model
 {
-    internal class Employee
+    public class Employee
     {
         [BsonElement("first_name")]
         public string FirstName { get; set; }
 
         [BsonElement("last_name")]
-        public double LastName { get; set; }
+        public string LastName { get; set; }
 
         [BsonElement("email")]
-        public bool Email { get; set; }
+        public string Email { get; set; }
         
         [BsonElement("phone")]
         public string Phone { get; set; }
@@ -25,9 +25,9 @@ namespace Model
         public string UserType { get; set; }
 
         [BsonElement("branch")]
-        public double Branch { get; set; }
+        public string Branch { get; set; }
 
         [BsonElement("password")]
-        public bool Password { get; set; }
+        public string Password { get; set; }
     }
 }
