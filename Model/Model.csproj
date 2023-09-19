@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Databases_Model.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Enums\IncidentType.cs" />
     <Compile Include="Enums\Priority.cs" />
     <Compile Include="Enums\Status.cs" />

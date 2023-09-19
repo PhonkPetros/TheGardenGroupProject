@@ -19,15 +19,15 @@ namespace Model
         public string subject { get; set; }
 
         [BsonElement("incident_type")]
-        public string incidentType { get; set; } //change to enumeration
+        public string incidentType { get; set; } 
 
-        /*
+        
         [BsonElement("reported_by")]
-        public User reportedBy {get; set;}
-        */
+        public Employee reportedBy {get; set;}
+        
 
         [BsonElement("priority")]
-        public string priority { get; set; } // change to enum
+        public string priority { get; set; } 
 
         [BsonElement("deadline")]
         public DateTime deadline { get; set; }
@@ -36,7 +36,7 @@ namespace Model
         public string description { get; set; }
 
         [BsonElement("status")]
-        public string status { get; set; } //change to enum
+        public string status { get; set; } 
 
     }
 }
