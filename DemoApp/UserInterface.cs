@@ -31,5 +31,15 @@ namespace DemoApp
             List<Ticket> tickets = ticketController.GetTickets();
             ticketViewControl.DisplayTickets(tickets);
         }
+
+        private void dateReportedLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportedByLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
