@@ -1,42 +1,111 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Model
 {
-    internal class Ticket
+    public class Ticket
     {
-        [BsonElement("id")]
-        public string Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        private string id;
 
         [BsonElement("date_reported")]
-        public DateTime DateReported { get; set; }
+        private string date_reported;
+
 
         [BsonElement("subject")]
-        public string subject { get; set; }
+        private string subject;
 
         [BsonElement("incident_type")]
-        public string incidentType { get; set; } 
+        private string incident_type;
 
-        
         [BsonElement("reported_by")]
-        public Employee reportedBy {get; set;}
-        
+        private Employee reported_by;
 
         [BsonElement("priority")]
-        public string priority { get; set; } 
+        private string priority;
 
         [BsonElement("deadline")]
-        public DateTime deadline { get; set; }
+        private string deadline;
 
         [BsonElement("description")]
-        public string description { get; set; }
+        private string description;
 
         [BsonElement("status")]
-        public string status { get; set; } 
+        private string status;
 
+        public string Id
+        {
+            get { return id; }
+        }
+
+        public DateTime DateReported
+        {
+            get
+            {
+                if (DateTime.TryParseExact(date_reported, "yyyy-MM-dd HH:mm:ss",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out DateTime result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return DateTime.MinValue;
+                }
+            }
+        }
+
+        public DateTime Deadline
+        {
+            get
+            {
+                if (DateTime.TryParseExact(deadline, "yyyy-MM-dd HH:mm:ss",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out DateTime result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return DateTime.MinValue;
+                }
+            }
+            set
+            {
+                deadline = value.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+        }
+
+        public string Subject
+        {
+            get { return subject; }
+        }
+
+        public string IncidentType
+        {
+            get { return incident_type; }
+        }
+
+        public Employee ReportedBy
+        {
+            get { return reported_by; }
+        }
+
+        public string Priority
+        {
+            get { return priority; }
+        }
+
+        public string Description
+        {
+            get { return description; }
+        }
+
+        public string Status
+        {
+            get { return status; }
+        }
     }
 }
