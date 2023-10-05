@@ -6,11 +6,11 @@ namespace Logic
 {
     public class TicketController
     {
-        private readonly DAO dao;
+        private readonly TicketDAO dao;
 
         public TicketController()
         {
-            dao = new DAO(); 
+            dao = new TicketDAO();
         }
 
         public List<Ticket> GetTickets()
@@ -18,6 +18,16 @@ namespace Logic
             List<Ticket> tickets = dao.GetTickets();
 
             return tickets;
+        }
+
+        public void CreateNewTicket(Ticket ticket)
+        {
+            dao.CreateNewTicket(ticket);
+        }
+
+        public void DeleteTicket(Ticket ticket)
+        {
+            dao.DeleteTicket(ticket);
         }
     }
 }
