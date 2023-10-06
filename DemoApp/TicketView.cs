@@ -27,7 +27,7 @@ namespace DemoApp
                 item.SubItems.Add(ticket.Subject);
                 //item.SubItems.Add(ticket.ReportedBy.ToString());
                 item.SubItems.Add(ticket.DateReported.ToString());
-                item.SubItems.Add(ticket.Status);
+                item.SubItems.Add(ticket.Status.ToString());
 
                 ticketListView.Items.Add(item);
             }
