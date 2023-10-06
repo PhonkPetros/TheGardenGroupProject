@@ -150,3 +150,4 @@ C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\bin\Debug\System.ValueTuple.xml
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\bin\Debug\DAL.pdb
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\UI.csproj.CopyComplete
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.CreateTicket.resources
