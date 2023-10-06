@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DemoApp"
+    "\\DemoApp",
+    "\\Model"
   ],
-  "SelectedNode": "\\DemoApp\\CreateTicket.Designer.cs",
+  "SelectedNode": "\\DemoApp\\mongocrypt.dll",
   "PreviewInSolutionExplorer": false
 }
