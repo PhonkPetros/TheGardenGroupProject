@@ -151,5 +151,10 @@ namespace Model
             this.description = description;
             this.status = status.ToString();
         }
+
+        public Ticket()
+        {
+
+        }
     }
 }
