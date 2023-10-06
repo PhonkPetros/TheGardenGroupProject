@@ -85,3 +85,7 @@ C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DAL\obj\Debug\DAL.
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DAL\obj\Debug\DAL.dll
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DAL\obj\Debug\DAL.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DAL\obj\Debug\DAL.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DAL\obj\Debug\DAL.pdb

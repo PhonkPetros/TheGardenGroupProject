@@ -91,3 +91,7 @@ C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Lo
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CopyComplete
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.dll
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.pdb
