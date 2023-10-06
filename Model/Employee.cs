@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.Enums;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Model
 {
     public class Employee
     {
+        [BsonId]
+        public ObjectId Id { get; set; }
+
         [BsonElement("first_name")]
         public string FirstName { get; set; }
 
@@ -22,12 +27,18 @@ namespace Model
         public string Phone { get; set; }
 
         [BsonElement("user_type")]
-        public string UserType { get; set; }
+        public UserType UserType { get; set; }
 
         [BsonElement("branch")]
         public string Branch { get; set; }
 
         [BsonElement("password")]
         public string Password { get; set; }
+
+        [BsonIgnore]
+        public string FullName
+        {
+            get { return $"{FirstName} {LastName}"; }
+        }
     }
 }
