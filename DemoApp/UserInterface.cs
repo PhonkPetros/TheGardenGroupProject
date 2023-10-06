@@ -15,15 +15,18 @@ namespace DemoApp
 {
     public partial class UserInterface : Form
     {
-        private TicketView ticketViewControl; // Rename the field to avoid naming conflict
+        private TicketView ticketViewControl;
         private TicketController ticketController;
+
 
         public UserInterface()
         {
             InitializeComponent();
 
-            ticketViewControl = new TicketView(ticketView); // Use a different name for the parameter
+            ticketViewControl = new TicketView(ticketView);
             ticketController = new TicketController();
+            List<Ticket> tickets = ticketController.GetTickets();
+            ticketViewControl.DisplayTickets(tickets);
         }
 
         private void loadDataToList_Click(object sender, EventArgs e)
