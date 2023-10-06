@@ -1,4 +1,5 @@
 ﻿using System;
+using Model.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -21,7 +22,7 @@ namespace Model
         private string incident_type;
 
         [BsonElement("reported_by")]
-        private Employee reported_by;
+        private string reported_by;
 
         [BsonElement("priority")]
         private string priority;
@@ -85,18 +86,38 @@ namespace Model
 
         public IncidentType IncidentType
         {
-            get { return incident_type; }
+            get 
+            { 
+                    if (IncidentType.TryParse(incident_type, out IncidentType result))
+                    {
+                        return result;
+                    }
+                    else
+                    {
+                    return IncidentType.Service;
+                    }
+            }
         }
 
-        public Employee ReportedBy
+        public string ReportedBy
         {
             get { return reported_by; }
         }
         //hello
 
-        public string Priority
+        public Priority Priority
         {
-            get { return priority; }
+            get 
+            { 
+                if (Priority.TryParse(priority, out Priority result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return Priority.Low;
+                }
+            }
         }
 
         public string Description
@@ -104,9 +125,32 @@ namespace Model
             get { return description; }
         }
 
-        public string Status
+        public Status Status
         {
-            get { return status; }
+            get 
+            {
+                if (Status.TryParse(status, out Status result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return Status.Open;
+                }
+            }
+        }
+
+        public Ticket(string id, DateTime date_reported, string subject, IncidentType incident_type, string reported_by, Priority priority, DateTime deadline, string description, Status status)
+        {
+            this.id = id;
+            this.date_reported = date_reported.ToString();
+            this.subject = subject;
+            this.incident_type = incident_type.ToString();
+            this.reported_by = reported_by;
+            this.priority = priority.ToString();
+            Deadline = deadline;
+            this.description = description;
+            this.status = status.ToString();
         }
     }
 }

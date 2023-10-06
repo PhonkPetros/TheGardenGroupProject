@@ -33,6 +33,24 @@
             this.incidentBtn = new System.Windows.Forms.Button();
             this.dashBoardBtn = new System.Windows.Forms.Button();
             this.dashboardPnl = new System.Windows.Forms.Panel();
+            this.CreateTicketPanel = new System.Windows.Forms.Panel();
+            this.submitButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.deadlineComboBox = new System.Windows.Forms.ComboBox();
+            this.deadlineLabel = new System.Windows.Forms.Label();
+            this.priorityLabel = new System.Windows.Forms.Label();
+            this.priorityComboBox = new System.Windows.Forms.ComboBox();
+            this.reportedByLabel = new System.Windows.Forms.Label();
+            this.reportedByComboBox = new System.Windows.Forms.ComboBox();
+            this.incidentTypeLabel = new System.Windows.Forms.Label();
+            this.incidentTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.subjectLabel = new System.Windows.Forms.Label();
+            this.subjectTextBox = new System.Windows.Forms.TextBox();
+            this.dateReportedLabel = new System.Windows.Forms.Label();
+            this.ticketDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.createTicketLabel = new System.Windows.Forms.Label();
             this.loadDataToList = new System.Windows.Forms.Button();
             this.ticketView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -40,24 +58,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CreateTicketPanel = new System.Windows.Forms.Panel();
-            this.createTicketLabel = new System.Windows.Forms.Label();
-            this.ticketDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dateReportedLabel = new System.Windows.Forms.Label();
-            this.subjectTextBox = new System.Windows.Forms.TextBox();
-            this.subjectLabel = new System.Windows.Forms.Label();
-            this.incidentTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.incidentTypeLabel = new System.Windows.Forms.Label();
-            this.reportedByComboBox = new System.Windows.Forms.ComboBox();
-            this.reportedByLabel = new System.Windows.Forms.Label();
-            this.priorityComboBox = new System.Windows.Forms.ComboBox();
-            this.priorityLabel = new System.Windows.Forms.Label();
-            this.deadlineLabel = new System.Windows.Forms.Label();
-            this.deadlineComboBox = new System.Windows.Forms.ComboBox();
-            this.descriptionLabel = new System.Windows.Forms.Label();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.submitButton = new System.Windows.Forms.Button();
             this.employeePanel.SuspendLayout();
             this.dashboardPnl.SuspendLayout();
             this.CreateTicketPanel.SuspendLayout();
@@ -103,13 +103,201 @@
             // 
             // dashboardPnl
             // 
-            this.dashboardPnl.Controls.Add(this.CreateTicketPanel);
             this.dashboardPnl.Controls.Add(this.loadDataToList);
             this.dashboardPnl.Controls.Add(this.ticketView);
+            this.dashboardPnl.Controls.Add(this.CreateTicketPanel);
             this.dashboardPnl.Location = new System.Drawing.Point(0, 0);
             this.dashboardPnl.Name = "dashboardPnl";
             this.dashboardPnl.Size = new System.Drawing.Size(830, 611);
             this.dashboardPnl.TabIndex = 4;
+            // 
+            // CreateTicketPanel
+            // 
+            this.CreateTicketPanel.Controls.Add(this.submitButton);
+            this.CreateTicketPanel.Controls.Add(this.cancelButton);
+            this.CreateTicketPanel.Controls.Add(this.descriptionTextBox);
+            this.CreateTicketPanel.Controls.Add(this.descriptionLabel);
+            this.CreateTicketPanel.Controls.Add(this.deadlineComboBox);
+            this.CreateTicketPanel.Controls.Add(this.deadlineLabel);
+            this.CreateTicketPanel.Controls.Add(this.priorityLabel);
+            this.CreateTicketPanel.Controls.Add(this.priorityComboBox);
+            this.CreateTicketPanel.Controls.Add(this.reportedByLabel);
+            this.CreateTicketPanel.Controls.Add(this.reportedByComboBox);
+            this.CreateTicketPanel.Controls.Add(this.incidentTypeLabel);
+            this.CreateTicketPanel.Controls.Add(this.incidentTypeComboBox);
+            this.CreateTicketPanel.Controls.Add(this.subjectLabel);
+            this.CreateTicketPanel.Controls.Add(this.subjectTextBox);
+            this.CreateTicketPanel.Controls.Add(this.dateReportedLabel);
+            this.CreateTicketPanel.Controls.Add(this.ticketDateTimePicker);
+            this.CreateTicketPanel.Controls.Add(this.createTicketLabel);
+            this.CreateTicketPanel.Location = new System.Drawing.Point(0, 0);
+            this.CreateTicketPanel.Name = "CreateTicketPanel";
+            this.CreateTicketPanel.Size = new System.Drawing.Size(827, 614);
+            this.CreateTicketPanel.TabIndex = 1;
+            // 
+            // submitButton
+            // 
+            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitButton.Location = new System.Drawing.Point(528, 557);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(121, 41);
+            this.submitButton.TabIndex = 16;
+            this.submitButton.Text = "Submit Ticket";
+            this.submitButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.Location = new System.Drawing.Point(334, 557);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(128, 41);
+            this.cancelButton.TabIndex = 15;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Location = new System.Drawing.Point(334, 360);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descriptionTextBox.Size = new System.Drawing.Size(315, 163);
+            this.descriptionTextBox.TabIndex = 14;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Location = new System.Drawing.Point(151, 360);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(100, 20);
+            this.descriptionLabel.TabIndex = 13;
+            this.descriptionLabel.Text = "Description:";
+            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // deadlineComboBox
+            // 
+            this.deadlineComboBox.FormattingEnabled = true;
+            this.deadlineComboBox.Location = new System.Drawing.Point(334, 310);
+            this.deadlineComboBox.Name = "deadlineComboBox";
+            this.deadlineComboBox.Size = new System.Drawing.Size(315, 24);
+            this.deadlineComboBox.TabIndex = 12;
+            // 
+            // deadlineLabel
+            // 
+            this.deadlineLabel.AutoSize = true;
+            this.deadlineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deadlineLabel.Location = new System.Drawing.Point(151, 314);
+            this.deadlineLabel.Name = "deadlineLabel";
+            this.deadlineLabel.Size = new System.Drawing.Size(151, 20);
+            this.deadlineLabel.TabIndex = 11;
+            this.deadlineLabel.Text = "Deadline/follow up:";
+            this.deadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // priorityLabel
+            // 
+            this.priorityLabel.AutoSize = true;
+            this.priorityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priorityLabel.Location = new System.Drawing.Point(151, 274);
+            this.priorityLabel.Name = "priorityLabel";
+            this.priorityLabel.Size = new System.Drawing.Size(67, 20);
+            this.priorityLabel.TabIndex = 10;
+            this.priorityLabel.Text = "Priority:";
+            this.priorityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // priorityComboBox
+            // 
+            this.priorityComboBox.FormattingEnabled = true;
+            this.priorityComboBox.Location = new System.Drawing.Point(334, 270);
+            this.priorityComboBox.Name = "priorityComboBox";
+            this.priorityComboBox.Size = new System.Drawing.Size(315, 24);
+            this.priorityComboBox.TabIndex = 9;
+            // 
+            // reportedByLabel
+            // 
+            this.reportedByLabel.AutoSize = true;
+            this.reportedByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportedByLabel.Location = new System.Drawing.Point(151, 234);
+            this.reportedByLabel.Name = "reportedByLabel";
+            this.reportedByLabel.Size = new System.Drawing.Size(142, 20);
+            this.reportedByLabel.TabIndex = 8;
+            this.reportedByLabel.Text = "Reported by user:";
+            this.reportedByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportedByLabel.Click += new System.EventHandler(this.reportedByLabel_Click);
+            // 
+            // reportedByComboBox
+            // 
+            this.reportedByComboBox.FormattingEnabled = true;
+            this.reportedByComboBox.Location = new System.Drawing.Point(334, 230);
+            this.reportedByComboBox.Name = "reportedByComboBox";
+            this.reportedByComboBox.Size = new System.Drawing.Size(315, 24);
+            this.reportedByComboBox.TabIndex = 7;
+            // 
+            // incidentTypeLabel
+            // 
+            this.incidentTypeLabel.AutoSize = true;
+            this.incidentTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incidentTypeLabel.Location = new System.Drawing.Point(151, 194);
+            this.incidentTypeLabel.Name = "incidentTypeLabel";
+            this.incidentTypeLabel.Size = new System.Drawing.Size(132, 20);
+            this.incidentTypeLabel.TabIndex = 6;
+            this.incidentTypeLabel.Text = "Type of incident:";
+            this.incidentTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // incidentTypeComboBox
+            // 
+            this.incidentTypeComboBox.FormattingEnabled = true;
+            this.incidentTypeComboBox.Location = new System.Drawing.Point(334, 190);
+            this.incidentTypeComboBox.Name = "incidentTypeComboBox";
+            this.incidentTypeComboBox.Size = new System.Drawing.Size(315, 24);
+            this.incidentTypeComboBox.TabIndex = 5;
+            // 
+            // subjectLabel
+            // 
+            this.subjectLabel.AutoSize = true;
+            this.subjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subjectLabel.Location = new System.Drawing.Point(151, 152);
+            this.subjectLabel.Name = "subjectLabel";
+            this.subjectLabel.Size = new System.Drawing.Size(180, 20);
+            this.subjectLabel.TabIndex = 4;
+            this.subjectLabel.Text = "Subject of the incident:";
+            this.subjectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // subjectTextBox
+            // 
+            this.subjectTextBox.Location = new System.Drawing.Point(334, 150);
+            this.subjectTextBox.Name = "subjectTextBox";
+            this.subjectTextBox.Size = new System.Drawing.Size(315, 22);
+            this.subjectTextBox.TabIndex = 3;
+            // 
+            // dateReportedLabel
+            // 
+            this.dateReportedLabel.AutoSize = true;
+            this.dateReportedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateReportedLabel.Location = new System.Drawing.Point(151, 112);
+            this.dateReportedLabel.Name = "dateReportedLabel";
+            this.dateReportedLabel.Size = new System.Drawing.Size(154, 20);
+            this.dateReportedLabel.TabIndex = 2;
+            this.dateReportedLabel.Text = "Date/time reported:";
+            this.dateReportedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dateReportedLabel.Click += new System.EventHandler(this.dateReportedLabel_Click);
+            // 
+            // ticketDateTimePicker
+            // 
+            this.ticketDateTimePicker.Location = new System.Drawing.Point(334, 110);
+            this.ticketDateTimePicker.Name = "ticketDateTimePicker";
+            this.ticketDateTimePicker.Size = new System.Drawing.Size(315, 22);
+            this.ticketDateTimePicker.TabIndex = 1;
+            // 
+            // createTicketLabel
+            // 
+            this.createTicketLabel.AutoSize = true;
+            this.createTicketLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createTicketLabel.Location = new System.Drawing.Point(148, 57);
+            this.createTicketLabel.Name = "createTicketLabel";
+            this.createTicketLabel.Size = new System.Drawing.Size(417, 38);
+            this.createTicketLabel.TabIndex = 0;
+            this.createTicketLabel.Text = "Create new incident ticket";
             // 
             // loadDataToList
             // 
@@ -162,194 +350,6 @@
             // 
             this.columnHeader5.Text = "Status";
             this.columnHeader5.Width = 100;
-            // 
-            // CreateTicketPanel
-            // 
-            this.CreateTicketPanel.Controls.Add(this.submitButton);
-            this.CreateTicketPanel.Controls.Add(this.cancelButton);
-            this.CreateTicketPanel.Controls.Add(this.descriptionTextBox);
-            this.CreateTicketPanel.Controls.Add(this.descriptionLabel);
-            this.CreateTicketPanel.Controls.Add(this.deadlineComboBox);
-            this.CreateTicketPanel.Controls.Add(this.deadlineLabel);
-            this.CreateTicketPanel.Controls.Add(this.priorityLabel);
-            this.CreateTicketPanel.Controls.Add(this.priorityComboBox);
-            this.CreateTicketPanel.Controls.Add(this.reportedByLabel);
-            this.CreateTicketPanel.Controls.Add(this.reportedByComboBox);
-            this.CreateTicketPanel.Controls.Add(this.incidentTypeLabel);
-            this.CreateTicketPanel.Controls.Add(this.incidentTypeComboBox);
-            this.CreateTicketPanel.Controls.Add(this.subjectLabel);
-            this.CreateTicketPanel.Controls.Add(this.subjectTextBox);
-            this.CreateTicketPanel.Controls.Add(this.dateReportedLabel);
-            this.CreateTicketPanel.Controls.Add(this.ticketDateTimePicker);
-            this.CreateTicketPanel.Controls.Add(this.createTicketLabel);
-            this.CreateTicketPanel.Location = new System.Drawing.Point(0, 0);
-            this.CreateTicketPanel.Name = "CreateTicketPanel";
-            this.CreateTicketPanel.Size = new System.Drawing.Size(827, 614);
-            this.CreateTicketPanel.TabIndex = 1;
-            // 
-            // createTicketLabel
-            // 
-            this.createTicketLabel.AutoSize = true;
-            this.createTicketLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createTicketLabel.Location = new System.Drawing.Point(148, 57);
-            this.createTicketLabel.Name = "createTicketLabel";
-            this.createTicketLabel.Size = new System.Drawing.Size(432, 39);
-            this.createTicketLabel.TabIndex = 0;
-            this.createTicketLabel.Text = "Create new incident ticket";
-            // 
-            // ticketDateTimePicker
-            // 
-            this.ticketDateTimePicker.Location = new System.Drawing.Point(334, 110);
-            this.ticketDateTimePicker.Name = "ticketDateTimePicker";
-            this.ticketDateTimePicker.Size = new System.Drawing.Size(315, 22);
-            this.ticketDateTimePicker.TabIndex = 1;
-            // 
-            // dateReportedLabel
-            // 
-            this.dateReportedLabel.AutoSize = true;
-            this.dateReportedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateReportedLabel.Location = new System.Drawing.Point(151, 112);
-            this.dateReportedLabel.Name = "dateReportedLabel";
-            this.dateReportedLabel.Size = new System.Drawing.Size(154, 20);
-            this.dateReportedLabel.TabIndex = 2;
-            this.dateReportedLabel.Text = "Date/time reported:";
-            this.dateReportedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dateReportedLabel.Click += new System.EventHandler(this.dateReportedLabel_Click);
-            // 
-            // subjectTextBox
-            // 
-            this.subjectTextBox.Location = new System.Drawing.Point(334, 150);
-            this.subjectTextBox.Name = "subjectTextBox";
-            this.subjectTextBox.Size = new System.Drawing.Size(315, 22);
-            this.subjectTextBox.TabIndex = 3;
-            // 
-            // subjectLabel
-            // 
-            this.subjectLabel.AutoSize = true;
-            this.subjectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subjectLabel.Location = new System.Drawing.Point(151, 152);
-            this.subjectLabel.Name = "subjectLabel";
-            this.subjectLabel.Size = new System.Drawing.Size(180, 20);
-            this.subjectLabel.TabIndex = 4;
-            this.subjectLabel.Text = "Subject of the incident:";
-            this.subjectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // incidentTypeComboBox
-            // 
-            this.incidentTypeComboBox.FormattingEnabled = true;
-            this.incidentTypeComboBox.Location = new System.Drawing.Point(334, 190);
-            this.incidentTypeComboBox.Name = "incidentTypeComboBox";
-            this.incidentTypeComboBox.Size = new System.Drawing.Size(315, 24);
-            this.incidentTypeComboBox.TabIndex = 5;
-            // 
-            // incidentTypeLabel
-            // 
-            this.incidentTypeLabel.AutoSize = true;
-            this.incidentTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incidentTypeLabel.Location = new System.Drawing.Point(151, 194);
-            this.incidentTypeLabel.Name = "incidentTypeLabel";
-            this.incidentTypeLabel.Size = new System.Drawing.Size(132, 20);
-            this.incidentTypeLabel.TabIndex = 6;
-            this.incidentTypeLabel.Text = "Type of incident:";
-            this.incidentTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // reportedByComboBox
-            // 
-            this.reportedByComboBox.FormattingEnabled = true;
-            this.reportedByComboBox.Location = new System.Drawing.Point(334, 230);
-            this.reportedByComboBox.Name = "reportedByComboBox";
-            this.reportedByComboBox.Size = new System.Drawing.Size(315, 24);
-            this.reportedByComboBox.TabIndex = 7;
-            // 
-            // reportedByLabel
-            // 
-            this.reportedByLabel.AutoSize = true;
-            this.reportedByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportedByLabel.Location = new System.Drawing.Point(151, 234);
-            this.reportedByLabel.Name = "reportedByLabel";
-            this.reportedByLabel.Size = new System.Drawing.Size(142, 20);
-            this.reportedByLabel.TabIndex = 8;
-            this.reportedByLabel.Text = "Reported by user:";
-            this.reportedByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportedByLabel.Click += new System.EventHandler(this.reportedByLabel_Click);
-            // 
-            // priorityComboBox
-            // 
-            this.priorityComboBox.FormattingEnabled = true;
-            this.priorityComboBox.Location = new System.Drawing.Point(334, 270);
-            this.priorityComboBox.Name = "priorityComboBox";
-            this.priorityComboBox.Size = new System.Drawing.Size(315, 24);
-            this.priorityComboBox.TabIndex = 9;
-            // 
-            // priorityLabel
-            // 
-            this.priorityLabel.AutoSize = true;
-            this.priorityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priorityLabel.Location = new System.Drawing.Point(151, 274);
-            this.priorityLabel.Name = "priorityLabel";
-            this.priorityLabel.Size = new System.Drawing.Size(67, 20);
-            this.priorityLabel.TabIndex = 10;
-            this.priorityLabel.Text = "Priority:";
-            this.priorityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // deadlineLabel
-            // 
-            this.deadlineLabel.AutoSize = true;
-            this.deadlineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deadlineLabel.Location = new System.Drawing.Point(151, 314);
-            this.deadlineLabel.Name = "deadlineLabel";
-            this.deadlineLabel.Size = new System.Drawing.Size(151, 20);
-            this.deadlineLabel.TabIndex = 11;
-            this.deadlineLabel.Text = "Deadline/follow up:";
-            this.deadlineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // deadlineComboBox
-            // 
-            this.deadlineComboBox.FormattingEnabled = true;
-            this.deadlineComboBox.Location = new System.Drawing.Point(334, 310);
-            this.deadlineComboBox.Name = "deadlineComboBox";
-            this.deadlineComboBox.Size = new System.Drawing.Size(315, 24);
-            this.deadlineComboBox.TabIndex = 12;
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(151, 360);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(100, 20);
-            this.descriptionLabel.TabIndex = 13;
-            this.descriptionLabel.Text = "Description:";
-            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(334, 360);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descriptionTextBox.Size = new System.Drawing.Size(315, 163);
-            this.descriptionTextBox.TabIndex = 14;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(334, 557);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(128, 41);
-            this.cancelButton.TabIndex = 15;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            // 
-            // submitButton
-            // 
-            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(528, 557);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(121, 41);
-            this.submitButton.TabIndex = 16;
-            this.submitButton.Text = "Submit Ticket";
-            this.submitButton.UseVisualStyleBackColor = true;
             // 
             // UserInterface
             // 

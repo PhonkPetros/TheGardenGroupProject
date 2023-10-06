@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< HEAD
     "\\DemoApp",
     "\\Model\\Enums"
   ],
   "SelectedNode": "\\DemoApp",
+=======
+    "\\Model"
+  ],
+  "SelectedNode": "\\Model\\Ticket.cs",
+>>>>>>> TestBranchMergeIntoHere
   "PreviewInSolutionExplorer": false
 }
