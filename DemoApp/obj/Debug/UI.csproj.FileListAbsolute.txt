@@ -103,7 +103,6 @@ C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\bin\Debug\
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\bin\Debug\System.ValueTuple.xml
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\bin\Debug\DAL.pdb
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\UI.csproj.AssemblyReference.cache
-C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\UI.csproj.SuggestedBindingRedirects.cache
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.Form1.resources
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.Properties.Resources.resources
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\UI.csproj.GenerateResource.cache

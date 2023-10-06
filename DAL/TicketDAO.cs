@@ -19,7 +19,6 @@ namespace DAL
         {
             var filter = Builders<Ticket>.Filter.Empty;
 
-            // Define a projection to exclude the 'ReportedBy' subdocument
             var projection = Builders<Ticket>.Projection.Exclude("reported_by");
 
             List<Ticket> tickets = ticketCollection.Find(filter).Project<Ticket>(projection).ToList();
