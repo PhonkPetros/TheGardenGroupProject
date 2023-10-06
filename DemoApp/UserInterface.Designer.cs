@@ -33,6 +33,9 @@
             this.incidentBtn = new System.Windows.Forms.Button();
             this.dashBoardBtn = new System.Windows.Forms.Button();
             this.dashboardPnl = new System.Windows.Forms.Panel();
+            this.editTicketPanel = new System.Windows.Forms.Panel();
+            this.submitEditButton = new System.Windows.Forms.Button();
+            this.editTicketListView = new System.Windows.Forms.ListView();
             this.loadDataToList = new System.Windows.Forms.Button();
             this.ticketView = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,14 +61,20 @@
             this.dateReportedLabel = new System.Windows.Forms.Label();
             this.ticketDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.createTicketLabel = new System.Windows.Forms.Label();
-            this.editTicketPanel = new System.Windows.Forms.Panel();
-            this.editTicketListView = new System.Windows.Forms.ListView();
-            this.submitEditButton = new System.Windows.Forms.Button();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.priorityEditLabel = new System.Windows.Forms.Label();
+            this.priorityEditComboBox = new System.Windows.Forms.ComboBox();
+            this.statusEditComboBox = new System.Windows.Forms.ComboBox();
+            this.deadlineEditLabel = new System.Windows.Forms.Label();
+            this.deadlineEditDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.descriptionEditLabel = new System.Windows.Forms.Label();
+            this.descriptionEditTextbox = new System.Windows.Forms.TextBox();
+            this.incidentTypeEditLabel = new System.Windows.Forms.Label();
+            this.incidentTypeEditComboBox = new System.Windows.Forms.ComboBox();
             this.employeePanel.SuspendLayout();
             this.dashboardPnl.SuspendLayout();
-            this.CreateTicketPanel.SuspendLayout();
             this.editTicketPanel.SuspendLayout();
+            this.CreateTicketPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeePanel
@@ -116,6 +125,43 @@
             this.dashboardPnl.Name = "dashboardPnl";
             this.dashboardPnl.Size = new System.Drawing.Size(830, 611);
             this.dashboardPnl.TabIndex = 4;
+            // 
+            // editTicketPanel
+            // 
+            this.editTicketPanel.Controls.Add(this.incidentTypeEditComboBox);
+            this.editTicketPanel.Controls.Add(this.incidentTypeEditLabel);
+            this.editTicketPanel.Controls.Add(this.descriptionEditTextbox);
+            this.editTicketPanel.Controls.Add(this.descriptionEditLabel);
+            this.editTicketPanel.Controls.Add(this.deadlineEditDateTimePicker);
+            this.editTicketPanel.Controls.Add(this.deadlineEditLabel);
+            this.editTicketPanel.Controls.Add(this.statusEditComboBox);
+            this.editTicketPanel.Controls.Add(this.priorityEditComboBox);
+            this.editTicketPanel.Controls.Add(this.priorityEditLabel);
+            this.editTicketPanel.Controls.Add(this.statusLabel);
+            this.editTicketPanel.Controls.Add(this.submitEditButton);
+            this.editTicketPanel.Controls.Add(this.editTicketListView);
+            this.editTicketPanel.Location = new System.Drawing.Point(0, 0);
+            this.editTicketPanel.Name = "editTicketPanel";
+            this.editTicketPanel.Size = new System.Drawing.Size(827, 614);
+            this.editTicketPanel.TabIndex = 17;
+            // 
+            // submitEditButton
+            // 
+            this.submitEditButton.Location = new System.Drawing.Point(704, 524);
+            this.submitEditButton.Name = "submitEditButton";
+            this.submitEditButton.Size = new System.Drawing.Size(75, 23);
+            this.submitEditButton.TabIndex = 1;
+            this.submitEditButton.Text = "Submit";
+            this.submitEditButton.UseVisualStyleBackColor = true;
+            // 
+            // editTicketListView
+            // 
+            this.editTicketListView.HideSelection = false;
+            this.editTicketListView.Location = new System.Drawing.Point(148, 98);
+            this.editTicketListView.Name = "editTicketListView";
+            this.editTicketListView.Size = new System.Drawing.Size(631, 97);
+            this.editTicketListView.TabIndex = 0;
+            this.editTicketListView.UseCompatibleStateImageBehavior = false;
             // 
             // loadDataToList
             // 
@@ -357,40 +403,89 @@
             this.createTicketLabel.TabIndex = 0;
             this.createTicketLabel.Text = "Create new incident ticket";
             // 
-            // editTicketPanel
+            // statusLabel
             // 
-            this.editTicketPanel.Controls.Add(this.statusTextBox);
-            this.editTicketPanel.Controls.Add(this.submitEditButton);
-            this.editTicketPanel.Controls.Add(this.editTicketListView);
-            this.editTicketPanel.Location = new System.Drawing.Point(0, 0);
-            this.editTicketPanel.Name = "editTicketPanel";
-            this.editTicketPanel.Size = new System.Drawing.Size(827, 614);
-            this.editTicketPanel.TabIndex = 17;
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(145, 233);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(44, 16);
+            this.statusLabel.TabIndex = 3;
+            this.statusLabel.Text = "Status";
             // 
-            // editTicketListView
+            // priorityEditLabel
             // 
-            this.editTicketListView.HideSelection = false;
-            this.editTicketListView.Location = new System.Drawing.Point(148, 98);
-            this.editTicketListView.Name = "editTicketListView";
-            this.editTicketListView.Size = new System.Drawing.Size(631, 97);
-            this.editTicketListView.TabIndex = 0;
-            this.editTicketListView.UseCompatibleStateImageBehavior = false;
+            this.priorityEditLabel.AutoSize = true;
+            this.priorityEditLabel.Location = new System.Drawing.Point(272, 233);
+            this.priorityEditLabel.Name = "priorityEditLabel";
+            this.priorityEditLabel.Size = new System.Drawing.Size(48, 16);
+            this.priorityEditLabel.TabIndex = 4;
+            this.priorityEditLabel.Text = "Priority";
             // 
-            // submitEditButton
+            // priorityEditComboBox
             // 
-            this.submitEditButton.Location = new System.Drawing.Point(148, 338);
-            this.submitEditButton.Name = "submitEditButton";
-            this.submitEditButton.Size = new System.Drawing.Size(75, 23);
-            this.submitEditButton.TabIndex = 1;
-            this.submitEditButton.Text = "Submit";
-            this.submitEditButton.UseVisualStyleBackColor = true;
+            this.priorityEditComboBox.FormattingEnabled = true;
+            this.priorityEditComboBox.Location = new System.Drawing.Point(275, 257);
+            this.priorityEditComboBox.Name = "priorityEditComboBox";
+            this.priorityEditComboBox.Size = new System.Drawing.Size(121, 24);
+            this.priorityEditComboBox.TabIndex = 5;
             // 
-            // statusTextBox
+            // statusEditComboBox
             // 
-            this.statusTextBox.Location = new System.Drawing.Point(148, 258);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(100, 22);
-            this.statusTextBox.TabIndex = 2;
+            this.statusEditComboBox.FormattingEnabled = true;
+            this.statusEditComboBox.Location = new System.Drawing.Point(148, 257);
+            this.statusEditComboBox.Name = "statusEditComboBox";
+            this.statusEditComboBox.Size = new System.Drawing.Size(121, 24);
+            this.statusEditComboBox.TabIndex = 6;
+            // 
+            // deadlineEditLabel
+            // 
+            this.deadlineEditLabel.AutoSize = true;
+            this.deadlineEditLabel.Location = new System.Drawing.Point(537, 233);
+            this.deadlineEditLabel.Name = "deadlineEditLabel";
+            this.deadlineEditLabel.Size = new System.Drawing.Size(62, 16);
+            this.deadlineEditLabel.TabIndex = 7;
+            this.deadlineEditLabel.Text = "Deadline";
+            // 
+            // deadlineEditDateTimePicker
+            // 
+            this.deadlineEditDateTimePicker.Location = new System.Drawing.Point(540, 257);
+            this.deadlineEditDateTimePicker.Name = "deadlineEditDateTimePicker";
+            this.deadlineEditDateTimePicker.Size = new System.Drawing.Size(239, 22);
+            this.deadlineEditDateTimePicker.TabIndex = 8;
+            // 
+            // descriptionEditLabel
+            // 
+            this.descriptionEditLabel.AutoSize = true;
+            this.descriptionEditLabel.Location = new System.Drawing.Point(148, 316);
+            this.descriptionEditLabel.Name = "descriptionEditLabel";
+            this.descriptionEditLabel.Size = new System.Drawing.Size(75, 16);
+            this.descriptionEditLabel.TabIndex = 9;
+            this.descriptionEditLabel.Text = "Description";
+            // 
+            // descriptionEditTextbox
+            // 
+            this.descriptionEditTextbox.Location = new System.Drawing.Point(148, 337);
+            this.descriptionEditTextbox.Multiline = true;
+            this.descriptionEditTextbox.Name = "descriptionEditTextbox";
+            this.descriptionEditTextbox.Size = new System.Drawing.Size(631, 153);
+            this.descriptionEditTextbox.TabIndex = 10;
+            // 
+            // incidentTypeEditLabel
+            // 
+            this.incidentTypeEditLabel.AutoSize = true;
+            this.incidentTypeEditLabel.Location = new System.Drawing.Point(399, 233);
+            this.incidentTypeEditLabel.Name = "incidentTypeEditLabel";
+            this.incidentTypeEditLabel.Size = new System.Drawing.Size(82, 16);
+            this.incidentTypeEditLabel.TabIndex = 11;
+            this.incidentTypeEditLabel.Text = "Incident type";
+            // 
+            // incidentTypeEditComboBox
+            // 
+            this.incidentTypeEditComboBox.FormattingEnabled = true;
+            this.incidentTypeEditComboBox.Location = new System.Drawing.Point(402, 257);
+            this.incidentTypeEditComboBox.Name = "incidentTypeEditComboBox";
+            this.incidentTypeEditComboBox.Size = new System.Drawing.Size(121, 24);
+            this.incidentTypeEditComboBox.TabIndex = 12;
             // 
             // UserInterface
             // 
@@ -402,10 +497,10 @@
             this.Text = "User Interface";
             this.employeePanel.ResumeLayout(false);
             this.dashboardPnl.ResumeLayout(false);
-            this.CreateTicketPanel.ResumeLayout(false);
-            this.CreateTicketPanel.PerformLayout();
             this.editTicketPanel.ResumeLayout(false);
             this.editTicketPanel.PerformLayout();
+            this.CreateTicketPanel.ResumeLayout(false);
+            this.CreateTicketPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -445,6 +540,15 @@
         private System.Windows.Forms.Panel editTicketPanel;
         private System.Windows.Forms.Button submitEditButton;
         private System.Windows.Forms.ListView editTicketListView;
-        private System.Windows.Forms.TextBox statusTextBox;
+        private System.Windows.Forms.Label priorityEditLabel;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.ComboBox priorityEditComboBox;
+        private System.Windows.Forms.ComboBox statusEditComboBox;
+        private System.Windows.Forms.TextBox descriptionEditTextbox;
+        private System.Windows.Forms.Label descriptionEditLabel;
+        private System.Windows.Forms.DateTimePicker deadlineEditDateTimePicker;
+        private System.Windows.Forms.Label deadlineEditLabel;
+        private System.Windows.Forms.ComboBox incidentTypeEditComboBox;
+        private System.Windows.Forms.Label incidentTypeEditLabel;
     }
 }
