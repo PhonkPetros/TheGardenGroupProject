@@ -10,7 +10,7 @@ namespace DAL
     {
         private MongoClient client;
         private IMongoDatabase database;
-        private IMongoCollection<Ticket> ticketCollection;
+        protected IMongoCollection<Ticket> ticketCollection;
 
         public DAO()
         {
@@ -30,22 +30,5 @@ namespace DAL
             }
             return all_databases;
         }
-
-
-        public List<Ticket> GetTickets()
-        {
-            var filter = Builders<Ticket>.Filter.Empty;
-
-            // Define a projection to exclude the 'ReportedBy' subdocument
-            var projection = Builders<Ticket>.Projection.Exclude("reported_by");
-
-            List<Ticket> tickets = ticketCollection.Find(filter).Project<Ticket>(projection).ToList();
-
-            return tickets;
-        }
-
-
     }
-
-
 }
