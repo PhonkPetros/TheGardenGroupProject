@@ -190,3 +190,4 @@ C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\UI.csproj.CopyComplete
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.exe
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.CreateTicket.resources
