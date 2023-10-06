@@ -11,14 +11,12 @@ namespace DAL
         private MongoClient client;
         private IMongoDatabase database;
         protected IMongoCollection<Ticket> ticketCollection;
-        protected IMongoCollection<Employee> employeeCollection;
 
         public DAO()
         {
             client = new MongoClient("mongodb+srv://group2:zMwl5O2SNreD5gsE@gardengroupcluster.nu8e8ut.mongodb.net/?retryWrites=true&w=majority");
             database = client.GetDatabase("db_garden_group");
             ticketCollection = database.GetCollection<Ticket>("tickets");
-            employeeCollection = database.GetCollection<Employee>("employees");
 
         }
 

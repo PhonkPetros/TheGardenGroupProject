@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticationLogic.cs" />
     <Compile Include="TicketController.cs" />
     <Compile Include="Databases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

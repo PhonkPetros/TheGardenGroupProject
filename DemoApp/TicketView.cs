@@ -23,14 +23,14 @@ namespace DemoApp
 
             foreach (Ticket ticket in tickets)
             {
-                ListViewItem item = new ListViewItem(ticket.Id.ToString());
+                ListViewItem item = new ListViewItem(ticket.Id);
                 item.SubItems.Add(ticket.Subject);
-                item.SubItems.Add(ticket.ReportedBy.ToString());
+                //item.SubItems.Add(ticket.ReportedBy.ToString());
                 item.SubItems.Add(ticket.DateReported.ToString());
                 item.SubItems.Add(ticket.Status.ToString());
+
                 ticketListView.Items.Add(item);
             }
         }
-
     }
 }

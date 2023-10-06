@@ -33,13 +33,6 @@
             this.incidentBtn = new System.Windows.Forms.Button();
             this.dashBoardBtn = new System.Windows.Forms.Button();
             this.dashboardPnl = new System.Windows.Forms.Panel();
-            this.loadDataToList = new System.Windows.Forms.Button();
-            this.ticketView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CreateTicketPanel = new System.Windows.Forms.Panel();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -58,6 +51,13 @@
             this.dateReportedLabel = new System.Windows.Forms.Label();
             this.ticketDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.createTicketLabel = new System.Windows.Forms.Label();
+            this.loadDataToList = new System.Windows.Forms.Button();
+            this.ticketView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.employeePanel.SuspendLayout();
             this.dashboardPnl.SuspendLayout();
             this.CreateTicketPanel.SuspendLayout();
@@ -110,58 +110,6 @@
             this.dashboardPnl.Name = "dashboardPnl";
             this.dashboardPnl.Size = new System.Drawing.Size(830, 611);
             this.dashboardPnl.TabIndex = 4;
-            // 
-            // loadDataToList
-            // 
-            this.loadDataToList.Location = new System.Drawing.Point(220, 524);
-            this.loadDataToList.Name = "loadDataToList";
-            this.loadDataToList.Size = new System.Drawing.Size(75, 23);
-            this.loadDataToList.TabIndex = 0;
-            this.loadDataToList.Text = "load date";
-            this.loadDataToList.UseVisualStyleBackColor = true;
-            this.loadDataToList.Click += new System.EventHandler(this.loadDataToList_Click);
-            // 
-            // ticketView
-            // 
-            this.ticketView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.ticketView.GridLines = true;
-            this.ticketView.HideSelection = false;
-            this.ticketView.Location = new System.Drawing.Point(148, 47);
-            this.ticketView.Name = "ticketView";
-            this.ticketView.Size = new System.Drawing.Size(631, 471);
-            this.ticketView.TabIndex = 0;
-            this.ticketView.UseCompatibleStateImageBehavior = false;
-            this.ticketView.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Subject";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "User";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Date";
-            this.columnHeader4.Width = 100;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Status";
-            this.columnHeader5.Width = 100;
             // 
             // CreateTicketPanel
             // 
@@ -350,6 +298,58 @@
             this.createTicketLabel.Size = new System.Drawing.Size(417, 38);
             this.createTicketLabel.TabIndex = 0;
             this.createTicketLabel.Text = "Create new incident ticket";
+            // 
+            // loadDataToList
+            // 
+            this.loadDataToList.Location = new System.Drawing.Point(220, 524);
+            this.loadDataToList.Name = "loadDataToList";
+            this.loadDataToList.Size = new System.Drawing.Size(75, 23);
+            this.loadDataToList.TabIndex = 0;
+            this.loadDataToList.Text = "load date";
+            this.loadDataToList.UseVisualStyleBackColor = true;
+            this.loadDataToList.Click += new System.EventHandler(this.loadDataToList_Click);
+            // 
+            // ticketView
+            // 
+            this.ticketView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.ticketView.GridLines = true;
+            this.ticketView.HideSelection = false;
+            this.ticketView.Location = new System.Drawing.Point(148, 47);
+            this.ticketView.Name = "ticketView";
+            this.ticketView.Size = new System.Drawing.Size(631, 471);
+            this.ticketView.TabIndex = 0;
+            this.ticketView.UseCompatibleStateImageBehavior = false;
+            this.ticketView.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Subject";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "User";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Date";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 100;
             // 
             // UserInterface
             // 
