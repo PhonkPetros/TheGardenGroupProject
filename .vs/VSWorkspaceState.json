@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DAL",
+    "\\Model",
+    "\\Model\\Enums"
   ],
-  "SelectedNode": "\\DemoApp.sln",
+  "SelectedNode": "\\Model\\Ticket.cs",
   "PreviewInSolutionExplorer": false
 }
