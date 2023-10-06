@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using Model.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -9,11 +10,10 @@ namespace Model
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        private string id;
+        private ObjectId id;
 
         [BsonElement("date_reported")]
-        private string date_reported;
-
+        private DateTime date_reported;
 
         [BsonElement("subject")]
         private string subject;
@@ -22,7 +22,7 @@ namespace Model
         private string incident_type;
 
         [BsonElement("reported_by")]
-        private string reported_by;
+        private ObjectId reported_by;
 
         [BsonElement("priority")]
         private string priority;
@@ -36,26 +36,14 @@ namespace Model
         [BsonElement("status")]
         private string status;
 
-        public string Id
+        public ObjectId Id
         {
             get { return id; }
         }
 
         public DateTime DateReported
         {
-            get
-            {
-                if (DateTime.TryParseExact(date_reported, "yyyy-MM-dd HH:mm:ss",
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    System.Globalization.DateTimeStyles.None, out DateTime result))
-                {
-                    return result;
-                }
-                else
-                {
-                    return DateTime.MinValue;
-                }
-            }
+            get { return date_reported; }
         }
 
         public DateTime Deadline
@@ -99,11 +87,10 @@ namespace Model
             }
         }
 
-        public string ReportedBy
+        public ObjectId ReportedBy
         {
             get { return reported_by; }
         }
-        //hello
 
         public Priority Priority
         {
@@ -140,10 +127,10 @@ namespace Model
             }
         }
 
-        public Ticket(string id, DateTime date_reported, string subject, IncidentType incident_type, string reported_by, Priority priority, DateTime deadline, string description, Status status)
+        public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, ObjectId reported_by, Priority priority, DateTime deadline, string description, Status status)
         {
             this.id = id;
-            this.date_reported = date_reported.ToString();
+            this.date_reported = date_reported;
             this.subject = subject;
             this.incident_type = incident_type.ToString();
             this.reported_by = reported_by;
