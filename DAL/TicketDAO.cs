@@ -34,7 +34,15 @@ namespace DAL
 
         public void UpdateTicket(Ticket ticket)
         {
-            //add query
+            FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
+            UpdateDefinition<Ticket> update = Builders<Ticket>.Update
+                .Set("subject", ticket.Subject)
+                .Set("description", ticket.Description)
+                .Set("deadline", ticket.Deadline)
+                .Set("reported_by", ticket.ReportedBy)
+                .Set("status", ticket.Status)
+                .Set("priority", ticket.Priority)
+                .Set("incident_type", ticket.IncidentType);
         }
     }
 }
