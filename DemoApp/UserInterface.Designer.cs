@@ -58,9 +58,14 @@
             this.dateReportedLabel = new System.Windows.Forms.Label();
             this.ticketDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.createTicketLabel = new System.Windows.Forms.Label();
+            this.editTicketPanel = new System.Windows.Forms.Panel();
+            this.editTicketListView = new System.Windows.Forms.ListView();
+            this.submitEditButton = new System.Windows.Forms.Button();
+            this.statusTextBox = new System.Windows.Forms.TextBox();
             this.employeePanel.SuspendLayout();
             this.dashboardPnl.SuspendLayout();
             this.CreateTicketPanel.SuspendLayout();
+            this.editTicketPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // employeePanel
@@ -103,6 +108,7 @@
             // 
             // dashboardPnl
             // 
+            this.dashboardPnl.Controls.Add(this.editTicketPanel);
             this.dashboardPnl.Controls.Add(this.loadDataToList);
             this.dashboardPnl.Controls.Add(this.ticketView);
             this.dashboardPnl.Controls.Add(this.CreateTicketPanel);
@@ -351,6 +357,41 @@
             this.createTicketLabel.TabIndex = 0;
             this.createTicketLabel.Text = "Create new incident ticket";
             // 
+            // editTicketPanel
+            // 
+            this.editTicketPanel.Controls.Add(this.statusTextBox);
+            this.editTicketPanel.Controls.Add(this.submitEditButton);
+            this.editTicketPanel.Controls.Add(this.editTicketListView);
+            this.editTicketPanel.Location = new System.Drawing.Point(0, 0);
+            this.editTicketPanel.Name = "editTicketPanel";
+            this.editTicketPanel.Size = new System.Drawing.Size(827, 614);
+            this.editTicketPanel.TabIndex = 17;
+            // 
+            // editTicketListView
+            // 
+            this.editTicketListView.HideSelection = false;
+            this.editTicketListView.Location = new System.Drawing.Point(148, 98);
+            this.editTicketListView.Name = "editTicketListView";
+            this.editTicketListView.Size = new System.Drawing.Size(631, 97);
+            this.editTicketListView.TabIndex = 0;
+            this.editTicketListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // submitEditButton
+            // 
+            this.submitEditButton.Location = new System.Drawing.Point(148, 338);
+            this.submitEditButton.Name = "submitEditButton";
+            this.submitEditButton.Size = new System.Drawing.Size(75, 23);
+            this.submitEditButton.TabIndex = 1;
+            this.submitEditButton.Text = "Submit";
+            this.submitEditButton.UseVisualStyleBackColor = true;
+            // 
+            // statusTextBox
+            // 
+            this.statusTextBox.Location = new System.Drawing.Point(148, 258);
+            this.statusTextBox.Name = "statusTextBox";
+            this.statusTextBox.Size = new System.Drawing.Size(100, 22);
+            this.statusTextBox.TabIndex = 2;
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,6 +404,8 @@
             this.dashboardPnl.ResumeLayout(false);
             this.CreateTicketPanel.ResumeLayout(false);
             this.CreateTicketPanel.PerformLayout();
+            this.editTicketPanel.ResumeLayout(false);
+            this.editTicketPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -399,5 +442,9 @@
         private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Panel editTicketPanel;
+        private System.Windows.Forms.Button submitEditButton;
+        private System.Windows.Forms.ListView editTicketListView;
+        private System.Windows.Forms.TextBox statusTextBox;
     }
 }
