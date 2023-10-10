@@ -187,6 +187,10 @@
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d53e0f50-1565-47ab-bc03-d427f29065da}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{f3d76796-cfc4-4306-be4e-6be76d31a03f}</Project>
       <Name>Logic</Name>

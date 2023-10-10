@@ -36,10 +36,10 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmitTicket = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSubjectOfIncident = new System.Windows.Forms.TextBox();
             this.comboBoxTypeOfIncident = new System.Windows.Forms.ComboBox();
             this.comboBoxPriority = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTxtDescription = new System.Windows.Forms.RichTextBox();
             this.dateTimePickerDeadline = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDateReeported = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
@@ -107,6 +107,7 @@
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSubmitTicket
             // 
@@ -116,17 +117,22 @@
             this.btnSubmitTicket.TabIndex = 8;
             this.btnSubmitTicket.Text = "SUBMIT  TICKET";
             this.btnSubmitTicket.UseVisualStyleBackColor = true;
+            this.btnSubmitTicket.Click += new System.EventHandler(this.btnSubmitTicket_Click);
             // 
-            // textBox1
+            // txtSubjectOfIncident
             // 
-            this.textBox1.Location = new System.Drawing.Point(191, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtSubjectOfIncident.Location = new System.Drawing.Point(191, 108);
+            this.txtSubjectOfIncident.Name = "txtSubjectOfIncident";
+            this.txtSubjectOfIncident.Size = new System.Drawing.Size(297, 20);
+            this.txtSubjectOfIncident.TabIndex = 9;
             // 
             // comboBoxTypeOfIncident
             // 
             this.comboBoxTypeOfIncident.FormattingEnabled = true;
+            this.comboBoxTypeOfIncident.Items.AddRange(new object[] {
+            "Software",
+            "Hardware",
+            "Service"});
             this.comboBoxTypeOfIncident.Location = new System.Drawing.Point(191, 143);
             this.comboBoxTypeOfIncident.Name = "comboBoxTypeOfIncident";
             this.comboBoxTypeOfIncident.Size = new System.Drawing.Size(297, 21);
@@ -135,19 +141,24 @@
             // 
             // comboBoxPriority
             // 
+            this.comboBoxPriority.DisplayMember = "High";
             this.comboBoxPriority.FormattingEnabled = true;
+            this.comboBoxPriority.Items.AddRange(new object[] {
+            "High",
+            "Normal",
+            "Low"});
             this.comboBoxPriority.Location = new System.Drawing.Point(191, 184);
             this.comboBoxPriority.Name = "comboBoxPriority";
             this.comboBoxPriority.Size = new System.Drawing.Size(297, 21);
             this.comboBoxPriority.TabIndex = 11;
             // 
-            // richTextBox1
+            // richTxtDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(191, 256);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(297, 128);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.richTxtDescription.Location = new System.Drawing.Point(191, 256);
+            this.richTxtDescription.Name = "richTxtDescription";
+            this.richTxtDescription.Size = new System.Drawing.Size(297, 128);
+            this.richTxtDescription.TabIndex = 12;
+            this.richTxtDescription.Text = "";
             // 
             // dateTimePickerDeadline
             // 
@@ -170,10 +181,10 @@
             this.ClientSize = new System.Drawing.Size(613, 460);
             this.Controls.Add(this.dateTimePickerDateReeported);
             this.Controls.Add(this.dateTimePickerDeadline);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richTxtDescription);
             this.Controls.Add(this.comboBoxPriority);
             this.Controls.Add(this.comboBoxTypeOfIncident);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSubjectOfIncident);
             this.Controls.Add(this.btnSubmitTicket);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblDescription);
@@ -200,10 +211,10 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmitTicket;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSubjectOfIncident;
         private System.Windows.Forms.ComboBox comboBoxTypeOfIncident;
         private System.Windows.Forms.ComboBox comboBoxPriority;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTxtDescription;
         private System.Windows.Forms.DateTimePicker dateTimePickerDeadline;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateReeported;
     }

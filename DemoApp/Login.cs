@@ -69,7 +69,7 @@ namespace DemoApp
             }
         }
 
-        private void GotoNextView(Employee employee)
+        private void GotoNextView(Employee employee) //use it
         {
             this.Hide();
             Form home;

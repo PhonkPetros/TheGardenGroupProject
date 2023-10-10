@@ -39,11 +39,13 @@ namespace Model
         public ObjectId Id
         {
             get { return id; }
+            set { id = value; } //maybe not needed
         }
 
         public DateTime DateReported
         {
             get { return date_reported; }
+            set { date_reported = value; }
         }
 
         public DateTime Deadline
@@ -70,6 +72,7 @@ namespace Model
         public string Subject
         {
             get { return subject; }
+            set { subject = value; }
         }
 
         public IncidentType IncidentType
@@ -85,11 +88,13 @@ namespace Model
                     return IncidentType.Service;
                     }
             }
+            set { incident_type = value.ToString(); }
         }
 
         public ObjectId ReportedBy
         {
             get { return reported_by; }
+            set { reported_by = value; }
         }
 
         public Priority Priority
@@ -105,11 +110,13 @@ namespace Model
                     return Priority.Low;
                 }
             }
+            set { priority = value.ToString(); }
         }
 
         public string Description
         {
             get { return description; }
+            set { description = value; }
         }
 
         public Status Status
@@ -125,6 +132,7 @@ namespace Model
                     return Status.Open;
                 }
             }
+            set {  status = value.ToString(); }
         }
 
         public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, ObjectId reported_by, Priority priority, DateTime deadline, string description, Status status)
@@ -139,5 +147,7 @@ namespace Model
             this.description = description;
             this.status = status.ToString();
         }
+
+        public Ticket() { }
     }
 }
