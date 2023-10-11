@@ -28,7 +28,7 @@ namespace Model
         private string priority;
 
         [BsonElement("deadline")]
-        private string deadline;
+        private DateTime deadline;
 
         [BsonElement("description")]
         private string description;
@@ -52,20 +52,14 @@ namespace Model
         {
             get
             {
-                if (DateTime.TryParseExact(deadline, "yyyy-MM-dd HH:mm:ss",
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    System.Globalization.DateTimeStyles.None, out DateTime result))
-                {
-                    return result;
-                }
-                else
-                {
-                    return DateTime.MinValue;
-                }
+               
+                 return deadline;
+                
+                
             }
             set
             {
-                deadline = value.ToString("yyyy-MM-dd HH:mm:ss");
+                deadline = value;  //ToString("yyyy-MM-dd HH:mm:ss");
             }
         }
 

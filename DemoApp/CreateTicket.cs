@@ -15,7 +15,7 @@ namespace DemoApp
 {
     public partial class CreateTicket : Form
     {
-        Ticket ticket;
+        
         private List<Ticket> sessionTickets = new List<Ticket>();
         public CreateTicket()
         {
@@ -25,11 +25,11 @@ namespace DemoApp
             sessionTickets.Add(newSessionTicket);
 
             // Bind the newSessionTicket to your form controls if needed
-            dateTimePickerDateReeported.Value = newSessionTicket.DateReported;
+            //dateTimePickerDateReeported.Value = newSessionTicket.DateReported;
             // Bind other controls similarly
 
             // Optionally, disable the "Submit" button until the user provides required information
-            btnSubmitTicket.Enabled = false;
+            //btnSubmitTicket.Enabled = false;
         }
 
         private void CreateTicket_Load(object sender, EventArgs e)
