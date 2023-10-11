@@ -76,7 +76,7 @@ namespace DemoApp
                 currentSessionTicket.Priority = (Priority)comboBoxPriority.SelectedIndex;
                 currentSessionTicket.Deadline = dateTimePickerDeadline.Value;
                 currentSessionTicket.Description = richTxtDescription.Text;
-                currentSessionTicket.Status = Status.Open;
+                
 
                 try
                 {
