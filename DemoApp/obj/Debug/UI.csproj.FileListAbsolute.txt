@@ -151,3 +151,4 @@ D:\Inholland\Term2.1\Project\TheGardeGroupProject\DemoApp\obj\Debug\UI.csproj.Co
 D:\Inholland\Term2.1\Project\TheGardeGroupProject\DemoApp\obj\Debug\UI.csproj.CopyComplete
 D:\Inholland\Term2.1\Project\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.exe
 D:\Inholland\Term2.1\Project\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.pdb
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.Login.resources
