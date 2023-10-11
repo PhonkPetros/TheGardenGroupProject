@@ -38,7 +38,7 @@
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
             this.dashBoardBtn = new System.Windows.Forms.Button();
-            this.dashboardPnl = new System.Windows.Forms.Panel();
+            this.dashBoardPanel = new System.Windows.Forms.Panel();
             this.editTicketPanel = new System.Windows.Forms.Panel();
             this.submitEditButton = new System.Windows.Forms.Button();
             this.editTicketListView = new System.Windows.Forms.ListView();
@@ -80,10 +80,9 @@
             this.incidentTypeEditLabel = new System.Windows.Forms.Label();
             this.incidentTypeEditComboBox = new System.Windows.Forms.ComboBox();
             this.employeePanel.SuspendLayout();
-            this.dashboardPnl.SuspendLayout();
+            this.dashBoardPanel.SuspendLayout();
             this.editTicketPanel.SuspendLayout();
-            this.CreateTicketPanel.SuspendLayout();
-            this.dashBoardPanel = new System.Windows.Forms.Panel();
+            this.createTicketPanel.SuspendLayout();
             this.ticketCount = new System.Windows.Forms.Label();
             this.incidentChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.piChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -93,7 +92,6 @@
             this.employeePanel.SuspendLayout();
             this.ticketViewPanel.SuspendLayout();
             this.createTicketPanel.SuspendLayout();
-            this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piChart)).BeginInit();
             this.SuspendLayout();
@@ -137,14 +135,14 @@
             // 
             // ticketViewPanel
             // 
-            this.dashboardPnl.Controls.Add(this.editTicketPanel);
-            this.dashboardPnl.Controls.Add(this.loadDataToList);
-            this.dashboardPnl.Controls.Add(this.ticketView);
-            this.dashboardPnl.Controls.Add(this.CreateTicketPanel);
-            this.dashboardPnl.Location = new System.Drawing.Point(0, 0);
-            this.dashboardPnl.Name = "dashboardPnl";
-            this.dashboardPnl.Size = new System.Drawing.Size(830, 611);
-            this.dashboardPnl.TabIndex = 4;
+            this.dashBoardPanel.Controls.Add(this.editTicketPanel);
+            this.dashBoardPanel.Controls.Add(this.loadDataToList);
+            this.dashBoardPanel.Controls.Add(this.ticketView);
+            this.dashBoardPanel.Controls.Add(this.createTicketPanel);
+            this.dashBoardPanel.Location = new System.Drawing.Point(0, 0);
+            this.dashBoardPanel.Name = "dashBoardPanel";
+            this.dashBoardPanel.Size = new System.Drawing.Size(830, 611);
+            this.dashBoardPanel.TabIndex = 4;
             this.ticketViewPanel.Controls.Add(this.incidentManagamentUIbtn);
             this.ticketViewPanel.Controls.Add(this.dashBoardTickeUI);
             this.ticketViewPanel.Controls.Add(this.loadDataToList);
@@ -619,15 +617,14 @@
             this.Name = "UserInterface";
             this.Text = "User Interface";
             this.employeePanel.ResumeLayout(false);
-            this.dashboardPnl.ResumeLayout(false);
+            this.dashBoardPanel.ResumeLayout(false);
             this.editTicketPanel.ResumeLayout(false);
             this.editTicketPanel.PerformLayout();
-            this.CreateTicketPanel.ResumeLayout(false);
-            this.CreateTicketPanel.PerformLayout();
+            this.createTicketPanel.ResumeLayout(false);
+            this.createTicketPanel.PerformLayout();
             this.ticketViewPanel.ResumeLayout(false);
             this.createTicketPanel.ResumeLayout(false);
             this.createTicketPanel.PerformLayout();
-            this.dashBoardPanel.ResumeLayout(false);
             this.dashBoardPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piChart)).EndInit();
