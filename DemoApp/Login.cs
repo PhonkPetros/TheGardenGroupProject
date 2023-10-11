@@ -37,7 +37,7 @@ namespace DemoApp
                 return;
             }
 
-            Employee authenticatedEmployee = authenticationLogic.AuthenticateUser(email, password);
+            Employee authenticatedEmployee = authenticationLogic.AuthenticateUser(email, authenticationLogic.GetHashPassword(password));
 
             if (authenticatedEmployee != null)
             {
