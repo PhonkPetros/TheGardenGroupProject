@@ -15,7 +15,14 @@ namespace Logic
 
         public List<Ticket> GetTickets()
         {
-            List<Ticket> tickets = dao.GetTickets();
+            List<Ticket> tickets = dao.GetTicketsWithDeadlines();
+
+            return tickets;
+        }
+
+        public List<Ticket> GetPastTickets()
+        {
+            List<Ticket> tickets = dao.GetTicketsWithPastDeadlines();
 
             return tickets;
         }

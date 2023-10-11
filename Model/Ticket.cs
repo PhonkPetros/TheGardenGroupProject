@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using Model.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -22,7 +21,7 @@ namespace Model
         private string incident_type;
 
         [BsonElement("reported_by")]
-        private ObjectId reported_by;
+        private string reported_by;
 
         [BsonElement("priority")]
         private string priority;
@@ -39,7 +38,6 @@ namespace Model
         public ObjectId Id
         {
             get { return id; }
-            set { id = value; } //maybe not needed
         }
 
         public DateTime DateReported
@@ -50,51 +48,39 @@ namespace Model
 
         public DateTime Deadline
         {
-            get
-            {
-               
-                 return deadline;
-                
-                
-            }
-            set
-            {
-                deadline = value;  //ToString("yyyy-MM-dd HH:mm:ss");
-            }
+            get { return deadline; }
+            set { deadline = value; }
         }
 
         public string Subject
         {
             get { return subject; }
-            set { subject = value; }
         }
 
         public IncidentType IncidentType
         {
-            get 
-            { 
-                    if (IncidentType.TryParse(incident_type, out IncidentType result))
-                    {
-                        return result;
-                    }
-                    else
-                    {
+            get
+            {
+                if (IncidentType.TryParse(incident_type, out IncidentType result))
+                {
+                    return result;
+                }
+                else
+                {
                     return IncidentType.Service;
-                    }
+                }
             }
-            set { incident_type = value.ToString(); }
         }
 
-        public ObjectId ReportedBy
+        public string ReportedBy
         {
             get { return reported_by; }
-            set { reported_by = value; }
         }
 
         public Priority Priority
         {
-            get 
-            { 
+            get
+            {
                 if (Priority.TryParse(priority, out Priority result))
                 {
                     return result;
@@ -104,18 +90,16 @@ namespace Model
                     return Priority.Low;
                 }
             }
-            set { priority = value.ToString(); }
         }
 
         public string Description
         {
             get { return description; }
-            set { description = value; }
         }
 
         public Status Status
         {
-            get 
+            get
             {
                 if (Status.TryParse(status, out Status result))
                 {
@@ -126,10 +110,9 @@ namespace Model
                     return Status.Open;
                 }
             }
-            set {  status = value.ToString(); }
         }
 
-        public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, ObjectId reported_by, Priority priority, DateTime deadline, string description, Status status)
+        public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, string reported_by, Priority priority, DateTime deadline, string description, Status status)
         {
             this.id = id;
             this.date_reported = date_reported;
@@ -137,11 +120,9 @@ namespace Model
             this.incident_type = incident_type.ToString();
             this.reported_by = reported_by;
             this.priority = priority.ToString();
-            Deadline = deadline;
+            this.deadline = deadline;
             this.description = description;
             this.status = status.ToString();
         }
-
-        public Ticket() { }
     }
 }
