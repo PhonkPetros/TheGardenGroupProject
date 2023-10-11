@@ -116,6 +116,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeTicketView.cs" />
     <Compile Include="CreateTicketView.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
