@@ -73,7 +73,7 @@ namespace DemoApp
         {
             this.Hide();
             Form home;
-            home = new UserInterface();
+            home = new UserInterface(employee);
             home.Closed += (s, args) => this.Close();
             home.Show();
         }

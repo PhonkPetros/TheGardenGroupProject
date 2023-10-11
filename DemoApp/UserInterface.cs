@@ -23,8 +23,9 @@ namespace DemoApp
         private TicketView ticketViewControl;
         private TicketController ticketController;
         private List<Ticket> sessionTickets = new List<Ticket>();
+        private Employee logedinEmployee;
 
-        public UserInterface()
+        public UserInterface(Employee employee)
         {
             InitializeComponent();
 
@@ -32,9 +33,7 @@ namespace DemoApp
             ticketViewControl = new TicketView(ticketView, piChart, ticketCount, incidentChart);
             ticketController = new TicketController();
 
-            Employee employee = new Employee();
-            AuthenticationLogic authenticationLogic = new AuthenticationLogic();
-            //employee =  authenticationLogic.AuthenticateUser();
+            logedinEmployee = employee;
             LoadAndUpdateView();
         }
 

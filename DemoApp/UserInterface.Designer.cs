@@ -711,9 +711,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 498);
-            this.Controls.Add(this.pnlCreateTicketByEmployee);
             this.Controls.Add(this.ticketViewPanel);
             this.Controls.Add(this.dashBoardPanel);
+            this.Controls.Add(this.pnlCreateTicketByEmployee);
             this.Controls.Add(this.createTicketPanel);
             this.Controls.Add(this.employeePanel);
             this.Margin = new System.Windows.Forms.Padding(2);
