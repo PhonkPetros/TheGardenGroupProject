@@ -122,6 +122,7 @@ namespace Model
                     return Status.Open;
                 }
             }
+            set {  status = value.ToString(); }
             
         }
 

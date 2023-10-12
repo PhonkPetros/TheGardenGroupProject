@@ -133,6 +133,7 @@ namespace DemoApp
                 currentSessionTicket.Priority = (Priority)comboBoxPriority2.SelectedIndex;
                 currentSessionTicket.Deadline = dateTimePickerDeadline2.Value;
                 currentSessionTicket.Description = txtBoxDescription2.Text;
+                currentSessionTicket.Status = Model.Enums.Status.Open;
                 //currentSessionTicket.ReportedBy = logedinEmployee.Id.ToString();
 
 
