@@ -59,7 +59,7 @@ namespace Model
             set { subject = value; }
         }
 
-        public IncidentType IncidentType //?
+        public IncidentType IncidentType 
         {
             get
             {
@@ -83,6 +83,7 @@ namespace Model
         public string ReportedBy
         {
             get { return reported_by; }
+            //set { reported_by = value; }
         }
 
         public Priority Priority 

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.employeePanel = new System.Windows.Forms.Panel();
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
@@ -491,35 +491,35 @@
             // 
             // incidentChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend9);
             this.incidentChart.Location = new System.Drawing.Point(326, 112);
             this.incidentChart.Margin = new System.Windows.Forms.Padding(2);
             this.incidentChart.Name = "incidentChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series9);
             this.incidentChart.Size = new System.Drawing.Size(286, 244);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.piChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.piChart.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea1";
+            this.piChart.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.piChart.Legends.Add(legend10);
             this.piChart.Location = new System.Drawing.Point(43, 112);
             this.piChart.Margin = new System.Windows.Forms.Padding(2);
             this.piChart.Name = "piChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.piChart.Series.Add(series2);
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.piChart.Series.Add(series10);
             this.piChart.Size = new System.Drawing.Size(264, 244);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -597,6 +597,10 @@
             // comboBoxPriority2
             // 
             this.comboBoxPriority2.FormattingEnabled = true;
+            this.comboBoxPriority2.Items.AddRange(new object[] {
+            "Low",
+            "Normal",
+            "High"});
             this.comboBoxPriority2.Location = new System.Drawing.Point(250, 219);
             this.comboBoxPriority2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPriority2.Name = "comboBoxPriority2";
@@ -618,6 +622,10 @@
             // comboBoxTypeOfIncident2
             // 
             this.comboBoxTypeOfIncident2.FormattingEnabled = true;
+            this.comboBoxTypeOfIncident2.Items.AddRange(new object[] {
+            "Software",
+            "Hardware",
+            "Service"});
             this.comboBoxTypeOfIncident2.Location = new System.Drawing.Point(250, 154);
             this.comboBoxTypeOfIncident2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTypeOfIncident2.Name = "comboBoxTypeOfIncident2";
