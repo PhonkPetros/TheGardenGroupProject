@@ -25,6 +25,7 @@ namespace DemoApp
         private List<Ticket> sessionTickets = new List<Ticket>();
         private Employee logedinEmployee;
         private CreateTicketView createTicket;
+        private ChangeTicketView changeTicket;
         private Ticket ticket = new Ticket();
 
         public UserInterface(Employee employee)
@@ -203,6 +204,41 @@ namespace DemoApp
             pnlCreateTicketByEmployee.Hide();
             createTicket = new CreateTicketView(descriptionTextBox, deadlineDateTimePicker, priorityComboBox, reportedByComboBox, incidentTypeComboBox, subjectTextBox, ticketDateTimePicker, ticket);
             createTicket.PopulateComboBoxes();
+        }
+
+        private void submitEditButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelEditButton_Click(object sender, EventArgs e)
+        {
+            
+            ticketViewPanel.Show();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            editTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+
+        }
+        
+
+        private void ticketView_DoubleClick(object sender, EventArgs e)
+        {
+            editTicketPanel.Show();
+            ticketViewPanel.Hide();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+
+            ListViewItem selectedItem = ticketView.SelectedItems[0];
+            string ticketId = selectedItem.SubItems[0].Text;
+            Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
+
+            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, editTicketListView);
+            changeTicket.Initialize();
         }
     }
 }

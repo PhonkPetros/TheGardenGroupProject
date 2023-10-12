@@ -61,7 +61,7 @@ namespace DemoApp
             ticket.Subject = subjectTextBox.Text;
             ticket.DateReported = ticketDateTimePicker.Value;
             ticket.Deadline = deadlineDateTimePicker.Value;
-            ticket.ReportedBy = reportedByComboBox.SelectedValue.ToString();//need to put employee id in
+            ticket.ReportedBy = reportedByComboBox.SelectedValue.ToString();//need to put employee id in instead of name
             ticket.Priority = (Priority)priorityComboBox.SelectedValue;
             ticket.Description = descriptionTextBox.Text;
             ticket.Status = Status.Open;

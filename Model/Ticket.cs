@@ -84,7 +84,7 @@ namespace Model
         public string ReportedBy
         {
             get { return reported_by; }
-            set {  reported_by = value; }
+            set { reported_by = value; }
         }
         [BsonIgnore]
         public Priority Priority 
@@ -127,19 +127,6 @@ namespace Model
             {
                 status = value.ToString();
             }
-        }
-
-        public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, string reported_by, Priority priority, DateTime deadline, string description, Status status)
-        {
-            this.id = id;
-            this.date_reported = date_reported;
-            this.subject = subject;
-            this.incident_type = incident_type.ToString();
-            this.reported_by = reported_by;
-            this.priority = priority.ToString();
-            this.deadline = deadline;
-            this.description = description;
-            this.status = status.ToString();
         }
 
         public Ticket()

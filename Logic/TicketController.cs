@@ -36,5 +36,10 @@ namespace Logic
         {
             dao.DeleteTicket(ticket);
         }
+
+        public Ticket GetTicketByTicketId(string ticketId)
+        {
+            return dao.GetTicketByTicketId(ticketId);
+        }
     }
 }

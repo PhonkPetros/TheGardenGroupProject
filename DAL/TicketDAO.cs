@@ -151,5 +151,19 @@ namespace DAL
                 .Set("priority", ticket.Priority)
                 .Set("incident_type", ticket.IncidentType);
         }
+
+        public Ticket GetTicketByTicketId(string ticketId)
+        {
+            ObjectId objectId;
+            if(ObjectId.TryParse(ticketId, out objectId))
+            {
+                FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", objectId);
+                return (Ticket)ticketCollection.Find(filter).First();
+            }
+            else
+            {
+                throw new Exception("there is no ticket with this id in the database");
+            }
+        }
     }
 }
