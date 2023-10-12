@@ -21,5 +21,20 @@ namespace DAL
             FilterDefinition<Employee> filter = Builders<Employee>.Filter.Empty;
             return (List<Employee>)employeeCollection.Find(filter).ToList();
         }
+
+        public string GetUserId(string userName)
+        {
+            string[] nameParts = userName.Split(' ');
+            string firstName = nameParts[0];
+            string lastName = nameParts[1];
+
+            FilterDefinition<Employee> filter = Builders<Employee>.Filter.And(
+                Builders<Employee>.Filter.Eq("first_name", firstName),
+                Builders<Employee>.Filter.Eq("last_name", lastName)
+                );
+            
+            Employee employee =  employeeCollection.Find(filter).FirstOrDefault();
+            return employee.Id.ToString();
+        }
     }
 }

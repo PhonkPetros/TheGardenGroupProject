@@ -20,6 +20,7 @@ namespace Model
         [BsonElement("incident_type")]
         private string incident_type;
 
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("reported_by")]
         private string reported_by;
 
