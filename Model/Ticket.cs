@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Model
 {
     public class Ticket
-    {
+    {   
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         private ObjectId id;
@@ -35,30 +35,31 @@ namespace Model
         [BsonElement("status")]
         private string status;
 
+        [BsonIgnore]
         public ObjectId Id
         {
             get { return id; }
             set { id = value; }
         }
-
+        [BsonIgnore]
         public DateTime DateReported
         {
             get { return date_reported; }
             set { date_reported = value; }
         }
-
+        [BsonIgnore]
         public DateTime Deadline
         {
             get { return deadline; }
             set { deadline = value; }
         }
-
+        [BsonIgnore]
         public string Subject
         {
             get { return subject; }
             set { subject = value; }
         }
-
+        [BsonIgnore]
         public IncidentType IncidentType //?
         {
             get
@@ -79,12 +80,13 @@ namespace Model
 
 
         }
-
+        [BsonIgnore]
         public string ReportedBy
         {
             get { return reported_by; }
+            set {  reported_by = value; }
         }
-
+        [BsonIgnore]
         public Priority Priority 
         {
             get
@@ -101,13 +103,13 @@ namespace Model
             set { priority = value.ToString(); }
 
         }
-
+        [BsonIgnore]
         public string Description
         {
             get { return description; }
             set { description = value; }
         }
-
+        [BsonIgnore]
         public Status Status //?
         {
             get
@@ -121,7 +123,10 @@ namespace Model
                     return Status.Open;
                 }
             }
-            
+            set
+            {
+                status = value.ToString();
+            }
         }
 
         public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, string reported_by, Priority priority, DateTime deadline, string description, Status status)

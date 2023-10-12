@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.employeePanel = new System.Windows.Forms.Panel();
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
@@ -70,11 +71,11 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.createTicketPanel = new System.Windows.Forms.Panel();
+            this.deadlineDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
-            this.deadlineComboBox = new System.Windows.Forms.ComboBox();
             this.deadlineLabel = new System.Windows.Forms.Label();
             this.priorityLabel = new System.Windows.Forms.Label();
             this.priorityComboBox = new System.Windows.Forms.ComboBox();
@@ -82,6 +83,7 @@
             this.reportedByComboBox = new System.Windows.Forms.ComboBox();
             this.incidentTypeLabel = new System.Windows.Forms.Label();
             this.incidentTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ticketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subjectLabel = new System.Windows.Forms.Label();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
             this.dateReportedLabel = new System.Windows.Forms.Label();
@@ -110,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.piChart)).BeginInit();
             this.ticketViewPanel.SuspendLayout();
             this.createTicketPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             this.pnlCreateTicketByEmployee.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,7 +166,7 @@
             this.dashBoardPanel.Controls.Add(this.incidentChart);
             this.dashBoardPanel.Controls.Add(this.piChart);
             this.dashBoardPanel.Location = new System.Drawing.Point(0, 0);
-            this.dashBoardPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dashBoardPanel.Margin = new System.Windows.Forms.Padding(4);
             this.dashBoardPanel.Name = "dashBoardPanel";
             this.dashBoardPanel.Size = new System.Drawing.Size(1107, 753);
             this.dashBoardPanel.TabIndex = 2;
@@ -184,7 +187,7 @@
             this.editTicketPanel.Controls.Add(this.submitEditButton);
             this.editTicketPanel.Controls.Add(this.editTicketListView);
             this.editTicketPanel.Location = new System.Drawing.Point(0, 0);
-            this.editTicketPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editTicketPanel.Margin = new System.Windows.Forms.Padding(4);
             this.editTicketPanel.Name = "editTicketPanel";
             this.editTicketPanel.Size = new System.Drawing.Size(1103, 756);
             this.editTicketPanel.TabIndex = 17;
@@ -204,7 +207,7 @@
             // 
             this.incidentTypeEditComboBox.FormattingEnabled = true;
             this.incidentTypeEditComboBox.Location = new System.Drawing.Point(536, 316);
-            this.incidentTypeEditComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.incidentTypeEditComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.incidentTypeEditComboBox.Name = "incidentTypeEditComboBox";
             this.incidentTypeEditComboBox.Size = new System.Drawing.Size(160, 24);
             this.incidentTypeEditComboBox.TabIndex = 12;
@@ -222,7 +225,7 @@
             // descriptionEditTextbox
             // 
             this.descriptionEditTextbox.Location = new System.Drawing.Point(197, 415);
-            this.descriptionEditTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descriptionEditTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.descriptionEditTextbox.Multiline = true;
             this.descriptionEditTextbox.Name = "descriptionEditTextbox";
             this.descriptionEditTextbox.Size = new System.Drawing.Size(840, 187);
@@ -241,7 +244,7 @@
             // deadlineEditDateTimePicker
             // 
             this.deadlineEditDateTimePicker.Location = new System.Drawing.Point(720, 316);
-            this.deadlineEditDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deadlineEditDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.deadlineEditDateTimePicker.Name = "deadlineEditDateTimePicker";
             this.deadlineEditDateTimePicker.Size = new System.Drawing.Size(317, 22);
             this.deadlineEditDateTimePicker.TabIndex = 8;
@@ -260,7 +263,7 @@
             // 
             this.statusEditComboBox.FormattingEnabled = true;
             this.statusEditComboBox.Location = new System.Drawing.Point(197, 316);
-            this.statusEditComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusEditComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.statusEditComboBox.Name = "statusEditComboBox";
             this.statusEditComboBox.Size = new System.Drawing.Size(160, 24);
             this.statusEditComboBox.TabIndex = 6;
@@ -269,7 +272,7 @@
             // 
             this.priorityEditComboBox.FormattingEnabled = true;
             this.priorityEditComboBox.Location = new System.Drawing.Point(367, 316);
-            this.priorityEditComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.priorityEditComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.priorityEditComboBox.Name = "priorityEditComboBox";
             this.priorityEditComboBox.Size = new System.Drawing.Size(160, 24);
             this.priorityEditComboBox.TabIndex = 5;
@@ -297,7 +300,7 @@
             // submitEditButton
             // 
             this.submitEditButton.Location = new System.Drawing.Point(939, 645);
-            this.submitEditButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.submitEditButton.Margin = new System.Windows.Forms.Padding(4);
             this.submitEditButton.Name = "submitEditButton";
             this.submitEditButton.Size = new System.Drawing.Size(100, 28);
             this.submitEditButton.TabIndex = 1;
@@ -308,7 +311,7 @@
             // 
             this.editTicketListView.HideSelection = false;
             this.editTicketListView.Location = new System.Drawing.Point(197, 121);
-            this.editTicketListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.editTicketListView.Margin = new System.Windows.Forms.Padding(4);
             this.editTicketListView.Name = "editTicketListView";
             this.editTicketListView.Size = new System.Drawing.Size(840, 118);
             this.editTicketListView.TabIndex = 0;
@@ -346,35 +349,35 @@
             // 
             // incidentChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend9);
             this.incidentChart.Location = new System.Drawing.Point(580, 170);
-            this.incidentChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.incidentChart.Margin = new System.Windows.Forms.Padding(4);
             this.incidentChart.Name = "incidentChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series9);
             this.incidentChart.Size = new System.Drawing.Size(508, 369);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea2.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.piChart.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.piChart.Legends.Add(legend10);
             this.piChart.Location = new System.Drawing.Point(76, 170);
-            this.piChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.piChart.Margin = new System.Windows.Forms.Padding(4);
             this.piChart.Name = "piChart";
-            series2.ChartArea = "ChartArea2";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.piChart.Series.Add(series2);
+            series10.ChartArea = "ChartArea2";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.piChart.Series.Add(series10);
             this.piChart.Size = new System.Drawing.Size(469, 369);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -481,11 +484,11 @@
             // 
             // createTicketPanel
             // 
+            this.createTicketPanel.Controls.Add(this.deadlineDateTimePicker);
             this.createTicketPanel.Controls.Add(this.submitButton);
             this.createTicketPanel.Controls.Add(this.cancelButton);
             this.createTicketPanel.Controls.Add(this.descriptionTextBox);
             this.createTicketPanel.Controls.Add(this.descriptionLabel);
-            this.createTicketPanel.Controls.Add(this.deadlineComboBox);
             this.createTicketPanel.Controls.Add(this.deadlineLabel);
             this.createTicketPanel.Controls.Add(this.priorityLabel);
             this.createTicketPanel.Controls.Add(this.priorityComboBox);
@@ -504,6 +507,13 @@
             this.createTicketPanel.Size = new System.Drawing.Size(827, 614);
             this.createTicketPanel.TabIndex = 1;
             // 
+            // deadlineDateTimePicker
+            // 
+            this.deadlineDateTimePicker.Location = new System.Drawing.Point(333, 314);
+            this.deadlineDateTimePicker.Name = "deadlineDateTimePicker";
+            this.deadlineDateTimePicker.Size = new System.Drawing.Size(315, 22);
+            this.deadlineDateTimePicker.TabIndex = 17;
+            // 
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -514,6 +524,7 @@
             this.submitButton.TabIndex = 16;
             this.submitButton.Text = "Submit Ticket";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(submitButton_Click);
             // 
             // cancelButton
             // 
@@ -525,6 +536,7 @@
             this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(cancelButton_Click);
             // 
             // descriptionTextBox
             // 
@@ -546,15 +558,6 @@
             this.descriptionLabel.TabIndex = 13;
             this.descriptionLabel.Text = "Description:";
             this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // deadlineComboBox
-            // 
-            this.deadlineComboBox.FormattingEnabled = true;
-            this.deadlineComboBox.Location = new System.Drawing.Point(333, 310);
-            this.deadlineComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.deadlineComboBox.Name = "deadlineComboBox";
-            this.deadlineComboBox.Size = new System.Drawing.Size(315, 24);
-            this.deadlineComboBox.TabIndex = 12;
             // 
             // deadlineLabel
             // 
@@ -580,7 +583,10 @@
             // 
             // priorityComboBox
             // 
+            this.priorityComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.priorityComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.priorityComboBox.FormattingEnabled = true;
+            this.priorityComboBox.IntegralHeight = false;
             this.priorityComboBox.Location = new System.Drawing.Point(333, 270);
             this.priorityComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.priorityComboBox.Name = "priorityComboBox";
@@ -597,10 +603,11 @@
             this.reportedByLabel.TabIndex = 8;
             this.reportedByLabel.Text = "Reported by user:";
             this.reportedByLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportedByLabel.Click += new System.EventHandler(this.reportedByLabel_Click);
             // 
             // reportedByComboBox
             // 
+            this.reportedByComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.reportedByComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.reportedByComboBox.FormattingEnabled = true;
             this.reportedByComboBox.Location = new System.Drawing.Point(333, 230);
             this.reportedByComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -621,12 +628,21 @@
             // 
             // incidentTypeComboBox
             // 
+            this.incidentTypeComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.incidentTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.incidentTypeComboBox.DataSource = this.ticketBindingSource;
+            this.incidentTypeComboBox.DisplayMember = "IncidentType";
             this.incidentTypeComboBox.FormattingEnabled = true;
             this.incidentTypeComboBox.Location = new System.Drawing.Point(333, 190);
             this.incidentTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.incidentTypeComboBox.MaxDropDownItems = 3;
             this.incidentTypeComboBox.Name = "incidentTypeComboBox";
             this.incidentTypeComboBox.Size = new System.Drawing.Size(315, 24);
             this.incidentTypeComboBox.TabIndex = 5;
+            // 
+            // ticketBindingSource
+            // 
+            this.ticketBindingSource.DataSource = typeof(Model.Ticket);
             // 
             // subjectLabel
             // 
@@ -657,7 +673,6 @@
             this.dateReportedLabel.TabIndex = 2;
             this.dateReportedLabel.Text = "Date/time reported:";
             this.dateReportedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dateReportedLabel.Click += new System.EventHandler(this.dateReportedLabel_Click);
             // 
             // ticketDateTimePicker
             // 
@@ -860,8 +875,8 @@
             this.Controls.Add(this.ticketViewPanel);
             this.Controls.Add(this.dashBoardPanel);
             this.Controls.Add(this.pnlCreateTicketByEmployee);
-            this.Controls.Add(this.createTicketPanel);
             this.Controls.Add(this.employeePanel);
+            this.Controls.Add(this.createTicketPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserInterface";
             this.Text = "User Interface";
@@ -875,6 +890,7 @@
             this.ticketViewPanel.ResumeLayout(false);
             this.createTicketPanel.ResumeLayout(false);
             this.createTicketPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             this.pnlCreateTicketByEmployee.ResumeLayout(false);
             this.pnlCreateTicketByEmployee.PerformLayout();
             this.ResumeLayout(false);
@@ -904,7 +920,6 @@
         private System.Windows.Forms.TextBox subjectTextBox;
         private System.Windows.Forms.Label dateReportedLabel;
         private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.ComboBox deadlineComboBox;
         private System.Windows.Forms.Label deadlineLabel;
         private System.Windows.Forms.Label priorityLabel;
         private System.Windows.Forms.ComboBox priorityComboBox;
@@ -952,5 +967,7 @@
         private System.Windows.Forms.Panel pnlCreateTicketByEmployee;
         private System.Windows.Forms.DateTimePicker dateTimePickerDeadline2;
         private System.Windows.Forms.Button btnCreateTicket;
+        private System.Windows.Forms.DateTimePicker deadlineDateTimePicker;
+        private System.Windows.Forms.BindingSource ticketBindingSource;
     }
 }

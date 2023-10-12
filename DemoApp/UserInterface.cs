@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace DemoApp
 {
@@ -24,6 +24,8 @@ namespace DemoApp
         private TicketController ticketController;
         private List<Ticket> sessionTickets = new List<Ticket>();
         private Employee logedinEmployee;
+        private CreateTicketView createTicket;
+        private Ticket ticket = new Ticket();
 
         public UserInterface(Employee employee)
         {
@@ -47,15 +49,6 @@ namespace DemoApp
             List<Ticket> tickets = ticketController.GetTickets();
             ticketViewControl.DisplayTickets(tickets);
             ticketViewControl.PiChartTickets(tickets);
-        }
-
-        private void dateReportedLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void reportedByLabel_Click(object sender, EventArgs e)
-        {
-            // Your code here (if needed)
         }
 
         private void dashBoardTickeUI_Click(object sender, EventArgs e)
@@ -96,12 +89,18 @@ namespace DemoApp
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-
+            createTicket.addTicketToDatabase();
+            createTicketPanel.Hide();
+            ticketViewPanel.Show();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            ticketViewPanel.Show();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            dashBoardPanel.Hide();
         }
 
         private void btnCancel2_Click(object sender, EventArgs e)
@@ -171,9 +170,14 @@ namespace DemoApp
         private void btnCreateTicket_Click(object sender, EventArgs e)
         {
             //define which employee is it and based on condition use methods below
-            ShowPanelForEmployee();
-
-
+            if(logedinEmployee.UserType == UserType.Employee)
+            {
+                ShowPanelForEmployee();
+            }
+            else
+            {
+                ShowPanelForServiceDesk();
+            }
         }
 
         //If it is general employee
@@ -191,7 +195,14 @@ namespace DemoApp
         //If it is service desk employee
         void ShowPanelForServiceDesk()
         {
-
+            ticketViewPanel.Hide();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Show();
+            editTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            createTicket = new CreateTicketView(descriptionTextBox, deadlineDateTimePicker, priorityComboBox, reportedByComboBox, incidentTypeComboBox, subjectTextBox, ticketDateTimePicker, ticket);
+            createTicket.PopulateComboBoxes();
         }
     }
 }
