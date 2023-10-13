@@ -62,7 +62,6 @@ namespace Model
         }
         [BsonIgnore]
         public IncidentType IncidentType //?
-
         {
             get
             {
@@ -87,7 +86,6 @@ namespace Model
         {
             get { return reported_by; }
             set { reported_by = value; }
-
         }
         [BsonIgnore]
         public Priority Priority 
