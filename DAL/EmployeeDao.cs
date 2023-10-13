@@ -36,5 +36,12 @@ namespace DAL
             Employee employee =  employeeCollection.Find(filter).FirstOrDefault();
             return employee.Id.ToString();
         }
+
+        public string GetUserName(string id)
+        {
+            FilterDefinition<Employee> filter = Builders<Employee>.Filter.Eq("_id", ObjectId.Parse(id));
+            Employee user = employeeCollection.Find(filter).FirstOrDefault();
+            return user.FullName;
+        }
     }
 }

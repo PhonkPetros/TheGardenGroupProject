@@ -208,6 +208,18 @@ namespace DemoApp
 
         private void submitEditButton_Click(object sender, EventArgs e)
         {
+            changeTicket.ReadChanges();
+            changeTicket.ChangeTicketInDatabase();
+
+            MessageBox.Show("Ticket was changed successfully.");
+
+            ticketViewPanel.Show();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            editTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            editTicketListView.Clear();
 
         }
 
@@ -220,7 +232,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             editTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
-
+            editTicketListView.Clear();
         }
         
 
@@ -237,7 +249,7 @@ namespace DemoApp
             string ticketId = selectedItem.SubItems[0].Text;
             Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
 
-            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, editTicketListView);
+            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView);
             changeTicket.Initialize();
         }
     }

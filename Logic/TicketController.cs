@@ -41,5 +41,10 @@ namespace Logic
         {
             return dao.GetTicketByTicketId(ticketId);
         }
+
+        public void UpdateTicket(Ticket ticket)
+        {
+            dao.UpdateTicket(ticket);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -141,15 +142,19 @@ namespace DAL
 
         public void UpdateTicket(Ticket ticket)
         {
+            
             FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
             UpdateDefinition<Ticket> update = Builders<Ticket>.Update
-                .Set("subject", ticket.Subject)
-                .Set("description", ticket.Description)
-                .Set("deadline", ticket.Deadline)
-                .Set("reported_by", ticket.ReportedBy)
-                .Set("status", ticket.Status)
-                .Set("priority", ticket.Priority)
-                .Set("incident_type", ticket.IncidentType);
+
+            .Set("subject", ticket.Subject)
+            .Set("description", ticket.Description)
+            .Set("deadline", ticket.Deadline)
+            .Set("reported_by", ticket.ReportedBy)
+            .Set("status", ticket.Status)
+            .Set("priority", ticket.Priority)
+            .Set("incident_type", ticket.IncidentType);
+
+            ticketCollection.UpdateOne(filter, update);
         }
 
         public Ticket GetTicketByTicketId(string ticketId)

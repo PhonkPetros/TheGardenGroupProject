@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.employeePanel = new System.Windows.Forms.Panel();
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
@@ -203,35 +203,35 @@
             // 
             // incidentChart
             // 
-            chartArea9.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend9);
+            chartArea5.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend5);
             this.incidentChart.Location = new System.Drawing.Point(580, 170);
             this.incidentChart.Margin = new System.Windows.Forms.Padding(4);
             this.incidentChart.Name = "incidentChart";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series9);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series5);
             this.incidentChart.Size = new System.Drawing.Size(508, 369);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea10.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.piChart.Legends.Add(legend10);
+            chartArea6.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.piChart.Legends.Add(legend6);
             this.piChart.Location = new System.Drawing.Point(76, 170);
             this.piChart.Margin = new System.Windows.Forms.Padding(4);
             this.piChart.Name = "piChart";
-            series10.ChartArea = "ChartArea2";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.piChart.Series.Add(series10);
+            series6.ChartArea = "ChartArea2";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.piChart.Series.Add(series6);
             this.piChart.Size = new System.Drawing.Size(469, 369);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -389,10 +389,12 @@
             this.editTicketListView.HideSelection = false;
             this.editTicketListView.Location = new System.Drawing.Point(13, 72);
             this.editTicketListView.Margin = new System.Windows.Forms.Padding(4);
+            this.editTicketListView.MultiSelect = false;
             this.editTicketListView.Name = "editTicketListView";
             this.editTicketListView.Size = new System.Drawing.Size(803, 118);
             this.editTicketListView.TabIndex = 0;
             this.editTicketListView.UseCompatibleStateImageBehavior = false;
+            this.editTicketListView.View = System.Windows.Forms.View.Details;
             // 
             // ticketViewPanel
             // 
