@@ -162,3 +162,6 @@ C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\UI.csproj.CoreCompileInputs.cache
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.exe
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.pdb
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.CreateTicket.resources
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.Login.resources
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.UserInterface.resources

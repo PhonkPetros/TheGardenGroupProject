@@ -100,6 +100,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             ticketViewPanel.Show();
             deleteTicketButton.Hide();
+            LoadAndUpdateView();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
