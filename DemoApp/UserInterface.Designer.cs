@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.employeePanel = new System.Windows.Forms.Panel();
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
@@ -106,6 +106,7 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlCreateTicketByEmployee = new System.Windows.Forms.Panel();
             this.dateTimePickerDeadline2 = new System.Windows.Forms.DateTimePicker();
+            this.deleteTicketButton = new System.Windows.Forms.Button();
             this.employeePanel.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
@@ -203,35 +204,35 @@
             // 
             // incidentChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend5);
+            chartArea11.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea11);
+            legend11.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend11);
             this.incidentChart.Location = new System.Drawing.Point(580, 170);
             this.incidentChart.Margin = new System.Windows.Forms.Padding(4);
             this.incidentChart.Name = "incidentChart";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series5);
+            series11.ChartArea = "ChartArea1";
+            series11.Legend = "Legend1";
+            series11.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series11);
             this.incidentChart.Size = new System.Drawing.Size(508, 369);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea6.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.piChart.Legends.Add(legend6);
+            chartArea12.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            this.piChart.Legends.Add(legend12);
             this.piChart.Location = new System.Drawing.Point(76, 170);
             this.piChart.Margin = new System.Windows.Forms.Padding(4);
             this.piChart.Name = "piChart";
-            series6.ChartArea = "ChartArea2";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.piChart.Series.Add(series6);
+            series12.ChartArea = "ChartArea2";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            this.piChart.Series.Add(series12);
             this.piChart.Size = new System.Drawing.Size(469, 369);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -398,6 +399,7 @@
             // 
             // ticketViewPanel
             // 
+            this.ticketViewPanel.Controls.Add(this.deleteTicketButton);
             this.ticketViewPanel.Controls.Add(this.btnCreateTicket);
             this.ticketViewPanel.Controls.Add(this.incidentManagamentUIbtn);
             this.ticketViewPanel.Controls.Add(this.dashBoardTickeUI);
@@ -472,6 +474,7 @@
             this.ticketView.TabIndex = 0;
             this.ticketView.UseCompatibleStateImageBehavior = false;
             this.ticketView.View = System.Windows.Forms.View.Details;
+            this.ticketView.SelectedIndexChanged += new System.EventHandler(this.ticketView_SelectedIndexChanged);
             this.ticketView.DoubleClick += new System.EventHandler(this.ticketView_DoubleClick);
             // 
             // columnHeader1
@@ -884,6 +887,22 @@
             this.dateTimePickerDeadline2.Size = new System.Drawing.Size(315, 22);
             this.dateTimePickerDeadline2.TabIndex = 17;
             // 
+            // deleteTicketButton
+            // 
+            this.deleteTicketButton.BackColor = System.Drawing.Color.DarkRed;
+            this.deleteTicketButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.deleteTicketButton.FlatAppearance.BorderSize = 0;
+            this.deleteTicketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTicketButton.ForeColor = System.Drawing.Color.White;
+            this.deleteTicketButton.Location = new System.Drawing.Point(593, 571);
+            this.deleteTicketButton.Margin = new System.Windows.Forms.Padding(0);
+            this.deleteTicketButton.Name = "deleteTicketButton";
+            this.deleteTicketButton.Size = new System.Drawing.Size(128, 30);
+            this.deleteTicketButton.TabIndex = 4;
+            this.deleteTicketButton.Text = "Delete Ticket";
+            this.deleteTicketButton.UseVisualStyleBackColor = false;
+            this.deleteTicketButton.Click += new System.EventHandler(this.deleteTicketButton_Click);
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -988,5 +1007,6 @@
         private System.Windows.Forms.DateTimePicker deadlineDateTimePicker;
         private System.Windows.Forms.BindingSource ticketBindingSource;
         private System.Windows.Forms.Button cancelEditButton;
+        private System.Windows.Forms.Button deleteTicketButton;
     }
 }

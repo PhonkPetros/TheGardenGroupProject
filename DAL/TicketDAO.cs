@@ -134,10 +134,19 @@ namespace DAL
 
 
 
-        public void DeleteTicket(Ticket ticket)
+        public void DeleteTicket(string ticketId)
         {
-            FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
-            ticketCollection.DeleteOne(filter);
+            ObjectId objectId;
+            if (ObjectId.TryParse(ticketId, out objectId))
+            {
+                FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", objectId);
+                ticketCollection.DeleteOne(filter);
+            }
+            else
+            {
+                throw new Exception("there is no ticket with this id in the database");
+            }
+            
         }
 
         public void UpdateTicket(Ticket ticket)
