@@ -118,6 +118,7 @@ namespace DemoApp
             {
                 MessageBox.Show("No session ticket to cancel.");
             }
+            this.Close();
         }
 
         private void btnSubmit2_Click(object sender, EventArgs e)
@@ -132,6 +133,7 @@ namespace DemoApp
                 currentSessionTicket.Priority = (Priority)comboBoxPriority2.SelectedIndex;
                 currentSessionTicket.Deadline = dateTimePickerDeadline2.Value;
                 currentSessionTicket.Description = txtBoxDescription2.Text;
+                //currentSessionTicket.ReportedBy = logedinEmployee.Id.ToString();
 
 
                 try
@@ -184,9 +186,10 @@ namespace DemoApp
         //If it is general employee
         void ShowPanelForEmployee()
         {
-            ticketViewPanel.Show();
+            dashBoardPanel.Hide();
             employeePanel.Hide();
             createTicketPanel.Hide();
+            ticketViewPanel.Hide();
             pnlCreateTicketByEmployee.Show();
             Ticket newSessionTicket = new Ticket();
             sessionTickets.Add(newSessionTicket);

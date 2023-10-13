@@ -84,7 +84,6 @@
             this.reportedByComboBox = new System.Windows.Forms.ComboBox();
             this.incidentTypeLabel = new System.Windows.Forms.Label();
             this.incidentTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.ticketBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subjectLabel = new System.Windows.Forms.Label();
             this.subjectTextBox = new System.Windows.Forms.TextBox();
             this.dateReportedLabel = new System.Windows.Forms.Label();
@@ -655,10 +654,6 @@
             this.incidentTypeComboBox.Size = new System.Drawing.Size(315, 24);
             this.incidentTypeComboBox.TabIndex = 5;
             // 
-            // ticketBindingSource
-            // 
-            this.ticketBindingSource.DataSource = typeof(Model.Ticket);
-            // 
             // subjectLabel
             // 
             this.subjectLabel.AutoSize = true;
@@ -706,6 +701,85 @@
             this.createTicketLabel.Size = new System.Drawing.Size(417, 38);
             this.createTicketLabel.TabIndex = 0;
             this.createTicketLabel.Text = "Create new incident ticket";
+            // 
+            // dashBoardPanel
+            // 
+            this.dashBoardPanel.Controls.Add(this.btnIncidentManagment);
+            this.dashBoardPanel.Controls.Add(this.btnDashBoard);
+            this.dashBoardPanel.Controls.Add(this.ticketCount);
+            this.dashBoardPanel.Controls.Add(this.incidentChart);
+            this.dashBoardPanel.Controls.Add(this.piChart);
+            this.dashBoardPanel.Location = new System.Drawing.Point(0, 0);
+            this.dashBoardPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.dashBoardPanel.Name = "dashBoardPanel";
+            this.dashBoardPanel.Size = new System.Drawing.Size(622, 497);
+            this.dashBoardPanel.TabIndex = 2;
+            // 
+            // btnIncidentManagment
+            // 
+            this.btnIncidentManagment.Location = new System.Drawing.Point(274, 46);
+            this.btnIncidentManagment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIncidentManagment.Name = "btnIncidentManagment";
+            this.btnIncidentManagment.Size = new System.Drawing.Size(182, 19);
+            this.btnIncidentManagment.TabIndex = 4;
+            this.btnIncidentManagment.Text = "Incident manamgnet";
+            this.btnIncidentManagment.UseVisualStyleBackColor = true;
+            this.btnIncidentManagment.Click += new System.EventHandler(this.btnIncidentManagment_Click);
+            // 
+            // btnDashBoard
+            // 
+            this.btnDashBoard.Location = new System.Drawing.Point(116, 46);
+            this.btnDashBoard.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashBoard.Name = "btnDashBoard";
+            this.btnDashBoard.Size = new System.Drawing.Size(142, 19);
+            this.btnDashBoard.TabIndex = 3;
+            this.btnDashBoard.Text = "Dash board";
+            this.btnDashBoard.UseVisualStyleBackColor = true;
+            this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
+            // 
+            // ticketCount
+            // 
+            this.ticketCount.AutoSize = true;
+            this.ticketCount.Location = new System.Drawing.Point(129, 225);
+            this.ticketCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ticketCount.Name = "ticketCount";
+            this.ticketCount.Size = new System.Drawing.Size(0, 13);
+            this.ticketCount.TabIndex = 2;
+            // 
+            // incidentChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend1);
+            this.incidentChart.Location = new System.Drawing.Point(326, 112);
+            this.incidentChart.Margin = new System.Windows.Forms.Padding(2);
+            this.incidentChart.Name = "incidentChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series1);
+            this.incidentChart.Size = new System.Drawing.Size(286, 244);
+            this.incidentChart.TabIndex = 1;
+            this.incidentChart.Text = "chart2";
+            // 
+            // piChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.piChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.piChart.Legends.Add(legend2);
+            this.piChart.Location = new System.Drawing.Point(43, 112);
+            this.piChart.Margin = new System.Windows.Forms.Padding(2);
+            this.piChart.Name = "piChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.piChart.Series.Add(series2);
+            this.piChart.Size = new System.Drawing.Size(264, 244);
+            this.piChart.TabIndex = 0;
+            this.piChart.Text = "chart1";
             // 
             // btnSubmit2
             // 
@@ -777,8 +851,12 @@
             // comboBoxPriority2
             // 
             this.comboBoxPriority2.FormattingEnabled = true;
-            this.comboBoxPriority2.Location = new System.Drawing.Point(333, 270);
-            this.comboBoxPriority2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxPriority2.Items.AddRange(new object[] {
+            "Low",
+            "Normal",
+            "High"});
+            this.comboBoxPriority2.Location = new System.Drawing.Point(250, 219);
+            this.comboBoxPriority2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPriority2.Name = "comboBoxPriority2";
             this.comboBoxPriority2.Size = new System.Drawing.Size(315, 24);
             this.comboBoxPriority2.TabIndex = 9;
@@ -797,8 +875,12 @@
             // comboBoxTypeOfIncident2
             // 
             this.comboBoxTypeOfIncident2.FormattingEnabled = true;
-            this.comboBoxTypeOfIncident2.Location = new System.Drawing.Point(333, 190);
-            this.comboBoxTypeOfIncident2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxTypeOfIncident2.Items.AddRange(new object[] {
+            "Software",
+            "Hardware",
+            "Service"});
+            this.comboBoxTypeOfIncident2.Location = new System.Drawing.Point(250, 154);
+            this.comboBoxTypeOfIncident2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxTypeOfIncident2.Name = "comboBoxTypeOfIncident2";
             this.comboBoxTypeOfIncident2.Size = new System.Drawing.Size(315, 24);
             this.comboBoxTypeOfIncident2.TabIndex = 5;
