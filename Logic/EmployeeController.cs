@@ -24,5 +24,10 @@ namespace Logic
         {
             return dao.GetUserId(userName);
         }
+
+        public string GetUserName(string id)
+        {
+            return dao.GetUserName(id);
+        }
     }
 }
