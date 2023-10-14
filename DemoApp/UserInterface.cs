@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace DemoApp
 {
@@ -24,6 +24,10 @@ namespace DemoApp
         private TicketController ticketController;
         private List<Ticket> sessionTickets = new List<Ticket>();
         private Employee logedinEmployee;
+        private CreateTicketView createTicket;
+        private ChangeTicketView changeTicket;
+        DeleteTicketView deleteTicket;
+        private Ticket ticket = new Ticket();
 
         public UserInterface(Employee employee)
         {
@@ -32,6 +36,7 @@ namespace DemoApp
             // Assuming ticketView, piChart, label, incidentChart are the actual names of controls on your form.
             ticketViewControl = new TicketView(ticketView, piChart, ticketCount, incidentChart);
             ticketController = new TicketController();
+            deleteTicketButton.Hide();
 
             logedinEmployee = employee;
             LoadAndUpdateView();
@@ -49,15 +54,6 @@ namespace DemoApp
             ticketViewControl.PiChartTickets(tickets);
         }
 
-        private void dateReportedLabel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void reportedByLabel_Click(object sender, EventArgs e)
-        {
-            // Your code here (if needed)
-        }
-
         private void dashBoardTickeUI_Click(object sender, EventArgs e)
         {
             ticketViewPanel.Hide();
@@ -65,6 +61,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
             dashBoardPanel.Show();
+            deleteTicketButton.Hide();
         }
 
         private void incidentManagamentUIbtn_Click(object sender, EventArgs e)
@@ -74,6 +71,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
             dashBoardPanel.Hide();
+            deleteTicketButton.Hide();
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
@@ -83,6 +81,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
             dashBoardPanel.Show();
+            deleteTicketButton.Hide();
         }
 
         private void btnIncidentManagment_Click(object sender, EventArgs e)
@@ -92,16 +91,26 @@ namespace DemoApp
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
             dashBoardPanel.Hide();
+            deleteTicketButton.Hide();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-
+            createTicket.addTicketToDatabase();
+            createTicketPanel.Hide();
+            ticketViewPanel.Show();
+            deleteTicketButton.Hide();
+            LoadAndUpdateView();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            ticketViewPanel.Show();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            dashBoardPanel.Hide();
+            deleteTicketButton.Hide();
         }
 
         private void btnCancel2_Click(object sender, EventArgs e)
@@ -118,7 +127,6 @@ namespace DemoApp
             {
                 MessageBox.Show("No session ticket to cancel.");
             }
-            this.Close();
         }
 
         private void btnSubmit2_Click(object sender, EventArgs e)
@@ -133,8 +141,6 @@ namespace DemoApp
                 currentSessionTicket.Priority = (Priority)comboBoxPriority2.SelectedIndex;
                 currentSessionTicket.Deadline = dateTimePickerDeadline2.Value;
                 currentSessionTicket.Description = txtBoxDescription2.Text;
-                currentSessionTicket.Status = Model.Enums.Status.Open;
-                //currentSessionTicket.ReportedBy = logedinEmployee.Id.ToString();
 
 
                 try
@@ -174,18 +180,22 @@ namespace DemoApp
         private void btnCreateTicket_Click(object sender, EventArgs e)
         {
             //define which employee is it and based on condition use methods below
-            ShowPanelForEmployee();
-
-
+            if(logedinEmployee.UserType == UserType.Employee)
+            {
+                ShowPanelForEmployee();
+            }
+            else
+            {
+                ShowPanelForServiceDesk();
+            }
         }
 
         //If it is general employee
         void ShowPanelForEmployee()
         {
-            dashBoardPanel.Hide();
+            ticketViewPanel.Show();
             employeePanel.Hide();
             createTicketPanel.Hide();
-            ticketViewPanel.Hide();
             pnlCreateTicketByEmployee.Show();
             Ticket newSessionTicket = new Ticket();
             sessionTickets.Add(newSessionTicket);
@@ -195,7 +205,88 @@ namespace DemoApp
         //If it is service desk employee
         void ShowPanelForServiceDesk()
         {
+            ticketViewPanel.Hide();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Show();
+            editTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            createTicket = new CreateTicketView(descriptionTextBox, deadlineDateTimePicker, priorityComboBox, reportedByComboBox, incidentTypeComboBox, subjectTextBox, ticketDateTimePicker, ticket);
+            createTicket.PopulateComboBoxes();
+        }
 
+        private void submitEditButton_Click(object sender, EventArgs e)
+        {
+            changeTicket.ReadChanges();
+            changeTicket.ChangeTicketInDatabase();
+
+            MessageBox.Show("Ticket was changed successfully.");
+
+            ticketViewPanel.Show();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            editTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            editTicketListView.Clear();
+            deleteTicketButton.Hide();
+        }
+
+        private void cancelEditButton_Click(object sender, EventArgs e)
+        {
+            
+            ticketViewPanel.Show();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            editTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            editTicketListView.Clear();
+            deleteTicketButton.Hide();
+        }
+        
+
+        private void ticketView_DoubleClick(object sender, EventArgs e)
+        {
+            editTicketPanel.Show();
+            ticketViewPanel.Hide();
+            dashBoardPanel.Hide();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+
+            ListViewItem selectedItem = ticketView.SelectedItems[0];
+            string ticketId = selectedItem.SubItems[0].Text;
+            Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
+
+            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView);
+            changeTicket.Initialize();
+        }
+
+        private void ticketView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(logedinEmployee.UserType == UserType.ServiceDeskEmployee)
+            {
+                deleteTicketButton.Show();
+            }
+            
+        }
+        private void deleteTicketButton_Click(object sender, EventArgs e)
+        {
+            if(ticketView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ticketView.SelectedItems[0];
+                string ticketId = selectedItem.SubItems[0].Text;
+
+                deleteTicket = new DeleteTicketView(ticketId);
+                deleteTicket.DeleteTicket();
+                MessageBox.Show("Ticket was successfully deleted.");
+                LoadAndUpdateView();
+            }
+            else
+            {
+                MessageBox.Show("Please select a ticket to delete.");
+            }
         }
     }
 }

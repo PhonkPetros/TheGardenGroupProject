@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Model
 {
     public class Ticket
-    {
+    {   
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         private ObjectId id;
@@ -20,6 +20,7 @@ namespace Model
         [BsonElement("incident_type")]
         private string incident_type;
 
+        [BsonRepresentation(BsonType.ObjectId)]
         [BsonElement("reported_by")]
         private string reported_by;
 
@@ -35,31 +36,32 @@ namespace Model
         [BsonElement("status")]
         private string status;
 
+        [BsonIgnore]
         public ObjectId Id
         {
             get { return id; }
             set { id = value; }
         }
-
+        [BsonIgnore]
         public DateTime DateReported
         {
             get { return date_reported; }
             set { date_reported = value; }
         }
-
+        [BsonIgnore]
         public DateTime Deadline
         {
             get { return deadline; }
             set { deadline = value; }
         }
-
+        [BsonIgnore]
         public string Subject
         {
             get { return subject; }
             set { subject = value; }
         }
-
-        public IncidentType IncidentType 
+        [BsonIgnore]
+        public IncidentType IncidentType //?
         {
             get
             {
@@ -79,13 +81,13 @@ namespace Model
 
 
         }
-
+        [BsonIgnore]
         public string ReportedBy
         {
             get { return reported_by; }
-            //set { reported_by = value; }
+            set { reported_by = value; }
         }
-
+        [BsonIgnore]
         public Priority Priority 
         {
             get
@@ -102,13 +104,13 @@ namespace Model
             set { priority = value.ToString(); }
 
         }
-
+        [BsonIgnore]
         public string Description
         {
             get { return description; }
             set { description = value; }
         }
-
+        [BsonIgnore]
         public Status Status //?
         {
             get
@@ -122,23 +124,15 @@ namespace Model
                     return Status.Open;
                 }
             }
-            set {  status = value.ToString(); }
-            
+            set
+            {
+                status = value.ToString();
+            }
         }
 
-        public Ticket(ObjectId id, DateTime date_reported, string subject, IncidentType incident_type, string reported_by, Priority priority, DateTime deadline, string description, Status status)
+        public Ticket()
         {
-            this.id = id;
-            this.date_reported = date_reported;
-            this.subject = subject;
-            this.incident_type = incident_type.ToString();
-            this.reported_by = reported_by;
-            this.priority = priority.ToString();
-            this.deadline = deadline;
-            this.description = description;
-            this.status = status.ToString();
-        }
 
-        public Ticket() { }
+        }
     }
 }

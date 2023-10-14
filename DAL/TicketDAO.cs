@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Model;
+using Model.Enums;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -130,15 +134,50 @@ namespace DAL
 
 
 
-        public void DeleteTicket(Ticket ticket)
+        public void DeleteTicket(string ticketId)
         {
-            FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
-            ticketCollection.DeleteOne(filter);
+            ObjectId objectId;
+            if (ObjectId.TryParse(ticketId, out objectId))
+            {
+                FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", objectId);
+                ticketCollection.DeleteOne(filter);
+            }
+            else
+            {
+                throw new Exception("there is no ticket with this id in the database");
+            }
+            
         }
 
         public void UpdateTicket(Ticket ticket)
         {
+            
+            FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
+            UpdateDefinition<Ticket> update = Builders<Ticket>.Update
 
+            .Set("subject", ticket.Subject)
+            .Set("description", ticket.Description)
+            .Set("deadline", ticket.Deadline)
+            .Set("reported_by", ticket.ReportedBy)
+            .Set("status", ticket.Status)
+            .Set("priority", ticket.Priority)
+            .Set("incident_type", ticket.IncidentType);
+
+            ticketCollection.UpdateOne(filter, update);
+        }
+
+        public Ticket GetTicketByTicketId(string ticketId)
+        {
+            ObjectId objectId;
+            if(ObjectId.TryParse(ticketId, out objectId))
+            {
+                FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", objectId);
+                return (Ticket)ticketCollection.Find(filter).First();
+            }
+            else
+            {
+                throw new Exception("there is no ticket with this id in the database");
+            }
         }
     }
 }

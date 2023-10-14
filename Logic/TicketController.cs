@@ -32,9 +32,19 @@ namespace Logic
             dao.CreateNewTicket(ticket);
         }
 
-        public void DeleteTicket(Ticket ticket)
+        public void DeleteTicket(string ticketId)
         {
-            dao.DeleteTicket(ticket);
+            dao.DeleteTicket(ticketId);
+        }
+
+        public Ticket GetTicketByTicketId(string ticketId)
+        {
+            return dao.GetTicketByTicketId(ticketId);
+        }
+
+        public void UpdateTicket(Ticket ticket)
+        {
+            dao.UpdateTicket(ticket);
         }
     }
 }
