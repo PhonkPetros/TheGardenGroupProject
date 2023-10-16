@@ -49,7 +49,8 @@ namespace DemoApp
 
         private void LoadAndUpdateView()
         {
-            List<Ticket> tickets = ticketController.GetTickets();
+
+            List<Ticket> tickets = ticketController.GetTickets(logedinEmployee);
             ticketViewControl.DisplayTickets(tickets);
             ticketViewControl.PiChartTickets(tickets);
         }

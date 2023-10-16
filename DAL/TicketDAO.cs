@@ -20,53 +20,55 @@ namespace DAL
             ticketCollection.InsertOne(newTicket);
         }
 
-        public List<Ticket> GetTicketsWithDeadlines()
+        public List<Ticket> GetTicketsWithDeadlines(Employee employeeId)
         {
             var match = new BsonDocument
-    {
-        {
-            "$match",
-            new BsonDocument
             {
-                { "deadline", new BsonDocument { { "$gt", DateTime.UtcNow } } }
-            }
-        }
-    };
+                {
+                    "$match",
+                    new BsonDocument
+                    {
+                        { "deadline", new BsonDocument { { "$gt", DateTime.UtcNow } } },
+                        { "reported_by", employeeId.Id }
+
+                    }
+                }
+            };
 
             var lookup = new BsonDocument
-    {
-        {
-            "$lookup",
-            new BsonDocument
             {
-                { "from", "employees" },
-                { "localField", "reported_by" },
-                { "foreignField", "_id" },
-                { "as", "employeeInfo" }
-            }
-        }
-    };
+                {
+                    "$lookup",
+                    new BsonDocument
+                    {
+                        { "from", "employees" },
+                        { "localField", "reported_by" },
+                        { "foreignField", "_id" },
+                        { "as", "employeeInfo" }
+                    }
+                }
+            };
 
             var unwind = new BsonDocument("$unwind", "$employeeInfo");
 
             var project = new BsonDocument
-    {
-        {
-            "$project",
-            new BsonDocument
             {
-                { "id", 1 },
-                { "date_reported", 1 },
-                { "subject", 1 },
-                { "incident_type", 1 },
-                { "reported_by", "$employeeInfo.first_name" },
-                { "priority", 1 },
-                { "deadline", 1 },
-                { "description", 1 },
-                { "status", 1 }
-            }
-        }
-    };
+                {
+                    "$project",
+                    new BsonDocument
+                    {
+                        { "id", 1 },
+                        { "date_reported", 1 },
+                        { "subject", 1 },
+                        { "incident_type", 1 },
+                        { "reported_by", "$employeeInfo.first_name" },
+                        { "priority", 1 },
+                        { "deadline", 1 },
+                        { "description", 1 },
+                        { "status", 1 }
+                    }
+                }
+            };
 
             var pipeline = new[] { match, lookup, unwind, project };
 
@@ -78,51 +80,51 @@ namespace DAL
 
         public List<Ticket> GetTicketsWithPastDeadlines()
         {
-            var match = new BsonDocument
-    {
+        var match = new BsonDocument
         {
-            "$match",
-            new BsonDocument
             {
-                { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
+                "$match",
+                new BsonDocument
+                {
+                    { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
+                }
             }
-        }
-    };
+        };
 
-            var lookup = new BsonDocument
-    {
+        var lookup = new BsonDocument
         {
-            "$lookup",
-            new BsonDocument
             {
-                { "from", "employees" },
-                { "localField", "reported_by" },
-                { "foreignField", "_id" },
-                { "as", "employeeInfo" }
+                "$lookup",
+                new BsonDocument
+                {
+                    { "from", "employees" },
+                    { "localField", "reported_by" },
+                    { "foreignField", "_id" },
+                    { "as", "employeeInfo" }
+                }
             }
-        }
-    };
+        };
 
-            var unwind = new BsonDocument("$unwind", "$employeeInfo");
+        var unwind = new BsonDocument("$unwind", "$employeeInfo");
 
-            var project = new BsonDocument
-    {
+        var project = new BsonDocument
         {
-            "$project",
-            new BsonDocument
             {
-                { "id", 1 },
-                { "date_reported", 1 },
-                { "subject", 1 },
-                { "incident_type", 1 },
-                { "reported_by", "$employeeInfo.first_name" },
-                { "priority", 1 },
-                { "deadline", 1 },
-                { "description", 1 },
-                { "status", 1 }
+                "$project",
+                new BsonDocument
+                {
+                    { "id", 1 },
+                    { "date_reported", 1 },
+                    { "subject", 1 },
+                    { "incident_type", 1 },
+                    { "reported_by", "$employeeInfo.first_name" },
+                    { "priority", 1 },
+                    { "deadline", 1 },
+                    { "description", 1 },
+                    { "status", 1 }
+                }
             }
-        }
-    };
+        };
 
             var pipeline = new[] { match, lookup, unwind, project };
 

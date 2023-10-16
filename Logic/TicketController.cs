@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using Model;
 using DAL;
+using System;
+using MongoDB.Bson;
 
 namespace Logic
 {
@@ -13,9 +15,9 @@ namespace Logic
             dao = new TicketDAO();
         }
 
-        public List<Ticket> GetTickets()
+        public List<Ticket> GetTickets(Employee employeeId)
         {
-            List<Ticket> tickets = dao.GetTicketsWithDeadlines();
+            List<Ticket> tickets = dao.GetTicketsWithDeadlines(employeeId);
 
             return tickets;
         }

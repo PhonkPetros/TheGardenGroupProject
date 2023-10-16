@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.employeePanel = new System.Windows.Forms.Panel();
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
@@ -61,6 +61,7 @@
             this.submitEditButton = new System.Windows.Forms.Button();
             this.editTicketListView = new System.Windows.Forms.ListView();
             this.ticketViewPanel = new System.Windows.Forms.Panel();
+            this.deleteTicketButton = new System.Windows.Forms.Button();
             this.btnCreateTicket = new System.Windows.Forms.Button();
             this.incidentManagamentUIbtn = new System.Windows.Forms.Button();
             this.dashBoardTickeUI = new System.Windows.Forms.Button();
@@ -106,7 +107,6 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlCreateTicketByEmployee = new System.Windows.Forms.Panel();
             this.dateTimePickerDeadline2 = new System.Windows.Forms.DateTimePicker();
-            this.deleteTicketButton = new System.Windows.Forms.Button();
             this.employeePanel.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
@@ -204,35 +204,35 @@
             // 
             // incidentChart
             // 
-            chartArea11.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend11);
+            chartArea1.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend1);
             this.incidentChart.Location = new System.Drawing.Point(580, 170);
             this.incidentChart.Margin = new System.Windows.Forms.Padding(4);
             this.incidentChart.Name = "incidentChart";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series11);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series1);
             this.incidentChart.Size = new System.Drawing.Size(508, 369);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea12.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.piChart.Legends.Add(legend12);
+            chartArea2.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.piChart.Legends.Add(legend2);
             this.piChart.Location = new System.Drawing.Point(76, 170);
             this.piChart.Margin = new System.Windows.Forms.Padding(4);
             this.piChart.Name = "piChart";
-            series12.ChartArea = "ChartArea2";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.piChart.Series.Add(series12);
+            series2.ChartArea = "ChartArea2";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.piChart.Series.Add(series2);
             this.piChart.Size = new System.Drawing.Size(469, 369);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -410,6 +410,22 @@
             this.ticketViewPanel.Name = "ticketViewPanel";
             this.ticketViewPanel.Size = new System.Drawing.Size(829, 610);
             this.ticketViewPanel.TabIndex = 4;
+            // 
+            // deleteTicketButton
+            // 
+            this.deleteTicketButton.BackColor = System.Drawing.Color.DarkRed;
+            this.deleteTicketButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.deleteTicketButton.FlatAppearance.BorderSize = 0;
+            this.deleteTicketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteTicketButton.ForeColor = System.Drawing.Color.White;
+            this.deleteTicketButton.Location = new System.Drawing.Point(593, 571);
+            this.deleteTicketButton.Margin = new System.Windows.Forms.Padding(0);
+            this.deleteTicketButton.Name = "deleteTicketButton";
+            this.deleteTicketButton.Size = new System.Drawing.Size(128, 30);
+            this.deleteTicketButton.TabIndex = 4;
+            this.deleteTicketButton.Text = "Delete Ticket";
+            this.deleteTicketButton.UseVisualStyleBackColor = false;
+            this.deleteTicketButton.Click += new System.EventHandler(this.deleteTicketButton_Click);
             // 
             // btnCreateTicket
             // 
@@ -886,22 +902,6 @@
             this.dateTimePickerDeadline2.Name = "dateTimePickerDeadline2";
             this.dateTimePickerDeadline2.Size = new System.Drawing.Size(315, 22);
             this.dateTimePickerDeadline2.TabIndex = 17;
-            // 
-            // deleteTicketButton
-            // 
-            this.deleteTicketButton.BackColor = System.Drawing.Color.DarkRed;
-            this.deleteTicketButton.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
-            this.deleteTicketButton.FlatAppearance.BorderSize = 0;
-            this.deleteTicketButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteTicketButton.ForeColor = System.Drawing.Color.White;
-            this.deleteTicketButton.Location = new System.Drawing.Point(593, 571);
-            this.deleteTicketButton.Margin = new System.Windows.Forms.Padding(0);
-            this.deleteTicketButton.Name = "deleteTicketButton";
-            this.deleteTicketButton.Size = new System.Drawing.Size(128, 30);
-            this.deleteTicketButton.TabIndex = 4;
-            this.deleteTicketButton.Text = "Delete Ticket";
-            this.deleteTicketButton.UseVisualStyleBackColor = false;
-            this.deleteTicketButton.Click += new System.EventHandler(this.deleteTicketButton_Click);
             // 
             // UserInterface
             // 
