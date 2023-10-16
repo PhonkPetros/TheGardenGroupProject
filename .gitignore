@@ -1,3 +1,12 @@
 
 *.vsidx
 .vs/DemoApp/v17/.suo
+*.vsidx
+*.vsidx
+.vs/DemoApp/v17/.suo
+*.cache
+*.cache
+.vs/DemoApp/v17/.suo
+DemoApp/bin/Debug/DemoApp.exe
+*.pdb
+DemoApp/obj/Debug/DemoApp.exe

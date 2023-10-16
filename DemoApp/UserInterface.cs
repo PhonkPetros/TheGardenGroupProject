@@ -100,6 +100,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             ticketViewPanel.Show();
             deleteTicketButton.Hide();
+            resetCreateTicketView();
             LoadAndUpdateView();
         }
 
@@ -287,6 +288,14 @@ namespace DemoApp
             {
                 MessageBox.Show("Please select a ticket to delete.");
             }
+        }
+
+        private void resetCreateTicketView()
+        {
+            subjectTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            deadlineDateTimePicker.Value = DateTime.Now.AddDays(1);
+            ticketDateTimePicker.Value = DateTime.Now;
         }
     }
 }
