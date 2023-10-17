@@ -22,7 +22,6 @@ namespace DemoApp
     {
         private TicketView ticketViewControl;
         private TicketController ticketController;
-        private List<Ticket> sessionTickets = new List<Ticket>();
         private Employee logedinEmployee;
         private CreateTicketView createTicket;
         private ChangeTicketView changeTicket;
@@ -115,66 +114,21 @@ namespace DemoApp
 
         private void btnCancel2_Click(object sender, EventArgs e)
         {
-            Ticket currentSessionTicket = sessionTickets.LastOrDefault();
-
-            if (currentSessionTicket != null)
-            {
-                // Remove the session ticket
-                sessionTickets.Remove(currentSessionTicket);
-                MessageBox.Show("Ticket creation canceled.");
-            }
-            else
-            {
-                MessageBox.Show("No session ticket to cancel.");
-            }
+            ticketViewPanel.Show();
+            employeePanel.Hide();
+            createTicketPanel.Hide();
+            pnlCreateTicketByEmployee.Hide();
+            dashBoardPanel.Hide();
+            deleteTicketButton.Hide();
         }
 
         private void btnSubmit2_Click(object sender, EventArgs e)
         {
-            Ticket currentSessionTicket = sessionTickets.LastOrDefault();
-            if (currentSessionTicket != null)
-            {
-                // Update the ticket with provided information
-                currentSessionTicket.DateReported = dateTimePickerReported2.Value;
-                currentSessionTicket.Subject = txtBoxSubject2.Text;
-                currentSessionTicket.IncidentType = (IncidentType)comboBoxTypeOfIncident2.SelectedIndex;
-                currentSessionTicket.Priority = (Priority)comboBoxPriority2.SelectedIndex;
-                currentSessionTicket.Deadline = dateTimePickerDeadline2.Value;
-                currentSessionTicket.Description = txtBoxDescription2.Text;
-
-
-                try
-                {
-                    // Check if the ticket is complete (e.g., required fields are filled)
-                    if (!string.IsNullOrWhiteSpace(currentSessionTicket.Subject) &&
-                        (currentSessionTicket.IncidentType != IncidentType.Service || currentSessionTicket.IncidentType != IncidentType.Software || currentSessionTicket.IncidentType != IncidentType.Hardware) &&
-                        (currentSessionTicket.Priority != Priority.Low || currentSessionTicket.Priority != Priority.Normal || currentSessionTicket.Priority != Priority.High))
-                    {
-                        // Add the ticket to the database
-                        TicketDAO ticketDAO = new TicketDAO();
-                        ticketDAO.CreateNewTicket(currentSessionTicket);
-                        MessageBox.Show("Ticket added to the database.");
-
-                        // Remove the session ticket as it's now in the database
-                        sessionTickets.Remove(currentSessionTicket);
-
-                        // Close the form
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please provide all required information.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error adding ticket: " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No session ticket to submit.");
-            }
+            createTicket.addTicketToDatabase2();
+            createTicketPanel.Hide();
+            ticketViewPanel.Show();
+            deleteTicketButton.Hide();
+            LoadAndUpdateView();
         }
 
         private void btnCreateTicket_Click(object sender, EventArgs e)
@@ -193,12 +147,14 @@ namespace DemoApp
         //If it is general employee
         void ShowPanelForEmployee()
         {
-            ticketViewPanel.Show();
+            ticketViewPanel.Hide();
+            dashBoardPanel.Hide();
             employeePanel.Hide();
             createTicketPanel.Hide();
+            editTicketPanel.Hide();
             pnlCreateTicketByEmployee.Show();
-            Ticket newSessionTicket = new Ticket();
-            sessionTickets.Add(newSessionTicket);
+            createTicket = new CreateTicketView(descriptionTextBox2, deadlineDateTimePicker2, priorityComboBox2, incidentTypeComboBox2, subjectTextBox2, ticketDateTimePicker2, ticket);
+            createTicket.PopulateComboBoxes2();
 
         }
 
