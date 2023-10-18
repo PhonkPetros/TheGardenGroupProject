@@ -8,6 +8,7 @@ using Model;
 using Logic;
 using System.Windows.Forms;
 using Model.Enums;
+using MongoDB.Bson;
 
 namespace DemoApp
 {
@@ -23,7 +24,9 @@ namespace DemoApp
         ComboBox incidentTypeComboBox;
         TextBox subjectTextBox;
         DateTimePicker ticketDateTimePicker;
+        
 
+        
 
         public CreateTicketView(TextBox descriptionTextBox, DateTimePicker deadlineDateTimePicker, ComboBox priorityComboBox, ComboBox reportedByComboBox, ComboBox incidentTypeComboBox, TextBox subjectTextBox, DateTimePicker ticketDateTimePicker, Ticket ticket) 
         { 
@@ -37,10 +40,27 @@ namespace DemoApp
             this.ticket = ticket;
         }
 
+        public CreateTicketView(TextBox descriptionTextBox, DateTimePicker deadlineDateTimePicker, ComboBox priorityComboBox, ComboBox incidentTypeComboBox, TextBox subjectTextBox, DateTimePicker ticketDateTimePicker, Ticket ticket)
+        {
+            this.descriptionTextBox = descriptionTextBox;
+            this.deadlineDateTimePicker = deadlineDateTimePicker;
+            this.priorityComboBox = priorityComboBox;
+            this.incidentTypeComboBox = incidentTypeComboBox;
+            this.subjectTextBox = subjectTextBox;
+            this.ticketDateTimePicker = ticketDateTimePicker;
+            this.ticket = ticket;
+        }
+
         public void PopulateComboBoxes()
         {
             priorityComboBox.DataSource = Enum.GetValues(typeof(Priority));
             reportedByComboBox.DataSource = GetUserNames();
+            incidentTypeComboBox.DataSource = Enum.GetValues(typeof(IncidentType));
+        }
+
+        public void PopulateComboBoxes2()
+        {
+            priorityComboBox.DataSource = Enum.GetValues(typeof(Priority));
             incidentTypeComboBox.DataSource = Enum.GetValues(typeof(IncidentType));
         }
 
@@ -67,11 +87,36 @@ namespace DemoApp
             ticket.Status = Status.Open;
             ticket.IncidentType = (IncidentType)incidentTypeComboBox.SelectedValue;
         }
+        private void ReadUserInput2(ObjectId i)
+        {
+            ticket.Subject = subjectTextBox.Text;
+            ticket.DateReported = ticketDateTimePicker.Value;
+            ticket.Deadline = deadlineDateTimePicker.Value;
+            ticket.ReportedBy = i.ToString();
+            ticket.Priority = (Priority)priorityComboBox.SelectedValue;
+            ticket.Description = descriptionTextBox.Text;
+            ticket.Status = Status.Open;
+            ticket.IncidentType = (IncidentType)incidentTypeComboBox.SelectedValue;
+        }
 
         public void addTicketToDatabase()
         {
             ReadUserInput();
             if ((!string.IsNullOrEmpty(ticket.Subject) && !string.IsNullOrEmpty(ticket.Description)))
+            {
+                ticketController.CreateNewTicket(ticket);
+                MessageBox.Show("The ticket was successfully created.");
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all fields of the form to create a ticket");
+            }
+        }
+
+        public void addTicketToDatabase2(ObjectId id)
+        {
+            ReadUserInput2(id);
+            if (!string.IsNullOrEmpty(ticket.Subject) && !string.IsNullOrEmpty(ticket.Description))
             {
                 ticketController.CreateNewTicket(ticket);
                 MessageBox.Show("The ticket was successfully created.");
