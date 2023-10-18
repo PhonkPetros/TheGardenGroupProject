@@ -8,6 +8,7 @@ using Model;
 using Logic;
 using System.Windows.Forms;
 using Model.Enums;
+using MongoDB.Bson;
 
 namespace DemoApp
 {
@@ -23,6 +24,7 @@ namespace DemoApp
         ComboBox incidentTypeComboBox;
         TextBox subjectTextBox;
         DateTimePicker ticketDateTimePicker;
+        
 
         
 
@@ -85,12 +87,12 @@ namespace DemoApp
             ticket.Status = Status.Open;
             ticket.IncidentType = (IncidentType)incidentTypeComboBox.SelectedValue;
         }
-        private void ReadUserInput2()
+        private void ReadUserInput2(ObjectId i)
         {
             ticket.Subject = subjectTextBox.Text;
             ticket.DateReported = ticketDateTimePicker.Value;
             ticket.Deadline = deadlineDateTimePicker.Value;
-            //ticket.ReportedBy = employeeController.GetUserId(reportedByComboBox.SelectedValue.ToString());
+            ticket.ReportedBy = i.ToString();
             ticket.Priority = (Priority)priorityComboBox.SelectedValue;
             ticket.Description = descriptionTextBox.Text;
             ticket.Status = Status.Open;
@@ -111,9 +113,9 @@ namespace DemoApp
             }
         }
 
-        public void addTicketToDatabase2()
+        public void addTicketToDatabase2(ObjectId id)
         {
-            ReadUserInput2();
+            ReadUserInput2(id);
             if (!string.IsNullOrEmpty(ticket.Subject) && !string.IsNullOrEmpty(ticket.Description))
             {
                 ticketController.CreateNewTicket(ticket);

@@ -126,7 +126,7 @@ namespace DemoApp
 
         private void btnSubmit2_Click(object sender, EventArgs e)
         {
-            createTicket.addTicketToDatabase2();
+            createTicket.addTicketToDatabase2(logedinEmployee.Id);
             createTicketPanel.Hide();
             ticketViewPanel.Show();
             deleteTicketButton.Hide();
@@ -155,6 +155,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             editTicketPanel.Hide();
             pnlCreateTicketByEmployee.Show();
+            pnlAddUser.Hide();
             createTicket = new CreateTicketView(descriptionTextBox2, deadlineDateTimePicker2, priorityComboBox2, incidentTypeComboBox2, subjectTextBox2, ticketDateTimePicker2, ticket);
             createTicket.PopulateComboBoxes2();
 
@@ -169,6 +170,7 @@ namespace DemoApp
             createTicketPanel.Show();
             editTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
+            pnlAddUser.Hide();
             createTicket = new CreateTicketView(descriptionTextBox, deadlineDateTimePicker, priorityComboBox, reportedByComboBox, incidentTypeComboBox, subjectTextBox, ticketDateTimePicker, ticket);
             createTicket.PopulateComboBoxes();
         }
@@ -253,6 +255,38 @@ namespace DemoApp
             descriptionTextBox.Text = "";
             deadlineDateTimePicker.Value = DateTime.Now.AddDays(1);
             ticketDateTimePicker.Value = DateTime.Now;
+        }
+
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMoveToIncidentManagment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMoveToUserManagment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMoveToDashbord_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

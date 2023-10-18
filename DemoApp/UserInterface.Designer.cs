@@ -29,13 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.employeePanel = new System.Windows.Forms.Panel();
+            this.pnlAddUser = new System.Windows.Forms.Panel();
+            this.comboBoxTypeOfUser = new System.Windows.Forms.ComboBox();
+            this.textBoxLocation = new System.Windows.Forms.TextBox();
+            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxEmailAddress = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.buttonAddUser = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCreateNewUser = new System.Windows.Forms.Label();
+            this.btnMoveToUserManagment = new System.Windows.Forms.Button();
+            this.btnMoveToIncidentManagment = new System.Windows.Forms.Button();
+            this.btnMoveToDashbord = new System.Windows.Forms.Button();
+            this.btnAddNewUser = new System.Windows.Forms.Button();
             this.userBtn = new System.Windows.Forms.Button();
             this.incidentBtn = new System.Windows.Forms.Button();
             this.dashBoardBtn = new System.Windows.Forms.Button();
@@ -108,6 +128,7 @@
             this.pnlCreateTicketByEmployee = new System.Windows.Forms.Panel();
             this.deadlineDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.employeePanel.SuspendLayout();
+            this.pnlAddUser.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piChart)).BeginInit();
@@ -120,19 +141,218 @@
             // 
             // employeePanel
             // 
+            this.employeePanel.Controls.Add(this.btnAddNewUser);
             this.employeePanel.Controls.Add(this.userBtn);
             this.employeePanel.Controls.Add(this.incidentBtn);
             this.employeePanel.Controls.Add(this.dashBoardBtn);
-            this.employeePanel.Location = new System.Drawing.Point(2, 1);
-            this.employeePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employeePanel.Location = new System.Drawing.Point(0, 0);
+            this.employeePanel.Margin = new System.Windows.Forms.Padding(2);
             this.employeePanel.Name = "employeePanel";
             this.employeePanel.Size = new System.Drawing.Size(622, 499);
             this.employeePanel.TabIndex = 0;
             // 
+            // pnlAddUser
+            // 
+            this.pnlAddUser.Controls.Add(this.comboBoxTypeOfUser);
+            this.pnlAddUser.Controls.Add(this.textBoxLocation);
+            this.pnlAddUser.Controls.Add(this.textBoxPhoneNumber);
+            this.pnlAddUser.Controls.Add(this.textBoxEmailAddress);
+            this.pnlAddUser.Controls.Add(this.textBoxLastName);
+            this.pnlAddUser.Controls.Add(this.textBoxFirstName);
+            this.pnlAddUser.Controls.Add(this.buttonAddUser);
+            this.pnlAddUser.Controls.Add(this.buttonCancel);
+            this.pnlAddUser.Controls.Add(this.label4);
+            this.pnlAddUser.Controls.Add(this.label5);
+            this.pnlAddUser.Controls.Add(this.label6);
+            this.pnlAddUser.Controls.Add(this.label3);
+            this.pnlAddUser.Controls.Add(this.label2);
+            this.pnlAddUser.Controls.Add(this.label1);
+            this.pnlAddUser.Controls.Add(this.lblCreateNewUser);
+            this.pnlAddUser.Controls.Add(this.btnMoveToUserManagment);
+            this.pnlAddUser.Controls.Add(this.btnMoveToIncidentManagment);
+            this.pnlAddUser.Controls.Add(this.btnMoveToDashbord);
+            this.pnlAddUser.Location = new System.Drawing.Point(0, 0);
+            this.pnlAddUser.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlAddUser.Name = "pnlAddUser";
+            this.pnlAddUser.Size = new System.Drawing.Size(622, 499);
+            this.pnlAddUser.TabIndex = 5;
+            // 
+            // comboBoxTypeOfUser
+            // 
+            this.comboBoxTypeOfUser.FormattingEnabled = true;
+            this.comboBoxTypeOfUser.Items.AddRange(new object[] {
+            "Employee",
+            "ServiceDeskEmployee"});
+            this.comboBoxTypeOfUser.Location = new System.Drawing.Point(188, 223);
+            this.comboBoxTypeOfUser.Name = "comboBoxTypeOfUser";
+            this.comboBoxTypeOfUser.Size = new System.Drawing.Size(236, 21);
+            this.comboBoxTypeOfUser.TabIndex = 18;
+            // 
+            // textBoxLocation
+            // 
+            this.textBoxLocation.Location = new System.Drawing.Point(188, 341);
+            this.textBoxLocation.Name = "textBoxLocation";
+            this.textBoxLocation.Size = new System.Drawing.Size(236, 20);
+            this.textBoxLocation.TabIndex = 17;
+            // 
+            // textBoxPhoneNumber
+            // 
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(188, 303);
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(236, 20);
+            this.textBoxPhoneNumber.TabIndex = 16;
+            // 
+            // textBoxEmailAddress
+            // 
+            this.textBoxEmailAddress.Location = new System.Drawing.Point(188, 261);
+            this.textBoxEmailAddress.Name = "textBoxEmailAddress";
+            this.textBoxEmailAddress.Size = new System.Drawing.Size(236, 20);
+            this.textBoxEmailAddress.TabIndex = 15;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Location = new System.Drawing.Point(188, 185);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(236, 20);
+            this.textBoxLastName.TabIndex = 14;
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Location = new System.Drawing.Point(188, 144);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(236, 20);
+            this.textBoxFirstName.TabIndex = 13;
+            // 
+            // buttonAddUser
+            // 
+            this.buttonAddUser.Location = new System.Drawing.Point(349, 398);
+            this.buttonAddUser.Name = "buttonAddUser";
+            this.buttonAddUser.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddUser.TabIndex = 12;
+            this.buttonAddUser.Text = "ADD USER";
+            this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(188, 399);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.TabIndex = 11;
+            this.buttonCancel.Text = "CANCEL";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(63, 344);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Location/branch: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 306);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Phone number: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(63, 264);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Email address:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(63, 226);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Type of user:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(63, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Last name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "First name:";
+            // 
+            // lblCreateNewUser
+            // 
+            this.lblCreateNewUser.AutoSize = true;
+            this.lblCreateNewUser.Location = new System.Drawing.Point(63, 70);
+            this.lblCreateNewUser.Name = "lblCreateNewUser";
+            this.lblCreateNewUser.Size = new System.Drawing.Size(84, 13);
+            this.lblCreateNewUser.TabIndex = 4;
+            this.lblCreateNewUser.Text = "Create new user";
+            // 
+            // btnMoveToUserManagment
+            // 
+            this.btnMoveToUserManagment.Location = new System.Drawing.Point(351, 15);
+            this.btnMoveToUserManagment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMoveToUserManagment.Name = "btnMoveToUserManagment";
+            this.btnMoveToUserManagment.Size = new System.Drawing.Size(104, 19);
+            this.btnMoveToUserManagment.TabIndex = 3;
+            this.btnMoveToUserManagment.Text = "User managment";
+            this.btnMoveToUserManagment.UseVisualStyleBackColor = true;
+            this.btnMoveToUserManagment.Click += new System.EventHandler(this.btnMoveToUserManagment_Click);
+            // 
+            // btnMoveToIncidentManagment
+            // 
+            this.btnMoveToIncidentManagment.Location = new System.Drawing.Point(233, 15);
+            this.btnMoveToIncidentManagment.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMoveToIncidentManagment.Name = "btnMoveToIncidentManagment";
+            this.btnMoveToIncidentManagment.Size = new System.Drawing.Size(113, 19);
+            this.btnMoveToIncidentManagment.TabIndex = 2;
+            this.btnMoveToIncidentManagment.Text = "Incident managment";
+            this.btnMoveToIncidentManagment.UseVisualStyleBackColor = true;
+            this.btnMoveToIncidentManagment.Click += new System.EventHandler(this.btnMoveToIncidentManagment_Click);
+            // 
+            // btnMoveToDashbord
+            // 
+            this.btnMoveToDashbord.Location = new System.Drawing.Point(111, 15);
+            this.btnMoveToDashbord.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMoveToDashbord.Name = "btnMoveToDashbord";
+            this.btnMoveToDashbord.Size = new System.Drawing.Size(118, 19);
+            this.btnMoveToDashbord.TabIndex = 1;
+            this.btnMoveToDashbord.Text = "Dashboard";
+            this.btnMoveToDashbord.UseVisualStyleBackColor = true;
+            this.btnMoveToDashbord.Click += new System.EventHandler(this.btnMoveToDashbord_Click);
+            // 
+            // btnAddNewUser
+            // 
+            this.btnAddNewUser.Location = new System.Drawing.Point(426, 109);
+            this.btnAddNewUser.Name = "btnAddNewUser";
+            this.btnAddNewUser.Size = new System.Drawing.Size(151, 23);
+            this.btnAddNewUser.TabIndex = 4;
+            this.btnAddNewUser.Text = "ADD NEW USER";
+            this.btnAddNewUser.UseVisualStyleBackColor = true;
+            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
+            // 
             // userBtn
             // 
             this.userBtn.Location = new System.Drawing.Point(351, 15);
-            this.userBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userBtn.Margin = new System.Windows.Forms.Padding(2);
             this.userBtn.Name = "userBtn";
             this.userBtn.Size = new System.Drawing.Size(104, 19);
             this.userBtn.TabIndex = 3;
@@ -142,7 +362,7 @@
             // incidentBtn
             // 
             this.incidentBtn.Location = new System.Drawing.Point(233, 15);
-            this.incidentBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.incidentBtn.Margin = new System.Windows.Forms.Padding(2);
             this.incidentBtn.Name = "incidentBtn";
             this.incidentBtn.Size = new System.Drawing.Size(113, 19);
             this.incidentBtn.TabIndex = 2;
@@ -152,7 +372,7 @@
             // dashBoardBtn
             // 
             this.dashBoardBtn.Location = new System.Drawing.Point(111, 15);
-            this.dashBoardBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dashBoardBtn.Margin = new System.Windows.Forms.Padding(2);
             this.dashBoardBtn.Name = "dashBoardBtn";
             this.dashBoardBtn.Size = new System.Drawing.Size(118, 19);
             this.dashBoardBtn.TabIndex = 1;
@@ -174,7 +394,7 @@
             // btnIncidentManagment
             // 
             this.btnIncidentManagment.Location = new System.Drawing.Point(274, 46);
-            this.btnIncidentManagment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIncidentManagment.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncidentManagment.Name = "btnIncidentManagment";
             this.btnIncidentManagment.Size = new System.Drawing.Size(182, 19);
             this.btnIncidentManagment.TabIndex = 4;
@@ -185,7 +405,7 @@
             // btnDashBoard
             // 
             this.btnDashBoard.Location = new System.Drawing.Point(116, 46);
-            this.btnDashBoard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDashBoard.Margin = new System.Windows.Forms.Padding(2);
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(142, 19);
             this.btnDashBoard.TabIndex = 3;
@@ -204,33 +424,33 @@
             // 
             // incidentChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend1);
             this.incidentChart.Location = new System.Drawing.Point(435, 138);
             this.incidentChart.Name = "incidentChart";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series1);
             this.incidentChart.Size = new System.Drawing.Size(381, 300);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea6.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.piChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.piChart.Legends.Add(legend2);
             this.piChart.Location = new System.Drawing.Point(57, 138);
             this.piChart.Name = "piChart";
-            series6.ChartArea = "ChartArea2";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.piChart.Series.Add(series6);
+            series2.ChartArea = "ChartArea2";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.piChart.Series.Add(series2);
             this.piChart.Size = new System.Drawing.Size(352, 300);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -259,7 +479,7 @@
             // cancelEditButton
             // 
             this.cancelEditButton.Location = new System.Drawing.Point(411, 464);
-            this.cancelEditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelEditButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelEditButton.Name = "cancelEditButton";
             this.cancelEditButton.Size = new System.Drawing.Size(75, 23);
             this.cancelEditButton.TabIndex = 14;
@@ -391,7 +611,7 @@
             this.ticketViewPanel.Controls.Add(this.loadDataToList);
             this.ticketViewPanel.Controls.Add(this.ticketView);
             this.ticketViewPanel.Location = new System.Drawing.Point(0, 0);
-            this.ticketViewPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ticketViewPanel.Margin = new System.Windows.Forms.Padding(2);
             this.ticketViewPanel.Name = "ticketViewPanel";
             this.ticketViewPanel.Size = new System.Drawing.Size(622, 496);
             this.ticketViewPanel.TabIndex = 4;
@@ -415,7 +635,7 @@
             // btnCreateTicket
             // 
             this.btnCreateTicket.Location = new System.Drawing.Point(426, 50);
-            this.btnCreateTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateTicket.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateTicket.Name = "btnCreateTicket";
             this.btnCreateTicket.Size = new System.Drawing.Size(115, 19);
             this.btnCreateTicket.TabIndex = 3;
@@ -426,7 +646,7 @@
             // incidentManagamentUIbtn
             // 
             this.incidentManagamentUIbtn.Location = new System.Drawing.Point(334, 18);
-            this.incidentManagamentUIbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.incidentManagamentUIbtn.Margin = new System.Windows.Forms.Padding(2);
             this.incidentManagamentUIbtn.Name = "incidentManagamentUIbtn";
             this.incidentManagamentUIbtn.Size = new System.Drawing.Size(153, 23);
             this.incidentManagamentUIbtn.TabIndex = 2;
@@ -437,7 +657,7 @@
             // dashBoardTickeUI
             // 
             this.dashBoardTickeUI.Location = new System.Drawing.Point(148, 18);
-            this.dashBoardTickeUI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dashBoardTickeUI.Margin = new System.Windows.Forms.Padding(2);
             this.dashBoardTickeUI.Name = "dashBoardTickeUI";
             this.dashBoardTickeUI.Size = new System.Drawing.Size(180, 23);
             this.dashBoardTickeUI.TabIndex = 1;
@@ -448,7 +668,7 @@
             // loadDataToList
             // 
             this.loadDataToList.Location = new System.Drawing.Point(122, 462);
-            this.loadDataToList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loadDataToList.Margin = new System.Windows.Forms.Padding(2);
             this.loadDataToList.Name = "loadDataToList";
             this.loadDataToList.Size = new System.Drawing.Size(56, 19);
             this.loadDataToList.TabIndex = 0;
@@ -468,7 +688,7 @@
             this.ticketView.GridLines = true;
             this.ticketView.HideSelection = false;
             this.ticketView.Location = new System.Drawing.Point(68, 73);
-            this.ticketView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ticketView.Margin = new System.Windows.Forms.Padding(2);
             this.ticketView.MultiSelect = false;
             this.ticketView.Name = "ticketView";
             this.ticketView.Size = new System.Drawing.Size(474, 383);
@@ -523,7 +743,7 @@
             this.createTicketPanel.Controls.Add(this.ticketDateTimePicker);
             this.createTicketPanel.Controls.Add(this.createTicketLabel);
             this.createTicketPanel.Location = new System.Drawing.Point(0, 0);
-            this.createTicketPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createTicketPanel.Margin = new System.Windows.Forms.Padding(2);
             this.createTicketPanel.Name = "createTicketPanel";
             this.createTicketPanel.Size = new System.Drawing.Size(620, 499);
             this.createTicketPanel.TabIndex = 1;
@@ -531,7 +751,7 @@
             // deadlineDateTimePicker
             // 
             this.deadlineDateTimePicker.Location = new System.Drawing.Point(250, 255);
-            this.deadlineDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deadlineDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.deadlineDateTimePicker.Name = "deadlineDateTimePicker";
             this.deadlineDateTimePicker.Size = new System.Drawing.Size(237, 20);
             this.deadlineDateTimePicker.TabIndex = 17;
@@ -540,7 +760,7 @@
             // 
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.Location = new System.Drawing.Point(396, 453);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.submitButton.Margin = new System.Windows.Forms.Padding(2);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(91, 33);
             this.submitButton.TabIndex = 16;
@@ -552,7 +772,7 @@
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.Location = new System.Drawing.Point(250, 453);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(96, 33);
             this.cancelButton.TabIndex = 15;
@@ -563,7 +783,7 @@
             // descriptionTextBox
             // 
             this.descriptionTextBox.Location = new System.Drawing.Point(250, 292);
-            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -613,7 +833,7 @@
             this.priorityComboBox.FormattingEnabled = true;
             this.priorityComboBox.IntegralHeight = false;
             this.priorityComboBox.Location = new System.Drawing.Point(250, 219);
-            this.priorityComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.priorityComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.priorityComboBox.Name = "priorityComboBox";
             this.priorityComboBox.Size = new System.Drawing.Size(237, 21);
             this.priorityComboBox.TabIndex = 9;
@@ -636,7 +856,7 @@
             this.reportedByComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.reportedByComboBox.FormattingEnabled = true;
             this.reportedByComboBox.Location = new System.Drawing.Point(250, 187);
-            this.reportedByComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportedByComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.reportedByComboBox.Name = "reportedByComboBox";
             this.reportedByComboBox.Size = new System.Drawing.Size(237, 21);
             this.reportedByComboBox.TabIndex = 7;
@@ -661,7 +881,7 @@
             this.incidentTypeComboBox.DisplayMember = "IncidentType";
             this.incidentTypeComboBox.FormattingEnabled = true;
             this.incidentTypeComboBox.Location = new System.Drawing.Point(250, 154);
-            this.incidentTypeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.incidentTypeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.incidentTypeComboBox.MaxDropDownItems = 3;
             this.incidentTypeComboBox.Name = "incidentTypeComboBox";
             this.incidentTypeComboBox.Size = new System.Drawing.Size(237, 21);
@@ -686,7 +906,7 @@
             // subjectTextBox
             // 
             this.subjectTextBox.Location = new System.Drawing.Point(250, 122);
-            this.subjectTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subjectTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.Size = new System.Drawing.Size(237, 20);
             this.subjectTextBox.TabIndex = 3;
@@ -706,7 +926,7 @@
             // ticketDateTimePicker
             // 
             this.ticketDateTimePicker.Location = new System.Drawing.Point(250, 89);
-            this.ticketDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ticketDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.ticketDateTimePicker.Name = "ticketDateTimePicker";
             this.ticketDateTimePicker.Size = new System.Drawing.Size(237, 20);
             this.ticketDateTimePicker.TabIndex = 1;
@@ -726,7 +946,7 @@
             // 
             this.btnSubmit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit2.Location = new System.Drawing.Point(396, 453);
-            this.btnSubmit2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit2.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit2.Name = "btnSubmit2";
             this.btnSubmit2.Size = new System.Drawing.Size(91, 33);
             this.btnSubmit2.TabIndex = 16;
@@ -738,7 +958,7 @@
             // 
             this.btnCancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel2.Location = new System.Drawing.Point(250, 453);
-            this.btnCancel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel2.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel2.Name = "btnCancel2";
             this.btnCancel2.Size = new System.Drawing.Size(96, 33);
             this.btnCancel2.TabIndex = 15;
@@ -749,7 +969,7 @@
             // descriptionTextBox2
             // 
             this.descriptionTextBox2.Location = new System.Drawing.Point(250, 292);
-            this.descriptionTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.descriptionTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTextBox2.Multiline = true;
             this.descriptionTextBox2.Name = "descriptionTextBox2";
             this.descriptionTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -796,7 +1016,7 @@
             // 
             this.priorityComboBox2.FormattingEnabled = true;
             this.priorityComboBox2.Location = new System.Drawing.Point(250, 219);
-            this.priorityComboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.priorityComboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.priorityComboBox2.Name = "priorityComboBox2";
             this.priorityComboBox2.Size = new System.Drawing.Size(237, 21);
             this.priorityComboBox2.TabIndex = 9;
@@ -817,7 +1037,7 @@
             // 
             this.incidentTypeComboBox2.FormattingEnabled = true;
             this.incidentTypeComboBox2.Location = new System.Drawing.Point(250, 154);
-            this.incidentTypeComboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.incidentTypeComboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.incidentTypeComboBox2.Name = "incidentTypeComboBox2";
             this.incidentTypeComboBox2.Size = new System.Drawing.Size(237, 21);
             this.incidentTypeComboBox2.TabIndex = 5;
@@ -837,7 +1057,7 @@
             // subjectTextBox2
             // 
             this.subjectTextBox2.Location = new System.Drawing.Point(250, 122);
-            this.subjectTextBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subjectTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.subjectTextBox2.Name = "subjectTextBox2";
             this.subjectTextBox2.Size = new System.Drawing.Size(237, 20);
             this.subjectTextBox2.TabIndex = 3;
@@ -857,7 +1077,7 @@
             // ticketDateTimePicker2
             // 
             this.ticketDateTimePicker2.Location = new System.Drawing.Point(250, 89);
-            this.ticketDateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ticketDateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.ticketDateTimePicker2.Name = "ticketDateTimePicker2";
             this.ticketDateTimePicker2.Size = new System.Drawing.Size(237, 20);
             this.ticketDateTimePicker2.TabIndex = 1;
@@ -891,7 +1111,7 @@
             this.pnlCreateTicketByEmployee.Controls.Add(this.ticketDateTimePicker2);
             this.pnlCreateTicketByEmployee.Controls.Add(this.lblHeader);
             this.pnlCreateTicketByEmployee.Location = new System.Drawing.Point(0, 0);
-            this.pnlCreateTicketByEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCreateTicketByEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCreateTicketByEmployee.Name = "pnlCreateTicketByEmployee";
             this.pnlCreateTicketByEmployee.Size = new System.Drawing.Size(620, 499);
             this.pnlCreateTicketByEmployee.TabIndex = 17;
@@ -899,7 +1119,7 @@
             // deadlineDateTimePicker2
             // 
             this.deadlineDateTimePicker2.Location = new System.Drawing.Point(250, 253);
-            this.deadlineDateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deadlineDateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.deadlineDateTimePicker2.Name = "deadlineDateTimePicker2";
             this.deadlineDateTimePicker2.Size = new System.Drawing.Size(237, 20);
             this.deadlineDateTimePicker2.TabIndex = 17;
@@ -910,15 +1130,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 498);
             this.Controls.Add(this.ticketViewPanel);
+            this.Controls.Add(this.employeePanel);
+            this.Controls.Add(this.pnlAddUser);
             this.Controls.Add(this.pnlCreateTicketByEmployee);
             this.Controls.Add(this.dashBoardPanel);
-            this.Controls.Add(this.employeePanel);
-            this.Controls.Add(this.createTicketPanel);
             this.Controls.Add(this.editTicketPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.createTicketPanel);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserInterface";
             this.Text = "User Interface";
             this.employeePanel.ResumeLayout(false);
+            this.pnlAddUser.ResumeLayout(false);
+            this.pnlAddUser.PerformLayout();
             this.dashBoardPanel.ResumeLayout(false);
             this.dashBoardPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).EndInit();
@@ -1009,5 +1232,25 @@
         private System.Windows.Forms.BindingSource ticketBindingSource;
         private System.Windows.Forms.Button cancelEditButton;
         private System.Windows.Forms.Button deleteTicketButton;
+        private System.Windows.Forms.Button btnAddNewUser;
+        private System.Windows.Forms.Panel pnlAddUser;
+        private System.Windows.Forms.Label lblCreateNewUser;
+        private System.Windows.Forms.Button btnMoveToUserManagment;
+        private System.Windows.Forms.Button btnMoveToIncidentManagment;
+        private System.Windows.Forms.Button btnMoveToDashbord;
+        private System.Windows.Forms.ComboBox comboBoxTypeOfUser;
+        private System.Windows.Forms.TextBox textBoxLocation;
+        private System.Windows.Forms.TextBox textBoxPhoneNumber;
+        private System.Windows.Forms.TextBox textBoxEmailAddress;
+        private System.Windows.Forms.TextBox textBoxLastName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.Button buttonAddUser;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
