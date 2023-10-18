@@ -20,26 +20,38 @@ namespace DAL
             ticketCollection.InsertOne(newTicket);
         }
 
-        public List<Ticket> GetTicketsWithDeadlines(Employee employeeId)
+        public List<Ticket> GetTicketsWithDeadlines(Employee employee)
         {
-            var match = new BsonDocument
-            {
-                {
-                    "$match",
-                    new BsonDocument
-                    {
-                        { "deadline", new BsonDocument { { "$gt", DateTime.UtcNow } } },
-                        { "reported_by", employeeId.Id }
+            var startOfCurrentDayUtc = DateTime.UtcNow.Date;
+            List<BsonDocument> pipeline;
 
+            if (employee.UserType == UserType.ServiceDeskEmployee)
+            {
+                var match = new BsonDocument
+                {
+                    { "$match", new BsonDocument { { "deadline", new BsonDocument { { "$gte", startOfCurrentDayUtc } } } } }
+                };
+
+                pipeline = new List<BsonDocument> { match };
+            }
+            else
+            {
+                var match = new BsonDocument
+                {
+                    { "$match", new BsonDocument
+                        {
+                            { "deadline", new BsonDocument { { "$gte", startOfCurrentDayUtc } } },
+                            { "reported_by", employee.Id }
+                        }
                     }
-                }
-            };
+                };
+
+                pipeline = new List<BsonDocument> { match };
+            }
 
             var lookup = new BsonDocument
             {
-                {
-                    "$lookup",
-                    new BsonDocument
+                { "$lookup", new BsonDocument
                     {
                         { "from", "employees" },
                         { "localField", "reported_by" },
@@ -48,14 +60,14 @@ namespace DAL
                     }
                 }
             };
+            pipeline.Add(lookup);
 
             var unwind = new BsonDocument("$unwind", "$employeeInfo");
+            pipeline.Add(unwind);
 
             var project = new BsonDocument
             {
-                {
-                    "$project",
-                    new BsonDocument
+                { "$project", new BsonDocument
                     {
                         { "id", 1 },
                         { "date_reported", 1 },
@@ -69,11 +81,9 @@ namespace DAL
                     }
                 }
             };
-
-            var pipeline = new[] { match, lookup, unwind, project };
+            pipeline.Add(project);
 
             List<Ticket> tickets = ticketCollection.Aggregate<Ticket>(pipeline).ToList();
-
             return tickets;
         }
 
