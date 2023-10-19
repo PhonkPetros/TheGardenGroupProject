@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Model;
@@ -190,6 +192,75 @@ namespace DAL
             {
                 throw new Exception("there is no ticket with this id in the database");
             }
+        }
+
+        public List<Ticket> GetTicketsBasedOnKeywords(Employee loggedInEmployee, string searchInput)
+        {
+            string[] keywords = searchInput.Split(' ');
+                List<string> keywordsToEmit = new List<string>();
+
+                for (int i = 0; i < keywords.Length; i++)
+                {
+                    if (string.Equals(keywords[i], "and", StringComparison.OrdinalIgnoreCase))
+                    {
+                        keywordsToEmit.Add(keywords[i]);
+                        keywords = keywords.Except(keywordsToEmit).ToArray();
+                        return runAndQuery(loggedInEmployee, keywords);
+                    }
+                    else if (string.Equals(keywords[i], "or", StringComparison.OrdinalIgnoreCase))
+                    {
+                        keywordsToEmit.Add(keywords[i]);
+                        keywords = keywords.Except(keywordsToEmit).ToArray();
+                        return runOrQuery(loggedInEmployee, keywords);
+                    }
+                }
+                return runOrQuery(loggedInEmployee,keywords);   
+        }
+
+        private List<FilterDefinition<Ticket>> buildFilters(Employee loggedInEmployee, string[] keywords)
+        {
+            var filters = new List<FilterDefinition<Ticket>>();
+            foreach (string keyword in keywords)
+            {
+                var regexPattern = new BsonRegularExpression(new Regex(keyword, RegexOptions.IgnoreCase));
+                var subjectFilter = Builders<Ticket>.Filter.Regex("subject", regexPattern);
+                var descriptionFilter = Builders<Ticket>.Filter.Regex("description", regexPattern);
+                var keywordFilter = Builders<Ticket>.Filter.Or(subjectFilter, descriptionFilter);
+
+                filters.Add(keywordFilter);
+            }
+
+
+            return filters;
+        }
+        private List<Ticket> runAndQuery(Employee loggedInEmployee, string[] keywords)
+        {
+            List<FilterDefinition<Ticket>> filters = buildFilters(loggedInEmployee, keywords);
+            var andKeywordFilter = Builders<Ticket>.Filter.And(filters);            
+            var employeeFilter = Builders<Ticket>.Filter.Eq("reported_by", loggedInEmployee.Id);
+            var sortDefinition = Builders<Ticket>.Sort.Descending("date_reported");
+
+            var combinedFilter = Builders<Ticket>.Filter.And(andKeywordFilter, employeeFilter);
+            if(loggedInEmployee.UserType != UserType.ServiceDeskEmployee)
+            {
+                return ticketCollection.Find(combinedFilter).Sort(sortDefinition).ToList();
+            }
+            return ticketCollection.Find(andKeywordFilter).Sort(sortDefinition).ToList();
+        }
+
+        private List<Ticket> runOrQuery(Employee loggedInEmployee, string[] keywords)
+        {
+            List<FilterDefinition<Ticket>> filters = buildFilters(loggedInEmployee, keywords);
+            var orQueryFilter = Builders<Ticket>.Filter.Or(filters);
+            var employeeFilter = Builders<Ticket>.Filter.Eq("reported_by", loggedInEmployee.Id);
+            var sortDefinition = Builders<Ticket>.Sort.Descending("date_reported");
+
+            var combinedFilter = Builders<Ticket>.Filter.And(orQueryFilter, employeeFilter);
+            if (loggedInEmployee.UserType != UserType.ServiceDeskEmployee)
+            {
+                return ticketCollection.Find(combinedFilter).Sort(sortDefinition).ToList();
+            }
+            return ticketCollection.Find(orQueryFilter).Sort(sortDefinition).ToList();
         }
     }
 }

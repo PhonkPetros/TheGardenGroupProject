@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 
 namespace DemoApp
@@ -26,7 +27,8 @@ namespace DemoApp
         private Employee logedinEmployee;
         private CreateTicketView createTicket;
         private ChangeTicketView changeTicket;
-        DeleteTicketView deleteTicket;
+        private DeleteTicketView deleteTicket;
+        private WordSearchFunctionality searchFunctionality;
         private Ticket ticket = new Ticket();
         List<Panel> panels;
 
@@ -225,6 +227,19 @@ namespace DemoApp
         private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             switchView(pnlAddUser);
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if(searchbarTextBox.Text != "")
+            {
+                searchFunctionality = new WordSearchFunctionality(logedinEmployee,searchbarTextBox.Text);
+                ticketViewControl.DisplayTickets(searchFunctionality.searchTickets());
+            }
+            else
+            {
+                LoadAndUpdateView();
+            }
         }
     }
 }

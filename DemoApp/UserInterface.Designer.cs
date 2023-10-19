@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInterface));
             this.employeePanel = new System.Windows.Forms.Panel();
             this.btnAddNewUser = new System.Windows.Forms.Button();
@@ -74,6 +74,7 @@
             this.submitEditButton = new System.Windows.Forms.Button();
             this.editTicketListView = new System.Windows.Forms.ListView();
             this.ticketViewPanel = new System.Windows.Forms.Panel();
+            this.searchbarTextBox = new System.Windows.Forms.TextBox();
             this.deleteTicketButton = new System.Windows.Forms.Button();
             this.btnCreateTicket = new System.Windows.Forms.Button();
             this.ticketView = new System.Windows.Forms.ListView();
@@ -125,6 +126,7 @@
             this.menuLabel = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.employeePanel.SuspendLayout();
             this.pnlAddUser.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
@@ -333,33 +335,33 @@
             // 
             // incidentChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend1);
             this.incidentChart.Location = new System.Drawing.Point(329, 144);
             this.incidentChart.Name = "incidentChart";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series1);
             this.incidentChart.Size = new System.Drawing.Size(261, 207);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea6.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.piChart.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.piChart.Legends.Add(legend2);
             this.piChart.Location = new System.Drawing.Point(57, 138);
             this.piChart.Name = "piChart";
-            series6.ChartArea = "ChartArea2";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.piChart.Series.Add(series6);
+            series2.ChartArea = "ChartArea2";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.piChart.Series.Add(series2);
             this.piChart.Size = new System.Drawing.Size(232, 202);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -513,6 +515,8 @@
             // 
             // ticketViewPanel
             // 
+            this.ticketViewPanel.Controls.Add(this.searchButton);
+            this.ticketViewPanel.Controls.Add(this.searchbarTextBox);
             this.ticketViewPanel.Controls.Add(this.deleteTicketButton);
             this.ticketViewPanel.Controls.Add(this.btnCreateTicket);
             this.ticketViewPanel.Controls.Add(this.ticketView);
@@ -521,6 +525,14 @@
             this.ticketViewPanel.Name = "ticketViewPanel";
             this.ticketViewPanel.Size = new System.Drawing.Size(656, 531);
             this.ticketViewPanel.TabIndex = 4;
+            // 
+            // searchbarTextBox
+            // 
+            this.searchbarTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.searchbarTextBox.Location = new System.Drawing.Point(73, 77);
+            this.searchbarTextBox.Name = "searchbarTextBox";
+            this.searchbarTextBox.Size = new System.Drawing.Size(303, 21);
+            this.searchbarTextBox.TabIndex = 5;
             // 
             // deleteTicketButton
             // 
@@ -1023,7 +1035,7 @@
             this.menuStrip.Location = new System.Drawing.Point(71, 38);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(547, 29);
+            this.menuStrip.Size = new System.Drawing.Size(427, 29);
             this.menuStrip.TabIndex = 7;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -1078,14 +1090,25 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
             this.pictureBox.InitialImage = null;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(68, 73);
+            this.pictureBox.Size = new System.Drawing.Size(68, 70);
             this.pictureBox.TabIndex = 9;
             this.pictureBox.TabStop = false;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButton.BackgroundImage")));
+            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.searchButton.Location = new System.Drawing.Point(373, 75);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(25, 24);
+            this.searchButton.TabIndex = 6;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // UserInterface
             // 
@@ -1113,6 +1136,7 @@
             this.editTicketPanel.ResumeLayout(false);
             this.editTicketPanel.PerformLayout();
             this.ticketViewPanel.ResumeLayout(false);
+            this.ticketViewPanel.PerformLayout();
             this.createTicketPanel.ResumeLayout(false);
             this.createTicketPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
@@ -1218,5 +1242,7 @@
         private System.Windows.Forms.ToolStripMenuItem userManagementToolStripMenuItem;
         private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.TextBox searchbarTextBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }
