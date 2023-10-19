@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Security.Cryptography.X509Certificates;
@@ -27,6 +28,8 @@ namespace DemoApp
         private ChangeTicketView changeTicket;
         DeleteTicketView deleteTicket;
         private Ticket ticket = new Ticket();
+        List<Panel> panels;
+
 
         public UserInterface(Employee employee)
         {
@@ -37,9 +40,15 @@ namespace DemoApp
             ticketController = new TicketController();
             deleteTicketButton.Hide();
 
+            panels = new List<Panel>
+            {
+                ticketViewPanel, employeePanel, createTicketPanel, pnlCreateTicketByEmployee, dashBoardPanel, editTicketPanel, pnlAddUser, pnlCreateTicketByEmployee
+            };
+
             logedinEmployee = employee;
             LoadAndUpdateView();
         }
+
 
         private void loadDataToList_Click(object sender, EventArgs e)
         {
@@ -54,82 +63,43 @@ namespace DemoApp
             ticketViewControl.PiChartTickets(tickets);
         }
 
-        private void dashBoardTickeUI_Click(object sender, EventArgs e)
+        private void switchView(Panel panel)
         {
-            ticketViewPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            dashBoardPanel.Show();
-            deleteTicketButton.Hide();
+            foreach (Panel p in panels)
+            {
+                if (p != panel)
+                {
+                    p.Hide();
+                }
+                else
+                {
+                    p.Show();
+                }
+                deleteTicketButton.Hide();
+            }
         }
-
-        private void incidentManagamentUIbtn_Click(object sender, EventArgs e)
-        {
-            ticketViewPanel.Show();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            dashBoardPanel.Hide();
-            deleteTicketButton.Hide();
-        }
-
-        private void btnDashBoard_Click(object sender, EventArgs e)
-        {
-            ticketViewPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            dashBoardPanel.Show();
-            deleteTicketButton.Hide();
-        }
-
-        private void btnIncidentManagment_Click(object sender, EventArgs e)
-        {
-            ticketViewPanel.Show();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            dashBoardPanel.Hide();
-            deleteTicketButton.Hide();
-        }
-
         private void submitButton_Click(object sender, EventArgs e)
         {
             createTicket.addTicketToDatabase();
-            createTicketPanel.Hide();
-            ticketViewPanel.Show();
-            deleteTicketButton.Hide();
+            switchView(ticketViewPanel);
             resetCreateTicketView();
             LoadAndUpdateView();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            ticketViewPanel.Show();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            dashBoardPanel.Hide();
-            deleteTicketButton.Hide();
+            switchView(ticketViewPanel);
         }
 
         private void btnCancel2_Click(object sender, EventArgs e)
         {
-            ticketViewPanel.Show();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            dashBoardPanel.Hide();
-            deleteTicketButton.Hide();
+            switchView(ticketViewPanel);
         }
 
         private void btnSubmit2_Click(object sender, EventArgs e)
         {
             createTicket.addTicketToDatabase2(logedinEmployee.Id);
-            createTicketPanel.Hide();
-            ticketViewPanel.Show();
-            deleteTicketButton.Hide();
+            switchView(ticketViewPanel);
             LoadAndUpdateView();
         }
 
@@ -149,13 +119,7 @@ namespace DemoApp
         //If it is general employee
         void ShowPanelForEmployee()
         {
-            ticketViewPanel.Hide();
-            dashBoardPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            editTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Show();
-            pnlAddUser.Hide();
+            switchView(pnlCreateTicketByEmployee);
             createTicket = new CreateTicketView(descriptionTextBox2, deadlineDateTimePicker2, priorityComboBox2, incidentTypeComboBox2, subjectTextBox2, ticketDateTimePicker2, ticket);
             createTicket.PopulateComboBoxes2();
 
@@ -164,13 +128,7 @@ namespace DemoApp
         //If it is service desk employee
         void ShowPanelForServiceDesk()
         {
-            ticketViewPanel.Hide();
-            dashBoardPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Show();
-            editTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
-            pnlAddUser.Hide();
+            switchView(createTicketPanel);
             createTicket = new CreateTicketView(descriptionTextBox, deadlineDateTimePicker, priorityComboBox, reportedByComboBox, incidentTypeComboBox, subjectTextBox, ticketDateTimePicker, ticket);
             createTicket.PopulateComboBoxes();
         }
@@ -182,38 +140,20 @@ namespace DemoApp
 
             MessageBox.Show("Ticket was changed successfully.");
 
-            ticketViewPanel.Show();
-            dashBoardPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            editTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
+            switchView(ticketViewPanel);
             editTicketListView.Clear();
-            deleteTicketButton.Hide();
         }
 
         private void cancelEditButton_Click(object sender, EventArgs e)
         {
-            
-            ticketViewPanel.Show();
-            dashBoardPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            editTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
+            switchView(ticketViewPanel);
             editTicketListView.Clear();
-            deleteTicketButton.Hide();
         }
         
 
         private void ticketView_DoubleClick(object sender, EventArgs e)
         {
-            editTicketPanel.Show();
-            ticketViewPanel.Hide();
-            dashBoardPanel.Hide();
-            employeePanel.Hide();
-            createTicketPanel.Hide();
-            pnlCreateTicketByEmployee.Hide();
+            switchView(editTicketPanel);
 
             ListViewItem selectedItem = ticketView.SelectedItems[0];
             string ticketId = selectedItem.SubItems[0].Text;
@@ -262,8 +202,6 @@ namespace DemoApp
 
         }
 
-        
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
 
@@ -274,19 +212,19 @@ namespace DemoApp
 
         }
 
-        private void btnMoveToIncidentManagment_Click(object sender, EventArgs e)
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            switchView(dashBoardPanel);
         }
 
-        private void btnMoveToUserManagment_Click(object sender, EventArgs e)
+        private void incidentManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            switchView(ticketViewPanel);
         }
 
-        private void btnMoveToDashbord_Click(object sender, EventArgs e)
+        private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            switchView(pnlAddUser);
         }
     }
 }

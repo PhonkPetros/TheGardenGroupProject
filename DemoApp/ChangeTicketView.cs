@@ -40,9 +40,9 @@ namespace DemoApp
             priorityEditComboBox.DataSource = Enum.GetValues(typeof(Priority));
             incidentTypeEditComboBox.DataSource = Enum.GetValues(typeof(IncidentType));
             statusEditComboBox.DataSource = Enum.GetValues(typeof(Status));
-            priorityEditComboBox.SelectedValue = selectedTicket.Priority;
-            incidentTypeEditComboBox.SelectedValue = selectedTicket.IncidentType;
-            statusEditComboBox.SelectedValue = selectedTicket.Status;
+            priorityEditComboBox.SelectedItem = selectedTicket.Priority;
+            incidentTypeEditComboBox.SelectedItem = selectedTicket.IncidentType;
+            statusEditComboBox.SelectedItem = selectedTicket.Status;
             descriptionEditTextBox.Text = selectedTicket.Description;
             deadlineEditDateTimePicker.Value = selectedTicket.Deadline;
 
