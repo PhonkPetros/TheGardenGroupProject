@@ -29,5 +29,10 @@ namespace Logic
         {
             return dao.GetUserName(id);
         }
+
+        public void CreateNewEmployee(Employee newEmployee)
+        {
+            dao.CreateNewEmployee(newEmployee);
+        }
     }
 }

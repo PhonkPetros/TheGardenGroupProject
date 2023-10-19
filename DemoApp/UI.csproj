@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChangeTicketView.cs" />
+    <Compile Include="CreateEmployeeView.cs" />
     <Compile Include="CreateTicket.cs">
       <SubType>Form</SubType>
     </Compile>

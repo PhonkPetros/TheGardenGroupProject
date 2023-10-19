@@ -27,6 +27,9 @@ namespace DemoApp
         private ChangeTicketView changeTicket;
         DeleteTicketView deleteTicket;
         private Ticket ticket = new Ticket();
+        private Employee newEmployee = new Employee();
+        private CreateEmployeeView createEmployee;
+        
 
         public UserInterface(Employee employee)
         {
@@ -60,6 +63,7 @@ namespace DemoApp
             employeePanel.Hide();
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
+            pnlAddUser.Hide();
             dashBoardPanel.Show();
             deleteTicketButton.Hide();
         }
@@ -67,6 +71,7 @@ namespace DemoApp
         private void incidentManagamentUIbtn_Click(object sender, EventArgs e)
         {
             ticketViewPanel.Show();
+            pnlAddUser.Hide();
             employeePanel.Hide();
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
@@ -78,6 +83,7 @@ namespace DemoApp
         {
             ticketViewPanel.Hide();
             employeePanel.Hide();
+            pnlAddUser.Hide();
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
             dashBoardPanel.Show();
@@ -90,6 +96,7 @@ namespace DemoApp
             employeePanel.Hide();
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
+            pnlAddUser.Hide();
             dashBoardPanel.Hide();
             deleteTicketButton.Hide();
         }
@@ -130,6 +137,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             ticketViewPanel.Show();
             deleteTicketButton.Hide();
+            resetCreateTicketView();
             LoadAndUpdateView();
         }
 
@@ -187,6 +195,7 @@ namespace DemoApp
             employeePanel.Hide();
             createTicketPanel.Hide();
             editTicketPanel.Hide();
+            pnlAddUser.Hide();
             pnlCreateTicketByEmployee.Hide();
             editTicketListView.Clear();
             deleteTicketButton.Hide();
@@ -201,6 +210,7 @@ namespace DemoApp
             createTicketPanel.Hide();
             editTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
+            pnlAddUser.Hide();
             editTicketListView.Clear();
             deleteTicketButton.Hide();
         }
@@ -212,6 +222,7 @@ namespace DemoApp
             ticketViewPanel.Hide();
             dashBoardPanel.Hide();
             employeePanel.Hide();
+            pnlAddUser.Hide();
             createTicketPanel.Hide();
             pnlCreateTicketByEmployee.Hide();
 
@@ -257,9 +268,28 @@ namespace DemoApp
             ticketDateTimePicker.Value = DateTime.Now;
         }
 
-        private void btnAddNewUser_Click(object sender, EventArgs e)
+        private void btnAddNewUser_Click(object sender, EventArgs e) //after click to the button in the user managment screen it dispalys add employee form
         {
+            //if (!(logedinEmployee.UserType == UserType.ServiceDeskEmployee))
+            //{
+            //    MessageBox.Show("You don't have enough permissions to add a new employee");
+            //}
+            //else
+            //{
+                pnlCreateTicketByEmployee.Hide();
+                createTicketPanel.Hide();
+                dashBoardPanel.Hide();
+                editTicketPanel.Hide();
+                employeePanel.Hide();
+                ticketViewPanel.Hide();
+                pnlAddUser.ResetText();
 
+                Clean(pnlAddUser);
+
+                pnlAddUser.Show();
+                createEmployee = new CreateEmployeeView(textBoxFirstName, textBoxLastName, comboBoxTypeOfUser, textBoxEmailAddress, textBoxPhoneNumber, textBoxLocation, textBoxPassword, newEmployee);
+                createEmployee.PopulateComboBoxes();
+            //}
         }
 
         
@@ -267,26 +297,51 @@ namespace DemoApp
         private void buttonCancel_Click(object sender, EventArgs e)
         {
 
+            btnMoveToUserManagment_Click(sender, e);
+            Clean(pnlAddUser);
         }
 
-        private void buttonAddUser_Click(object sender, EventArgs e)
+        private void buttonAddUser_Click(object sender, EventArgs e) //button on creating employee form panel
         {
+            createEmployee.addEmployeeToDatabase();
+            pnlAddUser.Hide();
+            employeePanel.Show();
+        }
 
+        private void Clean(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = "";
+                }
+                else if (control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = -1; //or 0
+                }
+            }
         }
 
         private void btnMoveToIncidentManagment_Click(object sender, EventArgs e)
         {
-
+            btnIncidentManagment_Click(sender, e);
         }
 
         private void btnMoveToUserManagment_Click(object sender, EventArgs e)
         {
-
+            pnlCreateTicketByEmployee.Hide();
+            createTicketPanel.Hide();
+            dashBoardPanel.Hide();
+            editTicketPanel.Hide();
+            ticketViewPanel.Hide();
+            pnlAddUser.Hide();
+            employeePanel.Show();
         }
 
         private void btnMoveToDashbord_Click(object sender, EventArgs e)
         {
-
+            dashBoardTickeUI_Click(sender, e);
         }
     }
 }

@@ -43,5 +43,10 @@ namespace DAL
             Employee user = employeeCollection.Find(filter).FirstOrDefault();
             return user.FullName;
         }
+
+        public void CreateNewEmployee(Employee newEmployee)
+        {
+            employeeCollection.InsertOne(newEmployee);
+        }
     }
 }
