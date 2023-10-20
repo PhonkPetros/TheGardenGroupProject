@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInterface));
-            this.employeePanel = new System.Windows.Forms.Panel();
-            this.btnAddNewUser = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlAddUser = new System.Windows.Forms.Panel();
             this.comboBoxTypeOfUser = new System.Windows.Forms.ComboBox();
             this.textBoxLocation = new System.Windows.Forms.TextBox();
@@ -47,12 +44,12 @@
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblPhoneNumber = new System.Windows.Forms.Label();
+            this.lblEmailAddress = new System.Windows.Forms.Label();
+            this.lblTypeOfUser = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.lblCreateNewUser = new System.Windows.Forms.Label();
             this.dashBoardPanel = new System.Windows.Forms.Panel();
             this.ticketCount = new System.Windows.Forms.Label();
@@ -74,6 +71,7 @@
             this.submitEditButton = new System.Windows.Forms.Button();
             this.editTicketListView = new System.Windows.Forms.ListView();
             this.ticketViewPanel = new System.Windows.Forms.Panel();
+            this.searchButton = new System.Windows.Forms.Button();
             this.searchbarTextBox = new System.Windows.Forms.TextBox();
             this.deleteTicketButton = new System.Windows.Forms.Button();
             this.btnCreateTicket = new System.Windows.Forms.Button();
@@ -126,8 +124,8 @@
             this.menuLabel = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.employeePanel.SuspendLayout();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.pnlAddUser.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
@@ -142,27 +140,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // employeePanel
-            // 
-            this.employeePanel.Controls.Add(this.btnAddNewUser);
-            this.employeePanel.Location = new System.Drawing.Point(0, 0);
-            this.employeePanel.Margin = new System.Windows.Forms.Padding(2);
-            this.employeePanel.Name = "employeePanel";
-            this.employeePanel.Size = new System.Drawing.Size(622, 531);
-            this.employeePanel.TabIndex = 0;
-            // 
-            // btnAddNewUser
-            // 
-            this.btnAddNewUser.Location = new System.Drawing.Point(426, 109);
-            this.btnAddNewUser.Name = "btnAddNewUser";
-            this.btnAddNewUser.Size = new System.Drawing.Size(151, 23);
-            this.btnAddNewUser.TabIndex = 4;
-            this.btnAddNewUser.Text = "ADD NEW USER";
-            this.btnAddNewUser.UseVisualStyleBackColor = true;
-            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
-            // 
             // pnlAddUser
             // 
+            this.pnlAddUser.Controls.Add(this.textBoxPassword);
+            this.pnlAddUser.Controls.Add(this.lblPassword);
             this.pnlAddUser.Controls.Add(this.comboBoxTypeOfUser);
             this.pnlAddUser.Controls.Add(this.textBoxLocation);
             this.pnlAddUser.Controls.Add(this.textBoxPhoneNumber);
@@ -171,12 +152,12 @@
             this.pnlAddUser.Controls.Add(this.textBoxFirstName);
             this.pnlAddUser.Controls.Add(this.buttonAddUser);
             this.pnlAddUser.Controls.Add(this.buttonCancel);
-            this.pnlAddUser.Controls.Add(this.label4);
-            this.pnlAddUser.Controls.Add(this.label5);
-            this.pnlAddUser.Controls.Add(this.label6);
-            this.pnlAddUser.Controls.Add(this.label3);
-            this.pnlAddUser.Controls.Add(this.label2);
-            this.pnlAddUser.Controls.Add(this.label1);
+            this.pnlAddUser.Controls.Add(this.lblLocation);
+            this.pnlAddUser.Controls.Add(this.lblPhoneNumber);
+            this.pnlAddUser.Controls.Add(this.lblEmailAddress);
+            this.pnlAddUser.Controls.Add(this.lblTypeOfUser);
+            this.pnlAddUser.Controls.Add(this.lblLastName);
+            this.pnlAddUser.Controls.Add(this.lblFirstName);
             this.pnlAddUser.Controls.Add(this.lblCreateNewUser);
             this.pnlAddUser.Location = new System.Drawing.Point(0, 0);
             this.pnlAddUser.Margin = new System.Windows.Forms.Padding(2);
@@ -232,7 +213,7 @@
             // 
             // buttonAddUser
             // 
-            this.buttonAddUser.Location = new System.Drawing.Point(349, 398);
+            this.buttonAddUser.Location = new System.Drawing.Point(349, 438);
             this.buttonAddUser.Name = "buttonAddUser";
             this.buttonAddUser.Size = new System.Drawing.Size(75, 23);
             this.buttonAddUser.TabIndex = 12;
@@ -242,7 +223,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(188, 399);
+            this.buttonCancel.Location = new System.Drawing.Point(188, 439);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 11;
@@ -250,59 +231,59 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // label4
+            // lblLocation
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 344);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Location/branch: ";
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(63, 344);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(92, 13);
+            this.lblLocation.TabIndex = 10;
+            this.lblLocation.Text = "Location/branch: ";
             // 
-            // label5
+            // lblPhoneNumber
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 306);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Phone number: ";
+            this.lblPhoneNumber.AutoSize = true;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(63, 306);
+            this.lblPhoneNumber.Name = "lblPhoneNumber";
+            this.lblPhoneNumber.Size = new System.Drawing.Size(82, 13);
+            this.lblPhoneNumber.TabIndex = 9;
+            this.lblPhoneNumber.Text = "Phone number: ";
             // 
-            // label6
+            // lblEmailAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 264);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Email address:";
+            this.lblEmailAddress.AutoSize = true;
+            this.lblEmailAddress.Location = new System.Drawing.Point(63, 264);
+            this.lblEmailAddress.Name = "lblEmailAddress";
+            this.lblEmailAddress.Size = new System.Drawing.Size(75, 13);
+            this.lblEmailAddress.TabIndex = 8;
+            this.lblEmailAddress.Text = "Email address:";
             // 
-            // label3
+            // lblTypeOfUser
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Type of user:";
+            this.lblTypeOfUser.AutoSize = true;
+            this.lblTypeOfUser.Location = new System.Drawing.Point(63, 226);
+            this.lblTypeOfUser.Name = "lblTypeOfUser";
+            this.lblTypeOfUser.Size = new System.Drawing.Size(69, 13);
+            this.lblTypeOfUser.TabIndex = 7;
+            this.lblTypeOfUser.Text = "Type of user:";
             // 
-            // label2
+            // lblLastName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Last name:";
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(63, 188);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(59, 13);
+            this.lblLastName.TabIndex = 6;
+            this.lblLastName.Text = "Last name:";
             // 
-            // label1
+            // lblFirstName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 146);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "First name:";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(63, 146);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(58, 13);
+            this.lblFirstName.TabIndex = 5;
+            this.lblFirstName.Text = "First name:";
             // 
             // lblCreateNewUser
             // 
@@ -335,33 +316,33 @@
             // 
             // incidentChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend1);
+            chartArea9.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend9);
             this.incidentChart.Location = new System.Drawing.Point(329, 144);
             this.incidentChart.Name = "incidentChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series1);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series9);
             this.incidentChart.Size = new System.Drawing.Size(261, 207);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea2.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.piChart.Legends.Add(legend2);
+            chartArea10.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.piChart.Legends.Add(legend10);
             this.piChart.Location = new System.Drawing.Point(57, 138);
             this.piChart.Name = "piChart";
-            series2.ChartArea = "ChartArea2";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.piChart.Series.Add(series2);
+            series10.ChartArea = "ChartArea2";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.piChart.Series.Add(series10);
             this.piChart.Size = new System.Drawing.Size(232, 202);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -525,6 +506,16 @@
             this.ticketViewPanel.Name = "ticketViewPanel";
             this.ticketViewPanel.Size = new System.Drawing.Size(656, 531);
             this.ticketViewPanel.TabIndex = 4;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.searchButton.Location = new System.Drawing.Point(373, 75);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(25, 24);
+            this.searchButton.TabIndex = 6;
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchbarTextBox
             // 
@@ -1090,7 +1081,6 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox.BackgroundImage")));
             this.pictureBox.InitialImage = null;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
@@ -1099,16 +1089,21 @@
             this.pictureBox.TabIndex = 9;
             this.pictureBox.TabStop = false;
             // 
-            // searchButton
+            // textBoxPassword
             // 
-            this.searchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButton.BackgroundImage")));
-            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.searchButton.Location = new System.Drawing.Point(373, 75);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(25, 24);
-            this.searchButton.TabIndex = 6;
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.textBoxPassword.Location = new System.Drawing.Point(188, 381);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(236, 20);
+            this.textBoxPassword.TabIndex = 20;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(63, 384);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 19;
+            this.lblPassword.Text = "Password:";
             // 
             // UserInterface
             // 
@@ -1117,16 +1112,14 @@
             this.ClientSize = new System.Drawing.Size(656, 531);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.ticketViewPanel);
-            this.Controls.Add(this.pnlAddUser);
             this.Controls.Add(this.createTicketPanel);
             this.Controls.Add(this.editTicketPanel);
             this.Controls.Add(this.pnlCreateTicketByEmployee);
             this.Controls.Add(this.dashBoardPanel);
-            this.Controls.Add(this.employeePanel);
+            this.Controls.Add(this.pnlAddUser);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserInterface";
             this.Text = "NoDesk";
-            this.employeePanel.ResumeLayout(false);
             this.pnlAddUser.ResumeLayout(false);
             this.pnlAddUser.PerformLayout();
             this.dashBoardPanel.ResumeLayout(false);
@@ -1152,8 +1145,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel employeePanel;
         private System.Windows.Forms.ListView ticketView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -1217,7 +1208,6 @@
         private System.Windows.Forms.BindingSource ticketBindingSource;
         private System.Windows.Forms.Button cancelEditButton;
         private System.Windows.Forms.Button deleteTicketButton;
-        private System.Windows.Forms.Button btnAddNewUser;
         private System.Windows.Forms.Panel pnlAddUser;
         private System.Windows.Forms.Label lblCreateNewUser;
         private System.Windows.Forms.ComboBox comboBoxTypeOfUser;
@@ -1228,12 +1218,12 @@
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Button buttonAddUser;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblEmailAddress;
+        private System.Windows.Forms.Label lblTypeOfUser;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label menuHeaderLabel;
         private System.Windows.Forms.Label menuLabel;
         private System.Windows.Forms.MenuStrip menuStrip;
@@ -1244,5 +1234,7 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox searchbarTextBox;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label lblPassword;
     }
 }

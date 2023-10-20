@@ -100,7 +100,7 @@ namespace DemoApp
 
         private void btnSubmit2_Click(object sender, EventArgs e)
         {
-            createTicket.addTicketToDatabase2(logedinEmployee.Id);
+            createTicket.addTicketToDatabase(logedinEmployee.Id);
             switchView(ticketViewPanel);
             LoadAndUpdateView();
         }
@@ -199,17 +199,12 @@ namespace DemoApp
             ticketDateTimePicker.Value = DateTime.Now;
         }
 
-        private void btnAddNewUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void buttonAddUser_Click(object sender, EventArgs e)
+        private void buttonAddUser_Click(object sender, EventArgs e) //add from a form
         {
 
         }
@@ -226,7 +221,7 @@ namespace DemoApp
 
         private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switchView(pnlAddUser);
+            switchView(pnlAddUser); //go to a form and add logic from copy branch
         }
 
         private void searchButton_Click(object sender, EventArgs e)
