@@ -48,5 +48,10 @@ namespace Logic
         {
             dao.UpdateTicket(ticket);
         }
+
+        public List<Ticket> GetTicketsBasedOnKeywords(Employee loggedInEmployee,string searchInput)
+        {
+            return dao.GetTicketsBasedOnKeywords(loggedInEmployee, searchInput);
+        }
     }
 }
