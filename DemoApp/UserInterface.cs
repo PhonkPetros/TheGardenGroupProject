@@ -133,7 +133,7 @@ namespace DemoApp
 
         private void btnSubmit2_Click(object sender, EventArgs e)
         {
-            createTicket.addTicketToDatabase2(logedinEmployee.Id);
+            createTicket.addTicketToDatabase(logedinEmployee.Id);
             createTicketPanel.Hide();
             ticketViewPanel.Show();
             deleteTicketButton.Hide();

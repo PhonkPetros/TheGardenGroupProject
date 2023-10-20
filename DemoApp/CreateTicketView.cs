@@ -76,46 +76,30 @@ namespace DemoApp
             return users;
         }
 
-        private void ReadUserInput()
+        private void ReadUserInput(ObjectId? id = null)
         {
             ticket.Subject = subjectTextBox.Text;
             ticket.DateReported = ticketDateTimePicker.Value;
             ticket.Deadline = deadlineDateTimePicker.Value;
-            ticket.ReportedBy = employeeController.GetUserId(reportedByComboBox.SelectedValue.ToString());
-            ticket.Priority = (Priority)priorityComboBox.SelectedValue;
-            ticket.Description = descriptionTextBox.Text;
-            ticket.Status = Status.Open;
-            ticket.IncidentType = (IncidentType)incidentTypeComboBox.SelectedValue;
-        }
-        private void ReadUserInput2(ObjectId i)
-        {
-            ticket.Subject = subjectTextBox.Text;
-            ticket.DateReported = ticketDateTimePicker.Value;
-            ticket.Deadline = deadlineDateTimePicker.Value;
-            ticket.ReportedBy = i.ToString();
-            ticket.Priority = (Priority)priorityComboBox.SelectedValue;
-            ticket.Description = descriptionTextBox.Text;
-            ticket.Status = Status.Open;
-            ticket.IncidentType = (IncidentType)incidentTypeComboBox.SelectedValue;
-        }
 
-        public void addTicketToDatabase()
-        {
-            ReadUserInput();
-            if ((!string.IsNullOrEmpty(ticket.Subject) && !string.IsNullOrEmpty(ticket.Description)))
+            if (id.HasValue)
             {
-                ticketController.CreateNewTicket(ticket);
-                MessageBox.Show("The ticket was successfully created.");
+                ticket.ReportedBy = id.ToString();
             }
             else
             {
-                MessageBox.Show("Please fill in all fields of the form to create a ticket");
+                ticket.ReportedBy = employeeController.GetUserId(reportedByComboBox.SelectedValue.ToString());
             }
+
+            ticket.Priority = (Priority)priorityComboBox.SelectedValue;
+            ticket.Description = descriptionTextBox.Text;
+            ticket.Status = Status.Open;
+            ticket.IncidentType = (IncidentType)incidentTypeComboBox.SelectedValue;
         }
 
-        public void addTicketToDatabase2(ObjectId id)
+        public void addTicketToDatabase(ObjectId? id = null)
         {
-            ReadUserInput2(id);
+            ReadUserInput(id);
             if (!string.IsNullOrEmpty(ticket.Subject) && !string.IsNullOrEmpty(ticket.Description))
             {
                 ticketController.CreateNewTicket(ticket);
