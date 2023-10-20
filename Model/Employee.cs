@@ -27,7 +27,27 @@ namespace Model
         public string Phone { get; set; }
 
         [BsonElement("user_type")]
-        public UserType UserType { get; set; }
+        private string user_type;
+
+        [BsonIgnore]
+        public UserType UserType
+        {
+            get
+            {
+                if (UserType.TryParse(user_type, out UserType result))
+                {
+                    return result;
+                }
+                else
+                {
+                    return UserType.Employee;
+                }
+            }
+            set
+            {
+                user_type = value.ToString();
+            }
+        }
 
         [BsonElement("branch")]
         public string Branch { get; set; }
@@ -40,5 +60,6 @@ namespace Model
         {
             get { return $"{FirstName} {LastName}"; }
         }
+
     }
 }

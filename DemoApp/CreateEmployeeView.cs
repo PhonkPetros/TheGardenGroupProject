@@ -43,7 +43,7 @@ namespace DemoApp
         {
             employee.FirstName = firstNameTextBox.Text;
             employee.LastName = lastNameTextBox.Text;
-            employee.UserType = (UserType)typeOfUserComboBox.SelectedValue;
+            employee.UserType = ((UserType)typeOfUserComboBox.SelectedValue);
             employee.Email = emailAddressTextBox.Text;
             employee.Phone = phoneNumberTextBox.Text;
             employee.Branch = locationTextBox.Text;
