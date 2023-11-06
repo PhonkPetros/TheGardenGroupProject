@@ -125,7 +125,10 @@
       <DependentUpon>CreateTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateTicketView.cs" />
+<<<<<<< HEAD
     <Compile Include="CloseTicketView.cs" />
+=======
+>>>>>>> 8515729849128c1b57b0ff133b381b1304b00133
     <Compile Include="DeleteTicketView.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
