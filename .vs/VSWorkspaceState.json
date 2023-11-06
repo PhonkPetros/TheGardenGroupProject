@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\DAL",
+    "\\DemoApp",
     "\\Model"
   ],
-  "SelectedNode": "\\Model\\Ticket.cs",
+  "SelectedNode": "\\DemoApp.sln",
   "PreviewInSolutionExplorer": false
 }

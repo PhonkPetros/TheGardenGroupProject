@@ -116,7 +116,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeTicketView.cs" />
+    <Compile Include="CreateEmployeeView.cs" />
+    <Compile Include="CreateTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTicket.Designer.cs">
+      <DependentUpon>CreateTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateTicketView.cs" />
+    <Compile Include="CloseTicketView.cs" />
+    <Compile Include="DeleteTicketView.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +148,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordSearchFunctionality.cs" />
+    <EmbeddedResource Include="CreateTicket.resx">
+      <DependentUpon>CreateTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +173,7 @@
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Model.Ticket.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -179,6 +194,10 @@
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d53e0f50-1565-47ab-bc03-d427f29065da}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{f3d76796-cfc4-4306-be4e-6be76d31a03f}</Project>
       <Name>Logic</Name>
