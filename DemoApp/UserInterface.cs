@@ -28,9 +28,12 @@ namespace DemoApp
         private CreateTicketView createTicket;
         private ChangeTicketView changeTicket;
         private DeleteTicketView deleteTicket;
+        private CloseTicketView closeTicket;
         private WordSearchFunctionality searchFunctionality;
         private Ticket ticket = new Ticket();
         List<Panel> panels;
+        private Employee newEmployee = new Employee();
+        private CreateEmployeeView createEmployee;
 
 
         public UserInterface(Employee employee)
@@ -41,10 +44,11 @@ namespace DemoApp
             ticketViewControl = new TicketView(ticketView, piChart, ticketCount, incidentChart);
             ticketController = new TicketController();
             deleteTicketButton.Hide();
+            btnCloseTicket.Hide();
 
             panels = new List<Panel>
             {
-                ticketViewPanel, employeePanel, createTicketPanel, pnlCreateTicketByEmployee, dashBoardPanel, editTicketPanel, pnlAddUser, pnlCreateTicketByEmployee
+                ticketViewPanel, createTicketPanel, pnlCreateTicketByEmployee, dashBoardPanel, editTicketPanel, pnlAddUser, pnlCreateTicketByEmployee
             };
 
             logedinEmployee = employee;
@@ -78,6 +82,7 @@ namespace DemoApp
                     p.Show();
                 }
                 deleteTicketButton.Hide();
+                btnCloseTicket.Hide();
             }
         }
         private void submitButton_Click(object sender, EventArgs e)
@@ -170,6 +175,7 @@ namespace DemoApp
             if(logedinEmployee.UserType == UserType.ServiceDeskEmployee)
             {
                 deleteTicketButton.Show();
+                btnCloseTicket.Show();
             }
             
         }
@@ -201,12 +207,14 @@ namespace DemoApp
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-
+            switchView(ticketViewPanel);
+            Clean(pnlAddUser);
         }
 
         private void buttonAddUser_Click(object sender, EventArgs e) //add from a form
         {
-
+            createEmployee.addEmployeeToDatabase();
+            switchView(ticketViewPanel);
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,7 +229,17 @@ namespace DemoApp
 
         private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switchView(pnlAddUser); //go to a form and add logic from copy branch
+            if (!(logedinEmployee.UserType == UserType.ServiceDeskEmployee))
+            {
+                MessageBox.Show("You don't have enough permissions to add a new employee");
+            }
+            else
+            {
+                Clean(pnlAddUser);
+                switchView(pnlAddUser); //go to a form and add logic from copy branch
+                createEmployee = new CreateEmployeeView(textBoxFirstName, textBoxLastName, comboBoxTypeOfUser, textBoxEmailAddress, textBoxPhoneNumber, textBoxLocation, textBoxPassword, newEmployee);
+                createEmployee.PopulateComboBoxes();
+            }
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -234,6 +252,39 @@ namespace DemoApp
             else
             {
                 LoadAndUpdateView();
+            }
+        }
+
+        private void Clean(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = "";
+                }
+                else if (control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = -1; //or 0
+                }
+            }
+        }
+
+        private void btnCloseTicket_Click(object sender, EventArgs e)
+        {
+            if (ticketView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ticketView.SelectedItems[0];
+                string ticketId = selectedItem.SubItems[0].Text;
+
+                closeTicket = new CloseTicketView(ticketId);
+                closeTicket.CloseTicket();
+                MessageBox.Show("Ticket was successfully closed.");
+                LoadAndUpdateView();
+            }
+            else
+            {
+                MessageBox.Show("Please select a ticket to close.");
             }
         }
     }

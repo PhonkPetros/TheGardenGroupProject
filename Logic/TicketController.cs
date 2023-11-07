@@ -38,6 +38,11 @@ namespace Logic
         {
             dao.DeleteTicket(ticketId);
         }
+        
+        public void CloseTicket(string ticketId)
+        {
+            dao.CloseTicket(ticketId);
+        }
 
         public Ticket GetTicketByTicketId(string ticketId)
         {

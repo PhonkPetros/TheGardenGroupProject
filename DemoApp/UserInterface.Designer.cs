@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.pnlAddUser = new System.Windows.Forms.Panel();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.comboBoxTypeOfUser = new System.Windows.Forms.ComboBox();
             this.textBoxLocation = new System.Windows.Forms.TextBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
@@ -124,8 +126,7 @@
             this.menuLabel = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
+            this.btnCloseTicket = new System.Windows.Forms.Button();
             this.pnlAddUser.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
@@ -164,6 +165,22 @@
             this.pnlAddUser.Name = "pnlAddUser";
             this.pnlAddUser.Size = new System.Drawing.Size(622, 531);
             this.pnlAddUser.TabIndex = 5;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(188, 381);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(236, 20);
+            this.textBoxPassword.TabIndex = 20;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(63, 384);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 19;
+            this.lblPassword.Text = "Password:";
             // 
             // comboBoxTypeOfUser
             // 
@@ -316,33 +333,33 @@
             // 
             // incidentChart
             // 
-            chartArea9.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend1);
             this.incidentChart.Location = new System.Drawing.Point(329, 144);
             this.incidentChart.Name = "incidentChart";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series9);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series1);
             this.incidentChart.Size = new System.Drawing.Size(261, 207);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea10.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.piChart.Legends.Add(legend10);
+            chartArea2.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.piChart.Legends.Add(legend2);
             this.piChart.Location = new System.Drawing.Point(57, 138);
             this.piChart.Name = "piChart";
-            series10.ChartArea = "ChartArea2";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.piChart.Series.Add(series10);
+            series2.ChartArea = "ChartArea2";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.piChart.Series.Add(series2);
             this.piChart.Size = new System.Drawing.Size(232, 202);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
@@ -496,6 +513,7 @@
             // 
             // ticketViewPanel
             // 
+            this.ticketViewPanel.Controls.Add(this.btnCloseTicket);
             this.ticketViewPanel.Controls.Add(this.searchButton);
             this.ticketViewPanel.Controls.Add(this.searchbarTextBox);
             this.ticketViewPanel.Controls.Add(this.deleteTicketButton);
@@ -1089,21 +1107,21 @@
             this.pictureBox.TabIndex = 9;
             this.pictureBox.TabStop = false;
             // 
-            // textBoxPassword
+            // btnCloseTicket
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(188, 381);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(236, 20);
-            this.textBoxPassword.TabIndex = 20;
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(63, 384);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(56, 13);
-            this.lblPassword.TabIndex = 19;
-            this.lblPassword.Text = "Password:";
+            this.btnCloseTicket.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCloseTicket.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnCloseTicket.FlatAppearance.BorderSize = 0;
+            this.btnCloseTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseTicket.ForeColor = System.Drawing.Color.White;
+            this.btnCloseTicket.Location = new System.Drawing.Point(348, 494);
+            this.btnCloseTicket.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCloseTicket.Name = "btnCloseTicket";
+            this.btnCloseTicket.Size = new System.Drawing.Size(96, 24);
+            this.btnCloseTicket.TabIndex = 7;
+            this.btnCloseTicket.Text = "Close Ticket";
+            this.btnCloseTicket.UseVisualStyleBackColor = false;
+            this.btnCloseTicket.Click += new System.EventHandler(this.btnCloseTicket_Click);
             // 
             // UserInterface
             // 
@@ -1236,5 +1254,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnCloseTicket;
     }
 }
