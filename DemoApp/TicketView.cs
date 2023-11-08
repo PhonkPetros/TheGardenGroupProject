@@ -59,7 +59,7 @@ namespace DemoApp
             }
         }
 
-        public void PiChartTickets(List<Ticket> tickets)
+        public void PiChartTickets(List<Ticket> tickets, List<Ticket> pastTickets)
         {
             int resolvedCount = 0;
             int unresolvedCount = 0;
@@ -69,24 +69,32 @@ namespace DemoApp
 
             foreach (Ticket ticket in tickets)
             {
-                if (ticket.Status == Status.Resolved)
+                if (ticket.Status == Status.NoResolve || ticket.Deadline < now)
+                {
+                    pastDeadLine++;
+                }
+                else if (ticket.Status == Status.Resolved)
                 {
                     resolvedCount++;
-
                 }
                 else if (ticket.Status == Status.Open)
                 {
                     unresolvedCount++;
                 }
-                else if (ticket.Status == Status.NoResolve || ticket.Deadline < now)
+            }
+
+
+            foreach (Ticket pastTicket in pastTickets)
+            {
+                if (pastTicket.Status != Status.Resolved)
                 {
                     pastDeadLine++;
                 }
             }
 
             piChart.Series["Series1"].Points.Clear();
-            piChart.Series["Series1"].Points.AddXY(1, resolvedCount);
-            piChart.Series["Series1"].Points.AddXY(1, unresolvedCount);
+            piChart.Series["Series1"].Points.AddXY("Resolved Tickets", resolvedCount);
+            piChart.Series["Series1"].Points.AddXY("Unresolved Tickets", unresolvedCount);
             resolvedTicketsLabel.Text = $"{resolvedCount}/{unresolvedCount}";
 
             incidentChart.Series["incidents past deadline"].Points.Clear();
