@@ -37,7 +37,7 @@ namespace DemoApp
                 return;
             }
 
-            Employee authenticatedEmployee = authenticationLogic.AuthenticateUser(email, password);
+            Employee authenticatedEmployee = authenticationLogic.AuthenticateUser(email, authenticationLogic.GetHashPassword(password));
 
             if (authenticatedEmployee != null)
             {
@@ -69,11 +69,11 @@ namespace DemoApp
             }
         }
 
-        private void GotoNextView(Employee employee)
+        private void GotoNextView(Employee employee) //use it
         {
             this.Hide();
             Form home;
-            home = new UserInterface();
+            home = new UserInterface(employee);
             home.Closed += (s, args) => this.Close();
             home.Show();
         }
