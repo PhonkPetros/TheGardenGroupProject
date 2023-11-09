@@ -30,9 +30,9 @@ namespace Logic
             return dao.GetUserName(id);
         }
 
-        public void CreateNewEmployee(Employee newEmployee)
+        public bool UpdateEmployeePassword(string email, string newPassword)
         {
-            dao.CreateNewEmployee(newEmployee);
+            return dao.UpdateEmployeePassword(email, newPassword);
         }
     }
 }

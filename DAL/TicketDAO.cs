@@ -90,7 +90,7 @@ namespace DAL
         }
 
 
-        public List<Ticket> GetTicketsWithPastDeadlines()
+        public List<Ticket> GetTicketsWithPastDeadlines(Employee employee)
         {
         var match = new BsonDocument
         {
@@ -98,7 +98,8 @@ namespace DAL
                 "$match",
                 new BsonDocument
                 {
-                    { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
+                    { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } },
+                    { "reported_by", employee.Id }
                 }
             }
         };
@@ -161,6 +162,22 @@ namespace DAL
                 throw new Exception("there is no ticket with this id in the database");
             }
             
+        }
+        
+        public void CloseTicket(string ticketId)
+        {
+            ObjectId objectId;
+            if (ObjectId.TryParse(ticketId, out objectId))
+            {
+                FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", objectId);
+                UpdateDefinition<Ticket> update = Builders<Ticket>.Update.Set("status", Status.Resolved.ToString());
+
+                ticketCollection.UpdateOne(filter, update);
+            }
+            else
+            {
+                throw new Exception("There is no ticket with this ID in the database");
+            }
         }
 
         public void UpdateTicket(Ticket ticket)

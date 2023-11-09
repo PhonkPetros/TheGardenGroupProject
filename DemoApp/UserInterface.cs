@@ -28,6 +28,7 @@ namespace DemoApp
         private CreateTicketView createTicket;
         private ChangeTicketView changeTicket;
         private DeleteTicketView deleteTicket;
+        private CloseTicketView closeTicket;
         private WordSearchFunctionality searchFunctionality;
         private Ticket ticket = new Ticket();
         List<Panel> panels;
@@ -39,10 +40,10 @@ namespace DemoApp
         {
             InitializeComponent();
 
-            // Assuming ticketView, piChart, label, incidentChart are the actual names of controls on your form.
             ticketViewControl = new TicketView(ticketView, piChart, ticketCount, incidentChart);
             ticketController = new TicketController();
             deleteTicketButton.Hide();
+            btnCloseTicket.Hide();
 
             panels = new List<Panel>
             {
@@ -63,8 +64,9 @@ namespace DemoApp
         {
 
             List<Ticket> tickets = ticketController.GetTickets(logedinEmployee);
+            List<Ticket> pastTickets = ticketController.GetPastTickets(logedinEmployee);
             ticketViewControl.DisplayTickets(tickets);
-            ticketViewControl.PiChartTickets(tickets);
+            ticketViewControl.PiChartTickets(tickets, pastTickets);
         }
 
         private void switchView(Panel panel)
@@ -80,6 +82,7 @@ namespace DemoApp
                     p.Show();
                 }
                 deleteTicketButton.Hide();
+                btnCloseTicket.Hide();
             }
         }
         private void submitButton_Click(object sender, EventArgs e)
@@ -172,6 +175,7 @@ namespace DemoApp
             if(logedinEmployee.UserType == UserType.ServiceDeskEmployee)
             {
                 deleteTicketButton.Show();
+                btnCloseTicket.Show();
             }
             
         }
@@ -263,6 +267,24 @@ namespace DemoApp
                 {
                     ((ComboBox)control).SelectedIndex = -1; //or 0
                 }
+            }
+        }
+
+        private void btnCloseTicket_Click(object sender, EventArgs e)
+        {
+            if (ticketView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ticketView.SelectedItems[0];
+                string ticketId = selectedItem.SubItems[0].Text;
+
+                closeTicket = new CloseTicketView(ticketId);
+                closeTicket.CloseTicket();
+                MessageBox.Show("Ticket was successfully closed.");
+                LoadAndUpdateView();
+            }
+            else
+            {
+                MessageBox.Show("Please select a ticket to close.");
             }
         }
     }
