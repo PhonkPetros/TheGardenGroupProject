@@ -40,7 +40,6 @@ namespace DemoApp
         {
             InitializeComponent();
 
-            // Assuming ticketView, piChart, label, incidentChart are the actual names of controls on your form.
             ticketViewControl = new TicketView(ticketView, piChart, ticketCount, incidentChart);
             ticketController = new TicketController();
             deleteTicketButton.Hide();
@@ -65,8 +64,9 @@ namespace DemoApp
         {
 
             List<Ticket> tickets = ticketController.GetTickets(logedinEmployee);
+            List<Ticket> pastTickets = ticketController.GetPastTickets(logedinEmployee);
             ticketViewControl.DisplayTickets(tickets);
-            ticketViewControl.PiChartTickets(tickets);
+            ticketViewControl.PiChartTickets(tickets, pastTickets);
         }
 
         private void switchView(Panel panel)

@@ -90,7 +90,7 @@ namespace DAL
         }
 
 
-        public List<Ticket> GetTicketsWithPastDeadlines()
+        public List<Ticket> GetTicketsWithPastDeadlines(Employee employee)
         {
         var match = new BsonDocument
         {
@@ -98,7 +98,8 @@ namespace DAL
                 "$match",
                 new BsonDocument
                 {
-                    { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
+                    { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } },
+                    { "reported_by", employee.Id }
                 }
             }
         };

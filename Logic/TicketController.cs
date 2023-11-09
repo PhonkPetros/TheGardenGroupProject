@@ -22,9 +22,9 @@ namespace Logic
             return tickets;
         }
 
-        public List<Ticket> GetPastTickets()
+        public List<Ticket> GetPastTickets(Employee employeeId)
         {
-            List<Ticket> tickets = dao.GetTicketsWithPastDeadlines();
+            List<Ticket> tickets = dao.GetTicketsWithPastDeadlines(employeeId);
 
             return tickets;
         }
