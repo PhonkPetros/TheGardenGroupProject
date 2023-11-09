@@ -29,5 +29,10 @@ namespace Logic
         {
             return dao.GetUserName(id);
         }
+
+        public bool UpdateEmployeePassword(string email, string newPassword)
+        {
+            return dao.UpdateEmployeePassword(email, newPassword);
+        }
     }
 }

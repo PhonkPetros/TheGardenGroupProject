@@ -55,6 +55,13 @@ namespace Logic
             return null;
         }
 
+
+        public bool UpdatePassword(string email, string newPassword)
+        {
+
+            return employeeDao.UpdateEmployeePassword(email, newPassword);
+        }
+
         public string GetHashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())

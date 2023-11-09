@@ -38,23 +38,32 @@
             this.lblLoginText = new System.Windows.Forms.Label();
             this.forgetPasswordBtn = new System.Windows.Forms.Button();
             this.forgotPasswordPnl = new System.Windows.Forms.Panel();
-            this.loginPanel = new System.Windows.Forms.Panel();
-            this.emailInputTxt = new System.Windows.Forms.TextBox();
-            this.codeInputTxt = new System.Windows.Forms.TextBox();
-            this.SendCodeToEmail = new System.Windows.Forms.Button();
-            this.VerifyCode = new System.Windows.Forms.Button();
-            this.BackButton = new System.Windows.Forms.Button();
-            this.labelEmailCode = new System.Windows.Forms.Label();
             this.validInvalidCode = new System.Windows.Forms.Label();
+            this.labelEmailCode = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.VerifyCode = new System.Windows.Forms.Button();
+            this.SendCodeToEmail = new System.Windows.Forms.Button();
+            this.codeInputTxt = new System.Windows.Forms.TextBox();
+            this.emailInputTxt = new System.Windows.Forms.TextBox();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.updatePasswordPnl = new System.Windows.Forms.Panel();
+            this.passwordTextBoxInput = new System.Windows.Forms.TextBox();
+            this.confirmPasswordTextBoxInput = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.Label();
+            this.confirmPassword = new System.Windows.Forms.Label();
+            this.UpdatePasswordBtn = new System.Windows.Forms.Button();
+            this.BackToLogin = new System.Windows.Forms.Button();
+            this.passwordError = new System.Windows.Forms.Label();
             this.forgotPasswordPnl.SuspendLayout();
             this.loginPanel.SuspendLayout();
+            this.updatePasswordPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // chbxRemember
             // 
             this.chbxRemember.AutoSize = true;
             this.chbxRemember.Location = new System.Drawing.Point(147, 255);
-            this.chbxRemember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chbxRemember.Margin = new System.Windows.Forms.Padding(4);
             this.chbxRemember.Name = "chbxRemember";
             this.chbxRemember.Size = new System.Drawing.Size(119, 20);
             this.chbxRemember.TabIndex = 15;
@@ -67,7 +76,7 @@
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
             this.btn_login.Location = new System.Drawing.Point(147, 302);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(247, 41);
             this.btn_login.TabIndex = 14;
@@ -78,7 +87,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(147, 221);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(245, 22);
@@ -87,7 +96,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(147, 168);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(245, 22);
             this.txtEmail.TabIndex = 12;
@@ -159,6 +168,66 @@
             this.forgotPasswordPnl.Size = new System.Drawing.Size(576, 465);
             this.forgotPasswordPnl.TabIndex = 20;
             // 
+            // validInvalidCode
+            // 
+            this.validInvalidCode.AutoSize = true;
+            this.validInvalidCode.Location = new System.Drawing.Point(240, 247);
+            this.validInvalidCode.Name = "validInvalidCode";
+            this.validInvalidCode.Size = new System.Drawing.Size(0, 16);
+            this.validInvalidCode.TabIndex = 26;
+            // 
+            // labelEmailCode
+            // 
+            this.labelEmailCode.AutoSize = true;
+            this.labelEmailCode.Location = new System.Drawing.Point(240, 158);
+            this.labelEmailCode.Name = "labelEmailCode";
+            this.labelEmailCode.Size = new System.Drawing.Size(0, 16);
+            this.labelEmailCode.TabIndex = 25;
+            // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(12, 421);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(106, 23);
+            this.BackButton.TabIndex = 24;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // VerifyCode
+            // 
+            this.VerifyCode.Location = new System.Drawing.Point(242, 220);
+            this.VerifyCode.Name = "VerifyCode";
+            this.VerifyCode.Size = new System.Drawing.Size(190, 23);
+            this.VerifyCode.TabIndex = 23;
+            this.VerifyCode.Text = "Verify code";
+            this.VerifyCode.UseVisualStyleBackColor = true;
+            this.VerifyCode.Click += new System.EventHandler(this.VerifyCode_Click);
+            // 
+            // SendCodeToEmail
+            // 
+            this.SendCodeToEmail.Location = new System.Drawing.Point(234, 123);
+            this.SendCodeToEmail.Name = "SendCodeToEmail";
+            this.SendCodeToEmail.Size = new System.Drawing.Size(198, 23);
+            this.SendCodeToEmail.TabIndex = 22;
+            this.SendCodeToEmail.Text = "Send code";
+            this.SendCodeToEmail.UseVisualStyleBackColor = true;
+            this.SendCodeToEmail.Click += new System.EventHandler(this.SendCodeToEmail_Click);
+            // 
+            // codeInputTxt
+            // 
+            this.codeInputTxt.Location = new System.Drawing.Point(242, 192);
+            this.codeInputTxt.Name = "codeInputTxt";
+            this.codeInputTxt.Size = new System.Drawing.Size(190, 22);
+            this.codeInputTxt.TabIndex = 21;
+            // 
+            // emailInputTxt
+            // 
+            this.emailInputTxt.Location = new System.Drawing.Point(80, 95);
+            this.emailInputTxt.Name = "emailInputTxt";
+            this.emailInputTxt.Size = new System.Drawing.Size(352, 22);
+            this.emailInputTxt.TabIndex = 20;
+            // 
             // loginPanel
             // 
             this.loginPanel.Controls.Add(this.txtEmail);
@@ -175,65 +244,79 @@
             this.loginPanel.Size = new System.Drawing.Size(576, 465);
             this.loginPanel.TabIndex = 21;
             // 
-            // emailInputTxt
+            // updatePasswordPnl
             // 
-            this.emailInputTxt.Location = new System.Drawing.Point(80, 95);
-            this.emailInputTxt.Name = "emailInputTxt";
-            this.emailInputTxt.Size = new System.Drawing.Size(352, 22);
-            this.emailInputTxt.TabIndex = 20;
+            this.updatePasswordPnl.Controls.Add(this.passwordError);
+            this.updatePasswordPnl.Controls.Add(this.BackToLogin);
+            this.updatePasswordPnl.Controls.Add(this.UpdatePasswordBtn);
+            this.updatePasswordPnl.Controls.Add(this.confirmPassword);
+            this.updatePasswordPnl.Controls.Add(this.password);
+            this.updatePasswordPnl.Controls.Add(this.confirmPasswordTextBoxInput);
+            this.updatePasswordPnl.Controls.Add(this.passwordTextBoxInput);
+            this.updatePasswordPnl.Location = new System.Drawing.Point(0, 0);
+            this.updatePasswordPnl.Name = "updatePasswordPnl";
+            this.updatePasswordPnl.Size = new System.Drawing.Size(576, 465);
+            this.updatePasswordPnl.TabIndex = 20;
             // 
-            // codeInputTxt
+            // passwordTextBoxInput
             // 
-            this.codeInputTxt.Location = new System.Drawing.Point(242, 192);
-            this.codeInputTxt.Name = "codeInputTxt";
-            this.codeInputTxt.Size = new System.Drawing.Size(190, 22);
-            this.codeInputTxt.TabIndex = 21;
+            this.passwordTextBoxInput.Location = new System.Drawing.Point(162, 158);
+            this.passwordTextBoxInput.Name = "passwordTextBoxInput";
+            this.passwordTextBoxInput.Size = new System.Drawing.Size(232, 22);
+            this.passwordTextBoxInput.TabIndex = 0;
             // 
-            // SendCodeToEmail
+            // confirmPasswordTextBoxInput
             // 
-            this.SendCodeToEmail.Location = new System.Drawing.Point(234, 123);
-            this.SendCodeToEmail.Name = "SendCodeToEmail";
-            this.SendCodeToEmail.Size = new System.Drawing.Size(198, 23);
-            this.SendCodeToEmail.TabIndex = 22;
-            this.SendCodeToEmail.Text = "Send code";
-            this.SendCodeToEmail.UseVisualStyleBackColor = true;
-            this.SendCodeToEmail.Click += new System.EventHandler(this.SendCodeToEmail_Click);
+            this.confirmPasswordTextBoxInput.Location = new System.Drawing.Point(162, 201);
+            this.confirmPasswordTextBoxInput.Name = "confirmPasswordTextBoxInput";
+            this.confirmPasswordTextBoxInput.Size = new System.Drawing.Size(232, 22);
+            this.confirmPasswordTextBoxInput.TabIndex = 1;
             // 
-            // VerifyCode
+            // password
             // 
-            this.VerifyCode.Location = new System.Drawing.Point(242, 220);
-            this.VerifyCode.Name = "VerifyCode";
-            this.VerifyCode.Size = new System.Drawing.Size(190, 23);
-            this.VerifyCode.TabIndex = 23;
-            this.VerifyCode.Text = "Verify code";
-            this.VerifyCode.UseVisualStyleBackColor = true;
-            this.VerifyCode.Click += new System.EventHandler(this.VerifyCode_Click);
+            this.password.AutoSize = true;
+            this.password.Location = new System.Drawing.Point(89, 161);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(67, 16);
+            this.password.TabIndex = 2;
+            this.password.Text = "Password";
             // 
-            // BackButton
+            // confirmPassword
             // 
-            this.BackButton.Location = new System.Drawing.Point(12, 421);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(106, 23);
-            this.BackButton.TabIndex = 24;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.confirmPassword.AutoSize = true;
+            this.confirmPassword.Location = new System.Drawing.Point(42, 207);
+            this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.Size = new System.Drawing.Size(114, 16);
+            this.confirmPassword.TabIndex = 3;
+            this.confirmPassword.Text = "Confirm password";
             // 
-            // labelEmailCode
+            // UpdatePasswordBtn
             // 
-            this.labelEmailCode.AutoSize = true;
-            this.labelEmailCode.Location = new System.Drawing.Point(240, 158);
-            this.labelEmailCode.Name = "labelEmailCode";
-            this.labelEmailCode.Size = new System.Drawing.Size(0, 16);
-            this.labelEmailCode.TabIndex = 25;
+            this.UpdatePasswordBtn.Location = new System.Drawing.Point(162, 250);
+            this.UpdatePasswordBtn.Name = "UpdatePasswordBtn";
+            this.UpdatePasswordBtn.Size = new System.Drawing.Size(232, 23);
+            this.UpdatePasswordBtn.TabIndex = 4;
+            this.UpdatePasswordBtn.Text = "Update password";
+            this.UpdatePasswordBtn.UseVisualStyleBackColor = true;
+            this.UpdatePasswordBtn.Click += new System.EventHandler(this.UpdatePasswordBtn_Click);
             // 
-            // validInvalidCode
+            // BackToLogin
             // 
-            this.validInvalidCode.AutoSize = true;
-            this.validInvalidCode.Location = new System.Drawing.Point(240, 247);
-            this.validInvalidCode.Name = "validInvalidCode";
-            this.validInvalidCode.Size = new System.Drawing.Size(0, 16);
-            this.validInvalidCode.TabIndex = 26;
+            this.BackToLogin.Location = new System.Drawing.Point(162, 282);
+            this.BackToLogin.Name = "BackToLogin";
+            this.BackToLogin.Size = new System.Drawing.Size(75, 23);
+            this.BackToLogin.TabIndex = 5;
+            this.BackToLogin.Text = "Back";
+            this.BackToLogin.UseVisualStyleBackColor = true;
+            this.BackToLogin.Click += new System.EventHandler(this.BackToLogin_Click);
+            // 
+            // passwordError
+            // 
+            this.passwordError.AutoSize = true;
+            this.passwordError.Location = new System.Drawing.Point(166, 227);
+            this.passwordError.Name = "passwordError";
+            this.passwordError.Size = new System.Drawing.Size(0, 16);
+            this.passwordError.TabIndex = 6;
             // 
             // Login
             // 
@@ -241,14 +324,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 465);
             this.Controls.Add(this.forgotPasswordPnl);
+            this.Controls.Add(this.updatePasswordPnl);
             this.Controls.Add(this.loginPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.forgotPasswordPnl.ResumeLayout(false);
             this.forgotPasswordPnl.PerformLayout();
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
+            this.updatePasswordPnl.ResumeLayout(false);
+            this.updatePasswordPnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -273,5 +359,13 @@
         private System.Windows.Forms.Button SendCodeToEmail;
         private System.Windows.Forms.Label labelEmailCode;
         private System.Windows.Forms.Label validInvalidCode;
+        private System.Windows.Forms.Panel updatePasswordPnl;
+        private System.Windows.Forms.Label passwordError;
+        private System.Windows.Forms.Button BackToLogin;
+        private System.Windows.Forms.Button UpdatePasswordBtn;
+        private System.Windows.Forms.Label confirmPassword;
+        private System.Windows.Forms.Label password;
+        private System.Windows.Forms.TextBox confirmPasswordTextBoxInput;
+        private System.Windows.Forms.TextBox passwordTextBoxInput;
     }
 }

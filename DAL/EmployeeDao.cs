@@ -43,5 +43,18 @@ namespace DAL
             Employee user = employeeCollection.Find(filter).FirstOrDefault();
             return user.FullName;
         }
+
+
+        public bool UpdateEmployeePassword(string email, string newPasswordHash)
+        {
+            var filter = Builders<Employee>.Filter.Eq("email", email); 
+
+            var update = Builders<Employee>.Update.Set("password", newPasswordHash);
+
+            var result = employeeCollection.UpdateOne(filter, update);
+
+            return result.IsAcknowledged && result.ModifiedCount == 1;
+        }
+
     }
 }

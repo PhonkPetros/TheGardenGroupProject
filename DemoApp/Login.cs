@@ -11,12 +11,18 @@ using System.Net;
 using System.Net.Mail;
 using Logic;
 using Model;
+using DAL;
 
 namespace DemoApp
 {
     public partial class Login : Form
     {
         private string resetCode;
+
+        private bool updateSuccess = false;
+
+        private string userEmail;
+
         public Login()
         {
             InitializeComponent();
@@ -83,14 +89,17 @@ namespace DemoApp
 
         private void forgetPasswordBtn_Click(object sender, EventArgs e)
         {
-            loginPanel.Hide();
             forgotPasswordPnl.Show();
+            loginPanel.Hide();
+            updatePasswordPnl.Hide();
+
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
             loginPanel.Show();
-            forgetPasswordBtn.Hide();
+            updatePasswordPnl.Hide();
+            forgotPasswordPnl.Hide();
         }
 
         private void SendCodeToEmail_Click(object sender, EventArgs e)
@@ -101,6 +110,8 @@ namespace DemoApp
 
             Employee employeeEmail = authenticationLogic.AuthenticateEmail(emailInput);
 
+            userEmail = employeeEmail.Email;
+
             if (employeeEmail != null)
             {
                 resetCode = GeneratePasswordResetCode();
@@ -109,7 +120,7 @@ namespace DemoApp
             }
             else
             {
-                labelEmailCode.Text = "Email does not exists"; //I could also say "The code has been sent to the email" for best security practice
+                labelEmailCode.Text = "Email does not exists";
             }
         }
 
@@ -119,6 +130,9 @@ namespace DemoApp
 
             if (codeInput == resetCode)
             {
+                updatePasswordPnl.Show();
+                loginPanel.Hide();
+                forgotPasswordPnl.Hide();
             }
             else 
             {
@@ -140,6 +154,43 @@ namespace DemoApp
 
             string code = new String(codeCharacters);
             return code;
+        }
+
+        private void BackToLogin_Click(object sender, EventArgs e)
+        {
+            loginPanel.Show();
+            updatePasswordPnl.Hide();
+            forgotPasswordPnl.Hide();
+        }
+
+        private void UpdatePasswordBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordTextBoxInput.Text == confirmPasswordTextBoxInput.Text)
+            {
+                var authenticationLogic = new AuthenticationLogic();
+
+                string newPassword = passwordTextBoxInput.Text;
+
+                string hashedNewPassword = authenticationLogic.GetHashPassword(newPassword);
+
+                updateSuccess = authenticationLogic.UpdatePassword(userEmail, hashedNewPassword);
+
+                if (updateSuccess)
+                {
+                    passwordError.Text = "Password has been updated successfully.";
+                    loginPanel.Show();
+                    updatePasswordPnl.Hide();
+                    forgotPasswordPnl.Hide();
+                }
+                else
+                {
+                    passwordError.Text = "There was a problem updating your password. Please try again.";
+                }
+            }
+            else
+            {
+                passwordError.Text = "Passwords do not match.";
+            }
         }
 
     }
