@@ -90,60 +90,66 @@ namespace DAL
         }
 
 
-        public List<Ticket> GetTicketsWithPastDeadlines()
+        public List<Ticket> GetTicketsWithPastDeadlines(Employee employee)
         {
-        var match = new BsonDocument
-        {
+            var matchFilter = new BsonDocument
             {
-                "$match",
-                new BsonDocument
-                {
-                    { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
-                }
-            }
-        };
+                { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
+            };
 
-        var lookup = new BsonDocument
-        {
+            if (employee.UserType != UserType.ServiceDeskEmployee)
             {
-                "$lookup",
-                new BsonDocument
-                {
-                    { "from", "employees" },
-                    { "localField", "reported_by" },
-                    { "foreignField", "_id" },
-                    { "as", "employeeInfo" }
-                }
+                matchFilter.Add("reported_by", employee.Id);
             }
-        };
 
-        var unwind = new BsonDocument("$unwind", "$employeeInfo");
-
-        var project = new BsonDocument
-        {
+            var match = new BsonDocument
             {
-                "$project",
-                new BsonDocument
+                { "$match", matchFilter }
+            };
+
+            var lookup = new BsonDocument
+            {
                 {
-                    { "id", 1 },
-                    { "date_reported", 1 },
-                    { "subject", 1 },
-                    { "incident_type", 1 },
-                    { "reported_by", "$employeeInfo.first_name" },
-                    { "priority", 1 },
-                    { "deadline", 1 },
-                    { "description", 1 },
-                    { "status", 1 }
+                    "$lookup",
+                    new BsonDocument
+                    {
+                        { "from", "employees" },
+                        { "localField", "reported_by" },
+                        { "foreignField", "_id" },
+                        { "as", "employeeInfo" }
+                    }
                 }
-            }
-        };
+            };
+
+            var unwind = new BsonDocument("$unwind", "$employeeInfo");
+
+            var project = new BsonDocument
+            {
+                {
+                    "$project",
+                    new BsonDocument
+                    {
+                        { "id", 1 },
+                        { "date_reported", 1 },
+                        { "subject", 1 },
+                        { "incident_type", 1 },
+                        { "reported_by", "$employeeInfo.first_name" },
+                        { "priority", 1 },
+                        { "deadline", 1 },
+                        { "description", 1 },
+                        { "status", 1 }
+                    }
+                }
+            };
 
             var pipeline = new[] { match, lookup, unwind, project };
 
+            // Execute the aggregation pipeline and return the results as a list of tickets
             List<Ticket> tickets = ticketCollection.Aggregate<Ticket>(pipeline).ToList();
 
             return tickets;
         }
+
 
 
 
