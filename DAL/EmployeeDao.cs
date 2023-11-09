@@ -56,5 +56,10 @@ namespace DAL
             return result.IsAcknowledged && result.ModifiedCount == 1;
         }
 
+        public void CreateNewEmployee(Employee newEmployee)
+        {
+            employeeCollection.InsertOne(newEmployee);
+        }
+
     }
 }

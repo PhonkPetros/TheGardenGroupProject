@@ -3,6 +3,7 @@
     "",
     "\\DAL",
     "\\DemoApp",
+    "\\Logic",
     "\\Model"
   ],
   "SelectedNode": "\\DemoApp.sln",

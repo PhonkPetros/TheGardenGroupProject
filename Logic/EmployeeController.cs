@@ -34,5 +34,10 @@ namespace Logic
         {
             return dao.UpdateEmployeePassword(email, newPassword);
         }
+
+        public void CreateNewEmployee(Employee newEmployee)
+        {
+            dao.CreateNewEmployee(newEmployee);
+        }
     }
 }

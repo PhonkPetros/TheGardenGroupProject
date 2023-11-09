@@ -30,6 +30,8 @@ namespace DemoApp
         private DeleteTicketView deleteTicket;
         private WordSearchFunctionality searchFunctionality;
         private Ticket ticket = new Ticket();
+        private Employee newEmployee = new Employee();
+        private CreateEmployeeView createEmployee;
         List<Panel> panels;
 
 
@@ -43,7 +45,7 @@ namespace DemoApp
 
             panels = new List<Panel>
             {
-                ticketViewPanel, employeePanel, createTicketPanel, pnlCreateTicketByEmployee, dashBoardPanel, editTicketPanel, pnlAddUser, pnlCreateTicketByEmployee
+                ticketViewPanel, createTicketPanel, pnlCreateTicketByEmployee, dashBoardPanel, editTicketPanel, pnlAddUser, pnlCreateTicketByEmployee
             };
 
             logedinEmployee = employee;
@@ -100,7 +102,7 @@ namespace DemoApp
 
         private void btnSubmit2_Click(object sender, EventArgs e)
         {
-            createTicket.addTicketToDatabase2(logedinEmployee.Id);
+            createTicket.addTicketToDatabase(logedinEmployee.Id);
             switchView(ticketViewPanel);
             LoadAndUpdateView();
         }
@@ -199,19 +201,33 @@ namespace DemoApp
             ticketDateTimePicker.Value = DateTime.Now;
         }
 
-        private void btnAddNewUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            switchView(ticketViewPanel);
+            Clean(pnlAddUser);
+        }
+
+        private void buttonAddUser_Click(object sender, EventArgs e) //add from form
+        {
+            createEmployee.addEmployeeToDatabase();
+            switchView(ticketViewPanel);
+            Clean(pnlAddUser);
 
         }
 
-        private void buttonAddUser_Click(object sender, EventArgs e)
+        private void Clean(Panel panel)
         {
-
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Text = "";
+                }
+                else if (control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = -1; //or 0
+                }
+            }
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,7 +242,17 @@ namespace DemoApp
 
         private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switchView(pnlAddUser);
+            if (!(logedinEmployee.UserType == UserType.ServiceDeskEmployee))
+            {
+                MessageBox.Show("You don't have enough permissions to add a new employee");
+            }
+            else
+            {
+                switchView(pnlAddUser);
+                createEmployee = new CreateEmployeeView(textBoxFirstName, textBoxLastName, comboBoxTypeOfUser, textBoxEmailAddress, textBoxPhoneNumber, textBoxLocation, textBoxPassword, newEmployee);
+                createEmployee.PopulateComboBoxes();
+            }
+            
         }
 
         private void searchButton_Click(object sender, EventArgs e)
