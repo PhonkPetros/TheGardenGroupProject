@@ -47,13 +47,13 @@
             this.emailInputTxt = new System.Windows.Forms.TextBox();
             this.loginPanel = new System.Windows.Forms.Panel();
             this.updatePasswordPnl = new System.Windows.Forms.Panel();
-            this.passwordTextBoxInput = new System.Windows.Forms.TextBox();
-            this.confirmPasswordTextBoxInput = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.Label();
-            this.confirmPassword = new System.Windows.Forms.Label();
-            this.UpdatePasswordBtn = new System.Windows.Forms.Button();
-            this.BackToLogin = new System.Windows.Forms.Button();
             this.passwordError = new System.Windows.Forms.Label();
+            this.BackToLogin = new System.Windows.Forms.Button();
+            this.UpdatePasswordBtn = new System.Windows.Forms.Button();
+            this.confirmPassword = new System.Windows.Forms.Label();
+            this.password = new System.Windows.Forms.Label();
+            this.confirmPasswordTextBoxInput = new System.Windows.Forms.TextBox();
+            this.passwordTextBoxInput = new System.Windows.Forms.TextBox();
             this.forgotPasswordPnl.SuspendLayout();
             this.loginPanel.SuspendLayout();
             this.updatePasswordPnl.SuspendLayout();
@@ -258,47 +258,13 @@
             this.updatePasswordPnl.Size = new System.Drawing.Size(576, 465);
             this.updatePasswordPnl.TabIndex = 20;
             // 
-            // passwordTextBoxInput
+            // passwordError
             // 
-            this.passwordTextBoxInput.Location = new System.Drawing.Point(162, 158);
-            this.passwordTextBoxInput.Name = "passwordTextBoxInput";
-            this.passwordTextBoxInput.Size = new System.Drawing.Size(232, 22);
-            this.passwordTextBoxInput.TabIndex = 0;
-            // 
-            // confirmPasswordTextBoxInput
-            // 
-            this.confirmPasswordTextBoxInput.Location = new System.Drawing.Point(162, 201);
-            this.confirmPasswordTextBoxInput.Name = "confirmPasswordTextBoxInput";
-            this.confirmPasswordTextBoxInput.Size = new System.Drawing.Size(232, 22);
-            this.confirmPasswordTextBoxInput.TabIndex = 1;
-            // 
-            // password
-            // 
-            this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(89, 161);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(67, 16);
-            this.password.TabIndex = 2;
-            this.password.Text = "Password";
-            // 
-            // confirmPassword
-            // 
-            this.confirmPassword.AutoSize = true;
-            this.confirmPassword.Location = new System.Drawing.Point(42, 207);
-            this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(114, 16);
-            this.confirmPassword.TabIndex = 3;
-            this.confirmPassword.Text = "Confirm password";
-            // 
-            // UpdatePasswordBtn
-            // 
-            this.UpdatePasswordBtn.Location = new System.Drawing.Point(162, 250);
-            this.UpdatePasswordBtn.Name = "UpdatePasswordBtn";
-            this.UpdatePasswordBtn.Size = new System.Drawing.Size(232, 23);
-            this.UpdatePasswordBtn.TabIndex = 4;
-            this.UpdatePasswordBtn.Text = "Update password";
-            this.UpdatePasswordBtn.UseVisualStyleBackColor = true;
-            this.UpdatePasswordBtn.Click += new System.EventHandler(this.UpdatePasswordBtn_Click);
+            this.passwordError.AutoSize = true;
+            this.passwordError.Location = new System.Drawing.Point(166, 227);
+            this.passwordError.Name = "passwordError";
+            this.passwordError.Size = new System.Drawing.Size(0, 16);
+            this.passwordError.TabIndex = 6;
             // 
             // BackToLogin
             // 
@@ -310,22 +276,56 @@
             this.BackToLogin.UseVisualStyleBackColor = true;
             this.BackToLogin.Click += new System.EventHandler(this.BackToLogin_Click);
             // 
-            // passwordError
+            // UpdatePasswordBtn
             // 
-            this.passwordError.AutoSize = true;
-            this.passwordError.Location = new System.Drawing.Point(166, 227);
-            this.passwordError.Name = "passwordError";
-            this.passwordError.Size = new System.Drawing.Size(0, 16);
-            this.passwordError.TabIndex = 6;
+            this.UpdatePasswordBtn.Location = new System.Drawing.Point(162, 250);
+            this.UpdatePasswordBtn.Name = "UpdatePasswordBtn";
+            this.UpdatePasswordBtn.Size = new System.Drawing.Size(232, 23);
+            this.UpdatePasswordBtn.TabIndex = 4;
+            this.UpdatePasswordBtn.Text = "Update password";
+            this.UpdatePasswordBtn.UseVisualStyleBackColor = true;
+            this.UpdatePasswordBtn.Click += new System.EventHandler(this.UpdatePasswordBtn_Click);
+            // 
+            // confirmPassword
+            // 
+            this.confirmPassword.AutoSize = true;
+            this.confirmPassword.Location = new System.Drawing.Point(42, 207);
+            this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.Size = new System.Drawing.Size(114, 16);
+            this.confirmPassword.TabIndex = 3;
+            this.confirmPassword.Text = "Confirm password";
+            // 
+            // password
+            // 
+            this.password.AutoSize = true;
+            this.password.Location = new System.Drawing.Point(89, 161);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(67, 16);
+            this.password.TabIndex = 2;
+            this.password.Text = "Password";
+            // 
+            // confirmPasswordTextBoxInput
+            // 
+            this.confirmPasswordTextBoxInput.Location = new System.Drawing.Point(162, 201);
+            this.confirmPasswordTextBoxInput.Name = "confirmPasswordTextBoxInput";
+            this.confirmPasswordTextBoxInput.Size = new System.Drawing.Size(232, 22);
+            this.confirmPasswordTextBoxInput.TabIndex = 1;
+            // 
+            // passwordTextBoxInput
+            // 
+            this.passwordTextBoxInput.Location = new System.Drawing.Point(162, 158);
+            this.passwordTextBoxInput.Name = "passwordTextBoxInput";
+            this.passwordTextBoxInput.Size = new System.Drawing.Size(232, 22);
+            this.passwordTextBoxInput.TabIndex = 0;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 465);
+            this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.forgotPasswordPnl);
             this.Controls.Add(this.updatePasswordPnl);
-            this.Controls.Add(this.loginPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
