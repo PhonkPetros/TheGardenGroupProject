@@ -153,7 +153,6 @@ D:\Inholland\Term2.1\Project\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.exe
 D:\Inholland\Term2.1\Project\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.pdb
 C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\DemoApp\obj\Debug\DemoApp.Login.resources
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\UI.csproj.AssemblyReference.cache
-C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.CreateTicket.resources
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.Form1.resources
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.Login.resources
 C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\DemoApp\obj\Debug\DemoApp.Properties.Resources.resources

@@ -242,16 +242,16 @@ namespace DemoApp
 
         private void userManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!(logedinEmployee.UserType == UserType.ServiceDeskEmployee))
-            {
-                MessageBox.Show("You don't have enough permissions to add a new employee");
-            }
-            else
-            {
+            //if (!(logedinEmployee.UserType == UserType.ServiceDeskEmployee))
+            //{
+            //    MessageBox.Show("You don't have enough permissions to add a new employee");
+            //}
+            //else
+            //{
                 switchView(pnlAddUser);
                 createEmployee = new CreateEmployeeView(textBoxFirstName, textBoxLastName, comboBoxTypeOfUser, textBoxEmailAddress, textBoxPhoneNumber, textBoxLocation, textBoxPassword, newEmployee);
                 createEmployee.PopulateComboBoxes();
-            }
+            //}
             
         }
 

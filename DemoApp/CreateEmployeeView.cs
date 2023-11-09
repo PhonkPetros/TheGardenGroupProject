@@ -55,6 +55,9 @@ namespace DemoApp
             ReadInput();
             if ((!string.IsNullOrEmpty(employee.FirstName) && !string.IsNullOrEmpty(employee.LastName) && !string.IsNullOrEmpty(employee.Email) && !string.IsNullOrEmpty(employee.Phone) && !string.IsNullOrEmpty(employee.Branch) && !string.IsNullOrEmpty(employee.Password)))
             {
+                AuthenticationLogic makePasswordHashed = new AuthenticationLogic();
+                string password = makePasswordHashed.GetHashPassword(employee.Password);
+                employee.Password = password;
                 employeeController.CreateNewEmployee(employee);
                 MessageBox.Show("The employee was successfully added.");
             }
