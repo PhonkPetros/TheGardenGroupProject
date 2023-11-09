@@ -177,7 +177,6 @@ namespace DemoApp
 
                 if (updateSuccess)
                 {
-                    passwordError.Text = "Password has been updated successfully.";
                     loginPanel.Show();
                     updatePasswordPnl.Hide();
                     forgotPasswordPnl.Hide();
