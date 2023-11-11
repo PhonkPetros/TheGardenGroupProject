@@ -29,3 +29,158 @@ C:\Users\muham\source\repos\DemoApp\Logic\obj\Debug\Logic.csproj.CoreCompileInpu
 C:\Users\muham\source\repos\DemoApp\Logic\obj\Debug\Logic.csproj.CopyComplete
 C:\Users\muham\source\repos\DemoApp\Logic\obj\Debug\Logic.dll
 C:\Users\muham\source\repos\DemoApp\Logic\obj\Debug\Logic.pdb
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\snappy32.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\snappy64.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\libzstd.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\mongocrypt.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\Logic.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\Logic.pdb
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\DAL.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\Model.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Bson.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\DnsClient.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\System.ValueTuple.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\SharpCompress.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\System.Buffers.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\DAL.pdb
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\Model.pdb
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Bson.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\DnsClient.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\System.ValueTuple.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\bin\Debug\System.Buffers.xml
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CopyComplete
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\obj\Debug\Logic.dll
+C:\Users\maike\OneDrive - Hogeschool Inholland\Inholland\year 2\TheGardeGroupProject\Logic\obj\Debug\Logic.pdb
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\snappy32.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\snappy64.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\libzstd.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\mongocrypt.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\Logic.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\Logic.pdb
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\DAL.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\Model.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Bson.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\DnsClient.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\System.ValueTuple.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\SharpCompress.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\System.Buffers.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\DAL.pdb
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\Model.pdb
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Bson.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\DnsClient.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\System.ValueTuple.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\bin\Debug\System.Buffers.xml
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CopyComplete
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.dll
+C:\Users\prota\OneDrive\Documents\GitHub\TheGardeGroupProject\Logic\obj\Debug\Logic.pdb
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\snappy32.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\snappy64.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\libzstd.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\mongocrypt.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\Logic.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\Logic.pdb
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\DAL.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\Model.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Bson.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Libmongocrypt.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\DnsClient.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\System.ValueTuple.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\SharpCompress.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\System.Buffers.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\DAL.pdb
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\Model.pdb
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Bson.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\DnsClient.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\System.ValueTuple.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\bin\Debug\System.Buffers.xml
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\obj\Debug\Logic.csproj.CopyComplete
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\obj\Debug\Logic.dll
+D:\Inholland\Term2.1\Project\TheGardeGroupProject\Logic\obj\Debug\Logic.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\snappy32.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\snappy64.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\libzstd.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\mongocrypt.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\Logic.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\Logic.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\DAL.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\Model.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Bson.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\DnsClient.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\System.ValueTuple.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\SharpCompress.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\System.Buffers.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\DAL.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\Model.pdb
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Bson.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\DnsClient.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\System.ValueTuple.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\bin\Debug\System.Buffers.xml
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.CopyComplete
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.dll
+C:\Users\stepa\Documents\Study\Inholland\Project2\TheGardenGroupProject\Logic\obj\Debug\Logic.pdb
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\snappy32.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\snappy64.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\libzstd.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\mongocrypt.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\Logic.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\Logic.pdb
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\DAL.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\Model.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Bson.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\DnsClient.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\System.ValueTuple.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\SharpCompress.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\System.Buffers.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\DAL.pdb
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\Model.pdb
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Bson.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\DnsClient.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\System.ValueTuple.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\bin\Debug\System.Buffers.xml
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\obj\Debug\Logic.csproj.CopyComplete
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\obj\Debug\Logic.dll
+C:\Users\USER\Desktop\TheGardenGroupProject\Logic\obj\Debug\Logic.pdb
