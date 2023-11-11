@@ -78,6 +78,7 @@ namespace DemoApp
 
         private void ReadUserInput(ObjectId? id = null)
         {
+            ticket.Id = new ObjectId();
             ticket.Subject = subjectTextBox.Text;
             ticket.DateReported = ticketDateTimePicker.Value;
             ticket.Deadline = deadlineDateTimePicker.Value;
