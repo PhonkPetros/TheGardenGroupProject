@@ -61,7 +61,7 @@ namespace Model
             set { subject = value; }
         }
         [BsonIgnore]
-        public IncidentType IncidentType //?
+        public IncidentType IncidentType 
         {
             get
             {
@@ -111,7 +111,7 @@ namespace Model
             set { description = value; }
         }
         [BsonIgnore]
-        public Status Status //?
+        public Status Status 
         {
             get
             {

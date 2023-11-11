@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.chbxRemember = new System.Windows.Forms.CheckBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -59,26 +58,14 @@
             this.updatePasswordPnl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // chbxRemember
-            // 
-            this.chbxRemember.AutoSize = true;
-            this.chbxRemember.Location = new System.Drawing.Point(147, 255);
-            this.chbxRemember.Margin = new System.Windows.Forms.Padding(4);
-            this.chbxRemember.Name = "chbxRemember";
-            this.chbxRemember.Size = new System.Drawing.Size(119, 20);
-            this.chbxRemember.TabIndex = 15;
-            this.chbxRemember.Text = "Remember me";
-            this.chbxRemember.UseVisualStyleBackColor = true;
-            // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(136)))), ((int)(((byte)(83)))));
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(147, 302);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_login.Location = new System.Drawing.Point(110, 229);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(247, 41);
+            this.btn_login.Size = new System.Drawing.Size(185, 33);
             this.btn_login.TabIndex = 14;
             this.btn_login.Text = "SIGN IN";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -86,38 +73,34 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(147, 221);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Location = new System.Drawing.Point(110, 180);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
-            this.txtPassword.Size = new System.Drawing.Size(245, 22);
+            this.txtPassword.Size = new System.Drawing.Size(185, 20);
             this.txtPassword.TabIndex = 13;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(147, 168);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(110, 136);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(245, 22);
+            this.txtEmail.Size = new System.Drawing.Size(185, 20);
             this.txtEmail.TabIndex = 12;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(143, 201);
-            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Location = new System.Drawing.Point(107, 163);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(67, 16);
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Password";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(143, 148);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Location = new System.Drawing.Point(107, 120);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(41, 16);
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 10;
             this.lblEmail.Text = "Email";
             // 
@@ -125,10 +108,9 @@
             // 
             this.lblMessage.AutoSize = true;
             this.lblMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblMessage.Location = new System.Drawing.Point(143, 120);
-            this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMessage.Location = new System.Drawing.Point(107, 98);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(141, 16);
+            this.lblMessage.Size = new System.Drawing.Size(111, 13);
             this.lblMessage.TabIndex = 16;
             this.lblMessage.Text = "This is a test message";
             this.lblMessage.Visible = false;
@@ -137,18 +119,18 @@
             // 
             this.lblLoginText.AutoSize = true;
             this.lblLoginText.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoginText.Location = new System.Drawing.Point(170, 72);
-            this.lblLoginText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoginText.Location = new System.Drawing.Point(128, 58);
             this.lblLoginText.Name = "lblLoginText";
-            this.lblLoginText.Size = new System.Drawing.Size(183, 48);
+            this.lblLoginText.Size = new System.Drawing.Size(152, 39);
             this.lblLoginText.TabIndex = 17;
             this.lblLoginText.Text = "SIGN IN";
             // 
             // forgetPasswordBtn
             // 
-            this.forgetPasswordBtn.Location = new System.Drawing.Point(241, 350);
+            this.forgetPasswordBtn.Location = new System.Drawing.Point(181, 284);
+            this.forgetPasswordBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.forgetPasswordBtn.Name = "forgetPasswordBtn";
-            this.forgetPasswordBtn.Size = new System.Drawing.Size(153, 29);
+            this.forgetPasswordBtn.Size = new System.Drawing.Size(115, 24);
             this.forgetPasswordBtn.TabIndex = 19;
             this.forgetPasswordBtn.Text = "Forgoten password?";
             this.forgetPasswordBtn.UseVisualStyleBackColor = true;
@@ -164,31 +146,35 @@
             this.forgotPasswordPnl.Controls.Add(this.codeInputTxt);
             this.forgotPasswordPnl.Controls.Add(this.emailInputTxt);
             this.forgotPasswordPnl.Location = new System.Drawing.Point(0, 0);
+            this.forgotPasswordPnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.forgotPasswordPnl.Name = "forgotPasswordPnl";
-            this.forgotPasswordPnl.Size = new System.Drawing.Size(576, 465);
+            this.forgotPasswordPnl.Size = new System.Drawing.Size(432, 378);
             this.forgotPasswordPnl.TabIndex = 20;
             // 
             // validInvalidCode
             // 
             this.validInvalidCode.AutoSize = true;
-            this.validInvalidCode.Location = new System.Drawing.Point(240, 247);
+            this.validInvalidCode.Location = new System.Drawing.Point(180, 201);
+            this.validInvalidCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.validInvalidCode.Name = "validInvalidCode";
-            this.validInvalidCode.Size = new System.Drawing.Size(0, 16);
+            this.validInvalidCode.Size = new System.Drawing.Size(0, 13);
             this.validInvalidCode.TabIndex = 26;
             // 
             // labelEmailCode
             // 
             this.labelEmailCode.AutoSize = true;
-            this.labelEmailCode.Location = new System.Drawing.Point(240, 158);
+            this.labelEmailCode.Location = new System.Drawing.Point(180, 128);
+            this.labelEmailCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmailCode.Name = "labelEmailCode";
-            this.labelEmailCode.Size = new System.Drawing.Size(0, 16);
+            this.labelEmailCode.Size = new System.Drawing.Size(0, 13);
             this.labelEmailCode.TabIndex = 25;
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(12, 421);
+            this.BackButton.Location = new System.Drawing.Point(9, 342);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(106, 23);
+            this.BackButton.Size = new System.Drawing.Size(80, 19);
             this.BackButton.TabIndex = 24;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -196,9 +182,10 @@
             // 
             // VerifyCode
             // 
-            this.VerifyCode.Location = new System.Drawing.Point(242, 220);
+            this.VerifyCode.Location = new System.Drawing.Point(182, 179);
+            this.VerifyCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VerifyCode.Name = "VerifyCode";
-            this.VerifyCode.Size = new System.Drawing.Size(190, 23);
+            this.VerifyCode.Size = new System.Drawing.Size(142, 19);
             this.VerifyCode.TabIndex = 23;
             this.VerifyCode.Text = "Verify code";
             this.VerifyCode.UseVisualStyleBackColor = true;
@@ -206,9 +193,10 @@
             // 
             // SendCodeToEmail
             // 
-            this.SendCodeToEmail.Location = new System.Drawing.Point(234, 123);
+            this.SendCodeToEmail.Location = new System.Drawing.Point(176, 100);
+            this.SendCodeToEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SendCodeToEmail.Name = "SendCodeToEmail";
-            this.SendCodeToEmail.Size = new System.Drawing.Size(198, 23);
+            this.SendCodeToEmail.Size = new System.Drawing.Size(148, 19);
             this.SendCodeToEmail.TabIndex = 22;
             this.SendCodeToEmail.Text = "Send code";
             this.SendCodeToEmail.UseVisualStyleBackColor = true;
@@ -216,16 +204,18 @@
             // 
             // codeInputTxt
             // 
-            this.codeInputTxt.Location = new System.Drawing.Point(242, 192);
+            this.codeInputTxt.Location = new System.Drawing.Point(182, 156);
+            this.codeInputTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.codeInputTxt.Name = "codeInputTxt";
-            this.codeInputTxt.Size = new System.Drawing.Size(190, 22);
+            this.codeInputTxt.Size = new System.Drawing.Size(144, 20);
             this.codeInputTxt.TabIndex = 21;
             // 
             // emailInputTxt
             // 
-            this.emailInputTxt.Location = new System.Drawing.Point(80, 95);
+            this.emailInputTxt.Location = new System.Drawing.Point(60, 77);
+            this.emailInputTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emailInputTxt.Name = "emailInputTxt";
-            this.emailInputTxt.Size = new System.Drawing.Size(352, 22);
+            this.emailInputTxt.Size = new System.Drawing.Size(265, 20);
             this.emailInputTxt.TabIndex = 20;
             // 
             // loginPanel
@@ -237,11 +227,11 @@
             this.loginPanel.Controls.Add(this.lblPassword);
             this.loginPanel.Controls.Add(this.lblMessage);
             this.loginPanel.Controls.Add(this.txtPassword);
-            this.loginPanel.Controls.Add(this.chbxRemember);
             this.loginPanel.Controls.Add(this.btn_login);
             this.loginPanel.Location = new System.Drawing.Point(0, 0);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(576, 465);
+            this.loginPanel.Size = new System.Drawing.Size(432, 378);
             this.loginPanel.TabIndex = 21;
             // 
             // updatePasswordPnl
@@ -254,23 +244,26 @@
             this.updatePasswordPnl.Controls.Add(this.confirmPasswordTextBoxInput);
             this.updatePasswordPnl.Controls.Add(this.passwordTextBoxInput);
             this.updatePasswordPnl.Location = new System.Drawing.Point(0, 0);
+            this.updatePasswordPnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.updatePasswordPnl.Name = "updatePasswordPnl";
-            this.updatePasswordPnl.Size = new System.Drawing.Size(576, 465);
+            this.updatePasswordPnl.Size = new System.Drawing.Size(432, 378);
             this.updatePasswordPnl.TabIndex = 20;
             // 
             // passwordError
             // 
             this.passwordError.AutoSize = true;
-            this.passwordError.Location = new System.Drawing.Point(166, 227);
+            this.passwordError.Location = new System.Drawing.Point(124, 184);
+            this.passwordError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordError.Name = "passwordError";
-            this.passwordError.Size = new System.Drawing.Size(0, 16);
+            this.passwordError.Size = new System.Drawing.Size(0, 13);
             this.passwordError.TabIndex = 6;
             // 
             // BackToLogin
             // 
-            this.BackToLogin.Location = new System.Drawing.Point(162, 282);
+            this.BackToLogin.Location = new System.Drawing.Point(122, 229);
+            this.BackToLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackToLogin.Name = "BackToLogin";
-            this.BackToLogin.Size = new System.Drawing.Size(75, 23);
+            this.BackToLogin.Size = new System.Drawing.Size(56, 19);
             this.BackToLogin.TabIndex = 5;
             this.BackToLogin.Text = "Back";
             this.BackToLogin.UseVisualStyleBackColor = true;
@@ -278,9 +271,10 @@
             // 
             // UpdatePasswordBtn
             // 
-            this.UpdatePasswordBtn.Location = new System.Drawing.Point(162, 250);
+            this.UpdatePasswordBtn.Location = new System.Drawing.Point(122, 203);
+            this.UpdatePasswordBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UpdatePasswordBtn.Name = "UpdatePasswordBtn";
-            this.UpdatePasswordBtn.Size = new System.Drawing.Size(232, 23);
+            this.UpdatePasswordBtn.Size = new System.Drawing.Size(174, 19);
             this.UpdatePasswordBtn.TabIndex = 4;
             this.UpdatePasswordBtn.Text = "Update password";
             this.UpdatePasswordBtn.UseVisualStyleBackColor = true;
@@ -289,44 +283,47 @@
             // confirmPassword
             // 
             this.confirmPassword.AutoSize = true;
-            this.confirmPassword.Location = new System.Drawing.Point(42, 207);
+            this.confirmPassword.Location = new System.Drawing.Point(32, 168);
+            this.confirmPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(114, 16);
+            this.confirmPassword.Size = new System.Drawing.Size(90, 13);
             this.confirmPassword.TabIndex = 3;
             this.confirmPassword.Text = "Confirm password";
             // 
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(89, 161);
+            this.password.Location = new System.Drawing.Point(67, 131);
+            this.password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(67, 16);
+            this.password.Size = new System.Drawing.Size(53, 13);
             this.password.TabIndex = 2;
             this.password.Text = "Password";
             // 
             // confirmPasswordTextBoxInput
             // 
-            this.confirmPasswordTextBoxInput.Location = new System.Drawing.Point(162, 201);
+            this.confirmPasswordTextBoxInput.Location = new System.Drawing.Point(122, 163);
+            this.confirmPasswordTextBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.confirmPasswordTextBoxInput.Name = "confirmPasswordTextBoxInput";
-            this.confirmPasswordTextBoxInput.Size = new System.Drawing.Size(232, 22);
+            this.confirmPasswordTextBoxInput.Size = new System.Drawing.Size(175, 20);
             this.confirmPasswordTextBoxInput.TabIndex = 1;
             // 
             // passwordTextBoxInput
             // 
-            this.passwordTextBoxInput.Location = new System.Drawing.Point(162, 158);
+            this.passwordTextBoxInput.Location = new System.Drawing.Point(122, 128);
+            this.passwordTextBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passwordTextBoxInput.Name = "passwordTextBoxInput";
-            this.passwordTextBoxInput.Size = new System.Drawing.Size(232, 22);
+            this.passwordTextBoxInput.Size = new System.Drawing.Size(175, 20);
             this.passwordTextBoxInput.TabIndex = 0;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 465);
+            this.ClientSize = new System.Drawing.Size(431, 378);
             this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.forgotPasswordPnl);
             this.Controls.Add(this.updatePasswordPnl);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.forgotPasswordPnl.ResumeLayout(false);
@@ -340,8 +337,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox chbxRemember;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtEmail;
