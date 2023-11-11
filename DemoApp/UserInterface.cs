@@ -27,6 +27,7 @@ namespace DemoApp
         private Employee logedinEmployee;
         private CreateTicketView createTicket;
         private ChangeTicketView changeTicket;
+        private CloseTicketView closeTicket;
         private DeleteTicketView deleteTicket;
         private WordSearchFunctionality searchFunctionality;
         private Ticket ticket = new Ticket();
@@ -42,6 +43,11 @@ namespace DemoApp
             ticketViewControl = new TicketView(ticketView, piChart, ticketCount, incidentChart);
             ticketController = new TicketController();
             deleteTicketButton.Hide();
+            btnCloseTicket.Hide();
+            ticketDateTimePicker.MinDate = DateTime.Now;
+            ticketDateTimePicker2.MinDate = DateTime.Now;
+            deadlineDateTimePicker.MinDate = DateTime.Now;
+            deadlineDateTimePicker2.MinDate = DateTime.Now;
 
             panels = new List<Panel>
             {
@@ -80,14 +86,21 @@ namespace DemoApp
                     p.Show();
                 }
                 deleteTicketButton.Hide();
+                btnCloseTicket.Hide();
             }
         }
         private void submitButton_Click(object sender, EventArgs e)
         {
-            createTicket.addTicketToDatabase();
-            switchView(ticketViewPanel);
-            resetCreateTicketView();
-            LoadAndUpdateView();
+            try
+            {
+                createTicket.addTicketToDatabase();
+                switchView(ticketViewPanel);
+                resetCreateTicketView();
+                LoadAndUpdateView();
+            } catch(Exception)
+            {
+                MessageBox.Show("Please fill the form with valid data");
+            }            
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -110,7 +123,7 @@ namespace DemoApp
         private void btnCreateTicket_Click(object sender, EventArgs e)
         {
             //define which employee is it and based on condition use methods below
-            if(logedinEmployee.UserType == UserType.Employee)
+            if (logedinEmployee.UserType == UserType.Employee)
             {
                 ShowPanelForEmployee();
             }
@@ -153,31 +166,35 @@ namespace DemoApp
             switchView(ticketViewPanel);
             editTicketListView.Clear();
         }
-        
+
 
         private void ticketView_DoubleClick(object sender, EventArgs e)
         {
-            switchView(editTicketPanel);
+            if (logedinEmployee.UserType != UserType.Employee)
+            {
+                switchView(editTicketPanel);
 
-            ListViewItem selectedItem = ticketView.SelectedItems[0];
-            string ticketId = selectedItem.SubItems[0].Text;
-            Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
+                ListViewItem selectedItem = ticketView.SelectedItems[0];
+                string ticketId = selectedItem.SubItems[0].Text;
+                Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
 
-            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView);
-            changeTicket.Initialize();
+                changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView);
+                changeTicket.Initialize();
+            }
         }
 
         private void ticketView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(logedinEmployee.UserType == UserType.ServiceDeskEmployee)
+            if (logedinEmployee.UserType == UserType.ServiceDeskEmployee)
             {
                 deleteTicketButton.Show();
+                btnCloseTicket.Show();
             }
-            
+
         }
         private void deleteTicketButton_Click(object sender, EventArgs e)
         {
-            if(ticketView.SelectedItems.Count > 0)
+            if (ticketView.SelectedItems.Count > 0)
             {
                 ListViewItem selectedItem = ticketView.SelectedItems[0];
                 string ticketId = selectedItem.SubItems[0].Text;
@@ -252,19 +269,37 @@ namespace DemoApp
                 createEmployee = new CreateEmployeeView(textBoxFirstName, textBoxLastName, comboBoxTypeOfUser, textBoxEmailAddress, textBoxPhoneNumber, textBoxLocation, textBoxPassword, newEmployee);
                 createEmployee.PopulateComboBoxes();
             }
-            
+
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            if(searchbarTextBox.Text != "")
+            if (searchbarTextBox.Text != "")
             {
-                searchFunctionality = new WordSearchFunctionality(logedinEmployee,searchbarTextBox.Text);
+                searchFunctionality = new WordSearchFunctionality(logedinEmployee, searchbarTextBox.Text);
                 ticketViewControl.DisplayTickets(searchFunctionality.searchTickets());
             }
             else
             {
                 LoadAndUpdateView();
+            }
+        }
+
+        private void btnCloseTicket_Click(object sender, EventArgs e)
+        {
+            if (ticketView.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ticketView.SelectedItems[0];
+                string ticketId = selectedItem.SubItems[0].Text;
+
+                closeTicket = new CloseTicketView(ticketId);
+                closeTicket.CloseTicket();
+                MessageBox.Show("Ticket was successfully closed.");
+                LoadAndUpdateView();
+            }
+            else
+            {
+                MessageBox.Show("Please select a ticket to close.");
             }
         }
     }

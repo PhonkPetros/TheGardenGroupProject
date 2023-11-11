@@ -106,21 +106,27 @@ namespace DemoApp
         {
             string emailInput = emailInputTxt.Text;
 
-            var authenticationLogic = new AuthenticationLogic();
-
-            Employee employeeEmail = authenticationLogic.AuthenticateEmail(emailInput);
-
-            userEmail = employeeEmail.Email;
-
-            if (employeeEmail != null)
+            if (emailInput != "")
             {
-                resetCode = GeneratePasswordResetCode();
-                authenticationLogic.SendPasswordResetEmail(emailInput, resetCode);
-                labelEmailCode.Text = "The code has been sent to the email";
-            }
-            else
+                var authenticationLogic = new AuthenticationLogic();
+
+                Employee employeeEmail = authenticationLogic.AuthenticateEmail(emailInput);
+
+                userEmail = employeeEmail.Email;
+
+                if (employeeEmail != null)
+                {
+                    resetCode = GeneratePasswordResetCode();
+                    authenticationLogic.SendPasswordResetEmail(emailInput, resetCode);
+                    labelEmailCode.Text = "The code has been sent to the email";
+                }
+                else
+                {
+                    labelEmailCode.Text = "Email does not exists";
+                }
+            } else
             {
-                labelEmailCode.Text = "Email does not exists";
+                labelEmailCode.Text = "Please enter email address";
             }
         }
 

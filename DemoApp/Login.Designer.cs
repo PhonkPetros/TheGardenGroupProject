@@ -128,11 +128,11 @@
             // forgetPasswordBtn
             // 
             this.forgetPasswordBtn.Location = new System.Drawing.Point(181, 284);
-            this.forgetPasswordBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.forgetPasswordBtn.Margin = new System.Windows.Forms.Padding(2);
             this.forgetPasswordBtn.Name = "forgetPasswordBtn";
             this.forgetPasswordBtn.Size = new System.Drawing.Size(115, 24);
             this.forgetPasswordBtn.TabIndex = 19;
-            this.forgetPasswordBtn.Text = "Forgoten password?";
+            this.forgetPasswordBtn.Text = "Forgot password?";
             this.forgetPasswordBtn.UseVisualStyleBackColor = true;
             this.forgetPasswordBtn.Click += new System.EventHandler(this.forgetPasswordBtn_Click);
             // 
@@ -146,7 +146,7 @@
             this.forgotPasswordPnl.Controls.Add(this.codeInputTxt);
             this.forgotPasswordPnl.Controls.Add(this.emailInputTxt);
             this.forgotPasswordPnl.Location = new System.Drawing.Point(0, 0);
-            this.forgotPasswordPnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.forgotPasswordPnl.Margin = new System.Windows.Forms.Padding(2);
             this.forgotPasswordPnl.Name = "forgotPasswordPnl";
             this.forgotPasswordPnl.Size = new System.Drawing.Size(432, 378);
             this.forgotPasswordPnl.TabIndex = 20;
@@ -172,7 +172,7 @@
             // BackButton
             // 
             this.BackButton.Location = new System.Drawing.Point(9, 342);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(80, 19);
             this.BackButton.TabIndex = 24;
@@ -183,7 +183,7 @@
             // VerifyCode
             // 
             this.VerifyCode.Location = new System.Drawing.Point(182, 179);
-            this.VerifyCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.VerifyCode.Margin = new System.Windows.Forms.Padding(2);
             this.VerifyCode.Name = "VerifyCode";
             this.VerifyCode.Size = new System.Drawing.Size(142, 19);
             this.VerifyCode.TabIndex = 23;
@@ -194,7 +194,7 @@
             // SendCodeToEmail
             // 
             this.SendCodeToEmail.Location = new System.Drawing.Point(176, 100);
-            this.SendCodeToEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SendCodeToEmail.Margin = new System.Windows.Forms.Padding(2);
             this.SendCodeToEmail.Name = "SendCodeToEmail";
             this.SendCodeToEmail.Size = new System.Drawing.Size(148, 19);
             this.SendCodeToEmail.TabIndex = 22;
@@ -205,7 +205,7 @@
             // codeInputTxt
             // 
             this.codeInputTxt.Location = new System.Drawing.Point(182, 156);
-            this.codeInputTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.codeInputTxt.Margin = new System.Windows.Forms.Padding(2);
             this.codeInputTxt.Name = "codeInputTxt";
             this.codeInputTxt.Size = new System.Drawing.Size(144, 20);
             this.codeInputTxt.TabIndex = 21;
@@ -213,7 +213,7 @@
             // emailInputTxt
             // 
             this.emailInputTxt.Location = new System.Drawing.Point(60, 77);
-            this.emailInputTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailInputTxt.Margin = new System.Windows.Forms.Padding(2);
             this.emailInputTxt.Name = "emailInputTxt";
             this.emailInputTxt.Size = new System.Drawing.Size(265, 20);
             this.emailInputTxt.TabIndex = 20;
@@ -229,7 +229,7 @@
             this.loginPanel.Controls.Add(this.txtPassword);
             this.loginPanel.Controls.Add(this.btn_login);
             this.loginPanel.Location = new System.Drawing.Point(0, 0);
-            this.loginPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(2);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(432, 378);
             this.loginPanel.TabIndex = 21;
@@ -244,7 +244,7 @@
             this.updatePasswordPnl.Controls.Add(this.confirmPasswordTextBoxInput);
             this.updatePasswordPnl.Controls.Add(this.passwordTextBoxInput);
             this.updatePasswordPnl.Location = new System.Drawing.Point(0, 0);
-            this.updatePasswordPnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updatePasswordPnl.Margin = new System.Windows.Forms.Padding(2);
             this.updatePasswordPnl.Name = "updatePasswordPnl";
             this.updatePasswordPnl.Size = new System.Drawing.Size(432, 378);
             this.updatePasswordPnl.TabIndex = 20;
@@ -261,7 +261,7 @@
             // BackToLogin
             // 
             this.BackToLogin.Location = new System.Drawing.Point(122, 229);
-            this.BackToLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackToLogin.Margin = new System.Windows.Forms.Padding(2);
             this.BackToLogin.Name = "BackToLogin";
             this.BackToLogin.Size = new System.Drawing.Size(56, 19);
             this.BackToLogin.TabIndex = 5;
@@ -272,7 +272,7 @@
             // UpdatePasswordBtn
             // 
             this.UpdatePasswordBtn.Location = new System.Drawing.Point(122, 203);
-            this.UpdatePasswordBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UpdatePasswordBtn.Margin = new System.Windows.Forms.Padding(2);
             this.UpdatePasswordBtn.Name = "UpdatePasswordBtn";
             this.UpdatePasswordBtn.Size = new System.Drawing.Size(174, 19);
             this.UpdatePasswordBtn.TabIndex = 4;
@@ -303,7 +303,7 @@
             // confirmPasswordTextBoxInput
             // 
             this.confirmPasswordTextBoxInput.Location = new System.Drawing.Point(122, 163);
-            this.confirmPasswordTextBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.confirmPasswordTextBoxInput.Margin = new System.Windows.Forms.Padding(2);
             this.confirmPasswordTextBoxInput.Name = "confirmPasswordTextBoxInput";
             this.confirmPasswordTextBoxInput.Size = new System.Drawing.Size(175, 20);
             this.confirmPasswordTextBoxInput.TabIndex = 1;
@@ -311,7 +311,7 @@
             // passwordTextBoxInput
             // 
             this.passwordTextBoxInput.Location = new System.Drawing.Point(122, 128);
-            this.passwordTextBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBoxInput.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBoxInput.Name = "passwordTextBoxInput";
             this.passwordTextBoxInput.Size = new System.Drawing.Size(175, 20);
             this.passwordTextBoxInput.TabIndex = 0;
