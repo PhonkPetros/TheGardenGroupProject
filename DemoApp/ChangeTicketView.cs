@@ -97,6 +97,9 @@ namespace DemoApp
                 // if the ticket status is "Sent to Incident Management."
                 incidentTypeEditComboBox.Enabled = true;
                 descriptionEditTextBox.Enabled = true;
+                deadlineEditDateTimePicker.Enabled = true;
+                statusEditComboBox.Enabled = true;
+                priorityEditComboBox.Enabled = true;
 
                 if (!canChangeDeadlineStatusPriority)
                 {
