@@ -169,7 +169,7 @@ namespace DAL
             
         }
 
-        public void UpdateTicket(Ticket ticket) //maybe change it within this condition
+        public void UpdateTicket(Ticket ticket) 
         {
             
             FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
@@ -239,7 +239,7 @@ namespace DAL
 
             return filters;
         }
-        private List<Ticket> runAndQuery(Employee loggedInEmployee, string[] keywords) //test
+        private List<Ticket> runAndQuery(Employee loggedInEmployee, string[] keywords) 
         {
             List<FilterDefinition<Ticket>> filters = buildFilters(loggedInEmployee, keywords);
             var andKeywordFilter = Builders<Ticket>.Filter.And(filters);            
@@ -254,7 +254,7 @@ namespace DAL
             return ticketCollection.Find(andKeywordFilter).Sort(sortDefinition).ToList();
         }
 
-        private List<Ticket> runOrQuery(Employee loggedInEmployee, string[] keywords) //test
+        private List<Ticket> runOrQuery(Employee loggedInEmployee, string[] keywords) 
         {
             List<FilterDefinition<Ticket>> filters = buildFilters(loggedInEmployee, keywords);
             var orQueryFilter = Builders<Ticket>.Filter.Or(filters);

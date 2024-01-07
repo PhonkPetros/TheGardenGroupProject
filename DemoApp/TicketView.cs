@@ -32,13 +32,7 @@ namespace DemoApp
 
             foreach (Ticket ticket in tickets)
             {
-                ListViewItem item = new ListViewItem(ticket.Id.ToString());
-                item.SubItems.Add(ticket.Subject);
-                item.SubItems.Add(ticket.ReportedBy.ToString());
-                item.SubItems.Add(ticket.DateReported.ToString());
-                item.SubItems.Add(ticket.Status.ToString());
-
-                Colours(item, ticket);
+                ListViewItem item = CreateTicketListViewItem(ticket);
                 ticketListView.Items.Add(item);
             }
         }
@@ -51,18 +45,26 @@ namespace DemoApp
             {
                 if(ticket.Status == Status.SentToIncidentManagement)
                 {
-                    ListViewItem item = new ListViewItem(ticket.Id.ToString());
-                    item.SubItems.Add(ticket.Subject);
-                    item.SubItems.Add(ticket.ReportedBy.ToString());
-                    item.SubItems.Add(ticket.DateReported.ToString());
-                    item.SubItems.Add(ticket.Status.ToString());
-
-                    Colours(item, ticket);
+                    ListViewItem item = CreateTicketListViewItem(ticket);
                     ticketListView.Items.Add(item);
                 }
                 
             }
         }
+
+        private ListViewItem CreateTicketListViewItem(Ticket ticket)
+        {
+            ListViewItem item = new ListViewItem(ticket.Id.ToString());
+            item.SubItems.Add(ticket.Subject);
+            item.SubItems.Add(ticket.ReportedBy.ToString());
+            item.SubItems.Add(ticket.DateReported.ToString());
+            item.SubItems.Add(ticket.Status.ToString());
+
+            Colours(item, ticket);
+
+            return item;
+        }
+
 
         public void Colours(ListViewItem item, Ticket ticket) 
         {

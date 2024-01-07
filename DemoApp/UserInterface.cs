@@ -49,15 +49,7 @@ namespace DemoApp
             };
 
             logedinEmployee = employee;
-            if (logedinEmployee.UserType == UserType.IcidentEmployee) 
-            { 
-                LoadAndUpdateView2();
-            }
-            else
-            {
-                LoadAndUpdateView();
-            }
-            
+            LoadAndUpdateView();
         }
 
 
@@ -71,16 +63,20 @@ namespace DemoApp
 
             List<Ticket> tickets = ticketController.GetTickets(logedinEmployee);
             List<Ticket> pastTickets = ticketController.GetPastTickets(logedinEmployee);
-            ticketViewControl.DisplayTickets(tickets);
+            DisplayTicketsBasedOnUserType(tickets);
             ticketViewControl.PiChartTickets(tickets, pastTickets);
         }
-        private void LoadAndUpdateView2()
-        {
 
-            List<Ticket> tickets = ticketController.GetTickets(logedinEmployee); 
-            List<Ticket> pastTickets = ticketController.GetPastTickets(logedinEmployee); 
-            ticketViewControl.DisplayTicketsForIncidentManagment(tickets);
-            ticketViewControl.PiChartTickets(tickets, pastTickets);
+        private void DisplayTicketsBasedOnUserType(List<Ticket> tickets)
+        {
+            if (logedinEmployee.UserType == UserType.IcidentEmployee)
+            {
+                ticketViewControl.DisplayTicketsForIncidentManagment(tickets);
+            }
+            else
+            {
+                ticketViewControl.DisplayTickets(tickets);
+            }
         }
 
         private void switchView(Panel panel)
@@ -153,7 +149,7 @@ namespace DemoApp
             createTicket.PopulateComboBoxes();
         }
 
-        private void submitEditButton_Click(object sender, EventArgs e) //edit
+        private void submitEditButton_Click(object sender, EventArgs e) 
         {
             changeTicket.ReadChanges();
             changeTicket.ChangeTicketInDatabase();
@@ -171,7 +167,7 @@ namespace DemoApp
         }
         
 
-        private void ticketView_DoubleClick(object sender, EventArgs e) //edit
+        private void ticketView_DoubleClick(object sender, EventArgs e) 
         {
             switchView(editTicketPanel);
 
@@ -183,7 +179,7 @@ namespace DemoApp
             changeTicket.Initialize();
         }
 
-        private void ticketView_SelectedIndexChanged(object sender, EventArgs e) //maybe change
+        private void ticketView_SelectedIndexChanged(object sender, EventArgs e) 
         {
             if(logedinEmployee.UserType == UserType.ServiceDeskEmployee)
             {
