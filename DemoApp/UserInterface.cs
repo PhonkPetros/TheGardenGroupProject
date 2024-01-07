@@ -178,7 +178,7 @@ namespace DemoApp
                 string ticketId = selectedItem.SubItems[0].Text;
                 Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
 
-                changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView);
+                changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView, logedinEmployee.UserType);
                 changeTicket.Initialize();
             }
         }
