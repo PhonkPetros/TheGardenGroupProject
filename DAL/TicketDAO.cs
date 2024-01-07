@@ -27,7 +27,7 @@ namespace DAL
             var startOfCurrentDayUtc = DateTime.UtcNow.Date;
             List<BsonDocument> pipeline;
 
-            if (employee.UserType == UserType.ServiceDeskEmployee)
+            if (employee.UserType == UserType.ServiceDeskEmployee || employee.UserType == UserType.IcidentEmployee)
             {
                 var match = new BsonDocument
                 {
@@ -97,7 +97,7 @@ namespace DAL
                 { "deadline", new BsonDocument { { "$lt", DateTime.UtcNow } } }
             };
 
-            if (employee.UserType != UserType.ServiceDeskEmployee)
+            if (employee.UserType != UserType.ServiceDeskEmployee && employee.UserType != UserType.IcidentEmployee)
             {
                 matchFilter.Add("reported_by", employee.Id);
             }
@@ -169,7 +169,7 @@ namespace DAL
             
         }
 
-        public void UpdateTicket(Ticket ticket)
+        public void UpdateTicket(Ticket ticket) //maybe change it within this condition
         {
             
             FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", ticket.Id);
@@ -239,7 +239,7 @@ namespace DAL
 
             return filters;
         }
-        private List<Ticket> runAndQuery(Employee loggedInEmployee, string[] keywords)
+        private List<Ticket> runAndQuery(Employee loggedInEmployee, string[] keywords) //test
         {
             List<FilterDefinition<Ticket>> filters = buildFilters(loggedInEmployee, keywords);
             var andKeywordFilter = Builders<Ticket>.Filter.And(filters);            
@@ -247,14 +247,14 @@ namespace DAL
             var sortDefinition = Builders<Ticket>.Sort.Descending("date_reported");
 
             var combinedFilter = Builders<Ticket>.Filter.And(andKeywordFilter, employeeFilter);
-            if(loggedInEmployee.UserType != UserType.ServiceDeskEmployee)
+            if(loggedInEmployee.UserType != UserType.ServiceDeskEmployee && loggedInEmployee.UserType != UserType.IcidentEmployee)
             {
                 return ticketCollection.Find(combinedFilter).Sort(sortDefinition).ToList();
             }
             return ticketCollection.Find(andKeywordFilter).Sort(sortDefinition).ToList();
         }
 
-        private List<Ticket> runOrQuery(Employee loggedInEmployee, string[] keywords)
+        private List<Ticket> runOrQuery(Employee loggedInEmployee, string[] keywords) //test
         {
             List<FilterDefinition<Ticket>> filters = buildFilters(loggedInEmployee, keywords);
             var orQueryFilter = Builders<Ticket>.Filter.Or(filters);
@@ -262,7 +262,7 @@ namespace DAL
             var sortDefinition = Builders<Ticket>.Sort.Descending("date_reported");
 
             var combinedFilter = Builders<Ticket>.Filter.And(orQueryFilter, employeeFilter);
-            if (loggedInEmployee.UserType != UserType.ServiceDeskEmployee)
+            if (loggedInEmployee.UserType != UserType.ServiceDeskEmployee && loggedInEmployee.UserType != UserType.IcidentEmployee)
             {
                 return ticketCollection.Find(combinedFilter).Sort(sortDefinition).ToList();
             }

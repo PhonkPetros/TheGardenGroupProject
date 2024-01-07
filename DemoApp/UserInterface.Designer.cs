@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.pnlAddUser = new System.Windows.Forms.Panel();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -74,6 +74,14 @@
             this.submitEditButton = new System.Windows.Forms.Button();
             this.editTicketListView = new System.Windows.Forms.ListView();
             this.ticketViewPanel = new System.Windows.Forms.Panel();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.menuLabel = new System.Windows.Forms.Label();
+            this.menuHeaderLabel = new System.Windows.Forms.Label();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incidentManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchbarTextBox = new System.Windows.Forms.TextBox();
             this.deleteTicketButton = new System.Windows.Forms.Button();
@@ -119,26 +127,18 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlCreateTicketByEmployee = new System.Windows.Forms.Panel();
             this.deadlineDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.menuHeaderLabel = new System.Windows.Forms.Label();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.incidentManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuLabel = new System.Windows.Forms.Label();
-            this.menuPanel = new System.Windows.Forms.Panel();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.pnlAddUser.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piChart)).BeginInit();
             this.editTicketPanel.SuspendLayout();
             this.ticketViewPanel.SuspendLayout();
+            this.menuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.createTicketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             this.pnlCreateTicketByEmployee.SuspendLayout();
-            this.menuStrip.SuspendLayout();
-            this.menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddUser
@@ -333,39 +333,39 @@
             // 
             // incidentChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.incidentChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.incidentChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.incidentChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.incidentChart.Legends.Add(legend1);
             this.incidentChart.Location = new System.Drawing.Point(329, 144);
             this.incidentChart.Name = "incidentChart";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "incidents past deadline";
-            this.incidentChart.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "incidents past deadline";
+            this.incidentChart.Series.Add(series1);
             this.incidentChart.Size = new System.Drawing.Size(261, 207);
             this.incidentChart.TabIndex = 1;
             this.incidentChart.Text = "chart2";
             // 
             // piChart
             // 
-            chartArea4.Name = "ChartArea2";
-            this.piChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.piChart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea2";
+            this.piChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.piChart.Legends.Add(legend2);
             this.piChart.Location = new System.Drawing.Point(24, 127);
             this.piChart.Name = "piChart";
             this.piChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series4.ChartArea = "ChartArea2";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.piChart.Series.Add(series4);
+            series2.ChartArea = "ChartArea2";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.piChart.Series.Add(series2);
             this.piChart.Size = new System.Drawing.Size(266, 283);
             this.piChart.TabIndex = 0;
             this.piChart.Text = "chart1";
-            title2.Name = "Unsolved tickets/Solved tickets";
-            this.piChart.Titles.Add(title2);
+            title1.Name = "Unsolved tickets/Solved tickets";
+            this.piChart.Titles.Add(title1);
             // 
             // editTicketPanel
             // 
@@ -390,7 +390,7 @@
             // 
             // cancelEditButton
             // 
-            this.cancelEditButton.Location = new System.Drawing.Point(411, 506);
+            this.cancelEditButton.Location = new System.Drawing.Point(10, 503);
             this.cancelEditButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelEditButton.Name = "cancelEditButton";
             this.cancelEditButton.Size = new System.Drawing.Size(75, 23);
@@ -495,7 +495,7 @@
             // 
             // submitEditButton
             // 
-            this.submitEditButton.Location = new System.Drawing.Point(537, 506);
+            this.submitEditButton.Location = new System.Drawing.Point(538, 503);
             this.submitEditButton.Name = "submitEditButton";
             this.submitEditButton.Size = new System.Drawing.Size(75, 23);
             this.submitEditButton.TabIndex = 1;
@@ -516,6 +516,7 @@
             // 
             // ticketViewPanel
             // 
+            this.ticketViewPanel.Controls.Add(this.menuPanel);
             this.ticketViewPanel.Controls.Add(this.searchButton);
             this.ticketViewPanel.Controls.Add(this.searchbarTextBox);
             this.ticketViewPanel.Controls.Add(this.deleteTicketButton);
@@ -526,6 +527,95 @@
             this.ticketViewPanel.Name = "ticketViewPanel";
             this.ticketViewPanel.Size = new System.Drawing.Size(656, 531);
             this.ticketViewPanel.TabIndex = 4;
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.menuPanel.BackColor = System.Drawing.Color.SeaGreen;
+            this.menuPanel.Controls.Add(this.pictureBox);
+            this.menuPanel.Controls.Add(this.menuLabel);
+            this.menuPanel.Controls.Add(this.menuHeaderLabel);
+            this.menuPanel.Controls.Add(this.menuStrip);
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(656, 70);
+            this.menuPanel.TabIndex = 5;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.InitialImage = null;
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(68, 70);
+            this.pictureBox.TabIndex = 9;
+            this.pictureBox.TabStop = false;
+            // 
+            // menuLabel
+            // 
+            this.menuLabel.AutoSize = true;
+            this.menuLabel.ForeColor = System.Drawing.Color.White;
+            this.menuLabel.Location = new System.Drawing.Point(520, 48);
+            this.menuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.menuLabel.Name = "menuLabel";
+            this.menuLabel.Size = new System.Drawing.Size(135, 13);
+            this.menuLabel.TabIndex = 8;
+            this.menuLabel.Text = "Licensed to: Garden Group";
+            // 
+            // menuHeaderLabel
+            // 
+            this.menuHeaderLabel.AutoSize = true;
+            this.menuHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.menuHeaderLabel.Location = new System.Drawing.Point(513, 9);
+            this.menuHeaderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.menuHeaderLabel.Name = "menuHeaderLabel";
+            this.menuHeaderLabel.Size = new System.Drawing.Size(141, 39);
+            this.menuHeaderLabel.TabIndex = 6;
+            this.menuHeaderLabel.Text = "NoDesk";
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem,
+            this.incidentManagementToolStripMenuItem,
+            this.userManagementToolStripMenuItem});
+            this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip.Location = new System.Drawing.Point(71, 38);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(427, 29);
+            this.menuStrip.TabIndex = 7;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // incidentManagementToolStripMenuItem
+            // 
+            this.incidentManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.incidentManagementToolStripMenuItem.Name = "incidentManagementToolStripMenuItem";
+            this.incidentManagementToolStripMenuItem.Size = new System.Drawing.Size(173, 25);
+            this.incidentManagementToolStripMenuItem.Text = "Incident Management";
+            this.incidentManagementToolStripMenuItem.Click += new System.EventHandler(this.incidentManagementToolStripMenuItem_Click);
+            // 
+            // userManagementToolStripMenuItem
+            // 
+            this.userManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
+            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(150, 25);
+            this.userManagementToolStripMenuItem.Text = "User Management";
+            this.userManagementToolStripMenuItem.Click += new System.EventHandler(this.userManagementToolStripMenuItem_Click);
             // 
             // searchButton
             // 
@@ -1020,107 +1110,17 @@
             this.deadlineDateTimePicker2.Size = new System.Drawing.Size(237, 20);
             this.deadlineDateTimePicker2.TabIndex = 17;
             // 
-            // menuHeaderLabel
-            // 
-            this.menuHeaderLabel.AutoSize = true;
-            this.menuHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuHeaderLabel.ForeColor = System.Drawing.Color.White;
-            this.menuHeaderLabel.Location = new System.Drawing.Point(513, 9);
-            this.menuHeaderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.menuHeaderLabel.Name = "menuHeaderLabel";
-            this.menuHeaderLabel.Size = new System.Drawing.Size(141, 39);
-            this.menuHeaderLabel.TabIndex = 6;
-            this.menuHeaderLabel.Text = "NoDesk";
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dashboardToolStripMenuItem,
-            this.incidentManagementToolStripMenuItem,
-            this.userManagementToolStripMenuItem});
-            this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip.Location = new System.Drawing.Point(71, 38);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(427, 29);
-            this.menuStrip.TabIndex = 7;
-            this.menuStrip.Text = "menuStrip1";
-            // 
-            // dashboardToolStripMenuItem
-            // 
-            this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
-            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
-            // 
-            // incidentManagementToolStripMenuItem
-            // 
-            this.incidentManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.incidentManagementToolStripMenuItem.Name = "incidentManagementToolStripMenuItem";
-            this.incidentManagementToolStripMenuItem.Size = new System.Drawing.Size(173, 25);
-            this.incidentManagementToolStripMenuItem.Text = "Incident Management";
-            this.incidentManagementToolStripMenuItem.Click += new System.EventHandler(this.incidentManagementToolStripMenuItem_Click);
-            // 
-            // userManagementToolStripMenuItem
-            // 
-            this.userManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
-            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(150, 25);
-            this.userManagementToolStripMenuItem.Text = "User Management";
-            this.userManagementToolStripMenuItem.Click += new System.EventHandler(this.userManagementToolStripMenuItem_Click);
-            // 
-            // menuLabel
-            // 
-            this.menuLabel.AutoSize = true;
-            this.menuLabel.ForeColor = System.Drawing.Color.White;
-            this.menuLabel.Location = new System.Drawing.Point(520, 48);
-            this.menuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.menuLabel.Name = "menuLabel";
-            this.menuLabel.Size = new System.Drawing.Size(135, 13);
-            this.menuLabel.TabIndex = 8;
-            this.menuLabel.Text = "Licensed to: Garden Group";
-            // 
-            // menuPanel
-            // 
-            this.menuPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.menuPanel.BackColor = System.Drawing.Color.SeaGreen;
-            this.menuPanel.Controls.Add(this.pictureBox);
-            this.menuPanel.Controls.Add(this.menuLabel);
-            this.menuPanel.Controls.Add(this.menuHeaderLabel);
-            this.menuPanel.Controls.Add(this.menuStrip);
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(656, 70);
-            this.menuPanel.TabIndex = 5;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(68, 70);
-            this.pictureBox.TabIndex = 9;
-            this.pictureBox.TabStop = false;
-            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 531);
-            this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.ticketViewPanel);
+            this.Controls.Add(this.editTicketPanel);
+            this.Controls.Add(this.dashBoardPanel);
+            this.Controls.Add(this.pnlCreateTicketByEmployee);
             this.Controls.Add(this.pnlAddUser);
             this.Controls.Add(this.createTicketPanel);
-            this.Controls.Add(this.editTicketPanel);
-            this.Controls.Add(this.pnlCreateTicketByEmployee);
-            this.Controls.Add(this.dashBoardPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserInterface";
             this.Text = "NoDesk";
@@ -1134,16 +1134,16 @@
             this.editTicketPanel.PerformLayout();
             this.ticketViewPanel.ResumeLayout(false);
             this.ticketViewPanel.PerformLayout();
+            this.menuPanel.ResumeLayout(false);
+            this.menuPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.createTicketPanel.ResumeLayout(false);
             this.createTicketPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             this.pnlCreateTicketByEmployee.ResumeLayout(false);
             this.pnlCreateTicketByEmployee.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
-            this.menuPanel.ResumeLayout(false);
-            this.menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

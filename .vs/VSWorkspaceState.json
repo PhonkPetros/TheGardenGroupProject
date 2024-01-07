@@ -4,7 +4,8 @@
     "\\DAL",
     "\\DemoApp",
     "\\Logic",
-    "\\Model"
+    "\\Model",
+    "\\Model\\Enums"
   ],
   "SelectedNode": "\\DemoApp.sln",
   "PreviewInSolutionExplorer": false

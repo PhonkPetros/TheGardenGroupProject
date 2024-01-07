@@ -23,8 +23,11 @@ namespace DemoApp
         EmployeeController employeeController = new EmployeeController();
         TicketController ticketController = new TicketController();
 
+        private UserType currentUserType; 
+        private bool canChangeDeadlineStatusPriority;
 
-        public ChangeTicketView(Ticket selectedTicket, ComboBox incidentTypeEditComboBox, ComboBox statusEditComboBox, ComboBox priorityEditComboBox, TextBox descriptionEditTextBox,DateTimePicker dateTimePickerDeadline, ListView editTicketListView)
+
+        public ChangeTicketView(Ticket selectedTicket, ComboBox incidentTypeEditComboBox, ComboBox statusEditComboBox, ComboBox priorityEditComboBox, TextBox descriptionEditTextBox,DateTimePicker dateTimePickerDeadline, ListView editTicketListView, UserType currentUserType)
         {
             this.selectedTicket = selectedTicket;
             this.incidentTypeEditComboBox = incidentTypeEditComboBox;
@@ -33,6 +36,9 @@ namespace DemoApp
             this.descriptionEditTextBox = descriptionEditTextBox;
             this.deadlineEditDateTimePicker = dateTimePickerDeadline;
             this.editTicketListView = editTicketListView;
+            this.currentUserType = currentUserType;
+            canChangeDeadlineStatusPriority = CanChangeDeadlineStatusPriority(selectedTicket);
+            ConfigureControlsBasedOnUserType();
         }
 
         public void Initialize()
@@ -73,5 +79,39 @@ namespace DemoApp
         {
             ticketController.UpdateTicket(selectedTicket);
         }
+
+        private void ConfigureControlsBasedOnUserType()
+        {
+            // Disable or enable controls based on the user type and ticket status.
+            if (currentUserType == UserType.Employee)
+            {
+                // Employee can change Incident Type and Description.
+                // Disable controls related to Deadline, Status, and Priority.
+                deadlineEditDateTimePicker.Enabled = false;
+                statusEditComboBox.Enabled = false;
+                priorityEditComboBox.Enabled = false;
+            }
+            else if (currentUserType == UserType.ServiceDeskEmployee)
+            {
+                // Service Employee can change all fields except Deadline, Status, and Priority
+                // if the ticket status is "Sent to Incident Management."
+                incidentTypeEditComboBox.Enabled = true;
+                descriptionEditTextBox.Enabled = true;
+
+                if (!canChangeDeadlineStatusPriority)
+                {
+                    deadlineEditDateTimePicker.Enabled = false;
+                    statusEditComboBox.Enabled = false;
+                    priorityEditComboBox.Enabled = false;
+                }
+            }
+        }
+
+        private bool CanChangeDeadlineStatusPriority(Ticket ticket)
+        {
+            // Logic to determine if the Deadline, Status, and Priority can be changed based on the ticket status.
+            return ticket.Status != Status.SentToIncidentManagement;
+        }
+
     }
 }

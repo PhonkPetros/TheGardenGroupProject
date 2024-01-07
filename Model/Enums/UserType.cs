@@ -9,6 +9,7 @@ namespace Model.Enums
     public enum UserType
     {
         Employee,
-        ServiceDeskEmployee
+        ServiceDeskEmployee,
+        IcidentEmployee
     }
 }

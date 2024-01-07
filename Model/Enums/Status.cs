@@ -8,6 +8,6 @@ namespace Model.Enums
 {
     public enum Status
     {
-        Open, Resolved, NoResolve
+        Open, Resolved, NoResolve, SentToIncidentManagement
     }
 }

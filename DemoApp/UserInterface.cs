@@ -49,7 +49,15 @@ namespace DemoApp
             };
 
             logedinEmployee = employee;
-            LoadAndUpdateView();
+            if (logedinEmployee.UserType == UserType.IcidentEmployee) 
+            { 
+                LoadAndUpdateView2();
+            }
+            else
+            {
+                LoadAndUpdateView();
+            }
+            
         }
 
 
@@ -64,6 +72,14 @@ namespace DemoApp
             List<Ticket> tickets = ticketController.GetTickets(logedinEmployee);
             List<Ticket> pastTickets = ticketController.GetPastTickets(logedinEmployee);
             ticketViewControl.DisplayTickets(tickets);
+            ticketViewControl.PiChartTickets(tickets, pastTickets);
+        }
+        private void LoadAndUpdateView2()
+        {
+
+            List<Ticket> tickets = ticketController.GetTickets(logedinEmployee); 
+            List<Ticket> pastTickets = ticketController.GetPastTickets(logedinEmployee); 
+            ticketViewControl.DisplayTicketsForIncidentManagment(tickets);
             ticketViewControl.PiChartTickets(tickets, pastTickets);
         }
 
@@ -137,7 +153,7 @@ namespace DemoApp
             createTicket.PopulateComboBoxes();
         }
 
-        private void submitEditButton_Click(object sender, EventArgs e)
+        private void submitEditButton_Click(object sender, EventArgs e) //edit
         {
             changeTicket.ReadChanges();
             changeTicket.ChangeTicketInDatabase();
@@ -155,7 +171,7 @@ namespace DemoApp
         }
         
 
-        private void ticketView_DoubleClick(object sender, EventArgs e)
+        private void ticketView_DoubleClick(object sender, EventArgs e) //edit
         {
             switchView(editTicketPanel);
 
@@ -163,11 +179,11 @@ namespace DemoApp
             string ticketId = selectedItem.SubItems[0].Text;
             Ticket selectedTicket = ticketController.GetTicketByTicketId(ticketId);
 
-            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView);
+            changeTicket = new ChangeTicketView(selectedTicket, incidentTypeEditComboBox, statusEditComboBox, priorityEditComboBox, descriptionEditTextbox, deadlineEditDateTimePicker, editTicketListView, logedinEmployee.UserType);
             changeTicket.Initialize();
         }
 
-        private void ticketView_SelectedIndexChanged(object sender, EventArgs e)
+        private void ticketView_SelectedIndexChanged(object sender, EventArgs e) //maybe change
         {
             if(logedinEmployee.UserType == UserType.ServiceDeskEmployee)
             {
