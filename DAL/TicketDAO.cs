@@ -268,5 +268,21 @@ namespace DAL
             }
             return ticketCollection.Find(orQueryFilter).Sort(sortDefinition).ToList();
         }
+
+        public void CloseTicket(string ticketId)
+        {
+            ObjectId objectId;
+            if (ObjectId.TryParse(ticketId, out objectId))
+            {
+                FilterDefinition<Ticket> filter = Builders<Ticket>.Filter.Eq("_id", objectId);
+                UpdateDefinition<Ticket> update = Builders<Ticket>.Update.Set("status", Status.Resolved.ToString());
+
+                ticketCollection.UpdateOne(filter, update);
+            }
+            else
+            {
+                throw new Exception("There is no ticket with this ID in the database");
+            }
+        }
     }
 }

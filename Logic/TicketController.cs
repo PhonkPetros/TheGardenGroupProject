@@ -49,6 +49,12 @@ namespace Logic
             dao.UpdateTicket(ticket);
         }
 
+        public void CloseTicket(string ticketId)
+        {
+            dao.CloseTicket(ticketId);
+        }
+
+
         public List<Ticket> GetTicketsBasedOnKeywords(Employee loggedInEmployee,string searchInput)
         {
             return dao.GetTicketsBasedOnKeywords(loggedInEmployee, searchInput);

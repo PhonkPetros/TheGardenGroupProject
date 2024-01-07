@@ -74,14 +74,7 @@
             this.submitEditButton = new System.Windows.Forms.Button();
             this.editTicketListView = new System.Windows.Forms.ListView();
             this.ticketViewPanel = new System.Windows.Forms.Panel();
-            this.menuPanel = new System.Windows.Forms.Panel();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.menuLabel = new System.Windows.Forms.Label();
-            this.menuHeaderLabel = new System.Windows.Forms.Label();
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.incidentManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCloseTicket = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchbarTextBox = new System.Windows.Forms.TextBox();
             this.deleteTicketButton = new System.Windows.Forms.Button();
@@ -127,18 +120,26 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlCreateTicketByEmployee = new System.Windows.Forms.Panel();
             this.deadlineDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.menuHeaderLabel = new System.Windows.Forms.Label();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incidentManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLabel = new System.Windows.Forms.Label();
+            this.menuPanel = new System.Windows.Forms.Panel();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.pnlAddUser.SuspendLayout();
             this.dashBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piChart)).BeginInit();
             this.editTicketPanel.SuspendLayout();
             this.ticketViewPanel.SuspendLayout();
-            this.menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            this.menuStrip.SuspendLayout();
             this.createTicketPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).BeginInit();
             this.pnlCreateTicketByEmployee.SuspendLayout();
+            this.menuStrip.SuspendLayout();
+            this.menuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlAddUser
@@ -390,7 +391,7 @@
             // 
             // cancelEditButton
             // 
-            this.cancelEditButton.Location = new System.Drawing.Point(10, 503);
+            this.cancelEditButton.Location = new System.Drawing.Point(411, 506);
             this.cancelEditButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelEditButton.Name = "cancelEditButton";
             this.cancelEditButton.Size = new System.Drawing.Size(75, 23);
@@ -495,7 +496,7 @@
             // 
             // submitEditButton
             // 
-            this.submitEditButton.Location = new System.Drawing.Point(538, 503);
+            this.submitEditButton.Location = new System.Drawing.Point(537, 506);
             this.submitEditButton.Name = "submitEditButton";
             this.submitEditButton.Size = new System.Drawing.Size(75, 23);
             this.submitEditButton.TabIndex = 1;
@@ -516,7 +517,7 @@
             // 
             // ticketViewPanel
             // 
-            this.ticketViewPanel.Controls.Add(this.menuPanel);
+            this.ticketViewPanel.Controls.Add(this.btnCloseTicket);
             this.ticketViewPanel.Controls.Add(this.searchButton);
             this.ticketViewPanel.Controls.Add(this.searchbarTextBox);
             this.ticketViewPanel.Controls.Add(this.deleteTicketButton);
@@ -528,102 +529,30 @@
             this.ticketViewPanel.Size = new System.Drawing.Size(656, 531);
             this.ticketViewPanel.TabIndex = 4;
             // 
-            // menuPanel
+            // btnCloseTicket
             // 
-            this.menuPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.menuPanel.BackColor = System.Drawing.Color.SeaGreen;
-            this.menuPanel.Controls.Add(this.pictureBox);
-            this.menuPanel.Controls.Add(this.menuLabel);
-            this.menuPanel.Controls.Add(this.menuHeaderLabel);
-            this.menuPanel.Controls.Add(this.menuStrip);
-            this.menuPanel.Location = new System.Drawing.Point(0, 0);
-            this.menuPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(656, 70);
-            this.menuPanel.TabIndex = 5;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(68, 70);
-            this.pictureBox.TabIndex = 9;
-            this.pictureBox.TabStop = false;
-            // 
-            // menuLabel
-            // 
-            this.menuLabel.AutoSize = true;
-            this.menuLabel.ForeColor = System.Drawing.Color.White;
-            this.menuLabel.Location = new System.Drawing.Point(520, 48);
-            this.menuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.menuLabel.Name = "menuLabel";
-            this.menuLabel.Size = new System.Drawing.Size(135, 13);
-            this.menuLabel.TabIndex = 8;
-            this.menuLabel.Text = "Licensed to: Garden Group";
-            // 
-            // menuHeaderLabel
-            // 
-            this.menuHeaderLabel.AutoSize = true;
-            this.menuHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuHeaderLabel.ForeColor = System.Drawing.Color.White;
-            this.menuHeaderLabel.Location = new System.Drawing.Point(513, 9);
-            this.menuHeaderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.menuHeaderLabel.Name = "menuHeaderLabel";
-            this.menuHeaderLabel.Size = new System.Drawing.Size(141, 39);
-            this.menuHeaderLabel.TabIndex = 6;
-            this.menuHeaderLabel.Text = "NoDesk";
-            // 
-            // menuStrip
-            // 
-            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dashboardToolStripMenuItem,
-            this.incidentManagementToolStripMenuItem,
-            this.userManagementToolStripMenuItem});
-            this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip.Location = new System.Drawing.Point(71, 38);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(427, 29);
-            this.menuStrip.TabIndex = 7;
-            this.menuStrip.Text = "menuStrip1";
-            // 
-            // dashboardToolStripMenuItem
-            // 
-            this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
-            this.dashboardToolStripMenuItem.Text = "Dashboard";
-            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
-            // 
-            // incidentManagementToolStripMenuItem
-            // 
-            this.incidentManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.incidentManagementToolStripMenuItem.Name = "incidentManagementToolStripMenuItem";
-            this.incidentManagementToolStripMenuItem.Size = new System.Drawing.Size(173, 25);
-            this.incidentManagementToolStripMenuItem.Text = "Incident Management";
-            this.incidentManagementToolStripMenuItem.Click += new System.EventHandler(this.incidentManagementToolStripMenuItem_Click);
-            // 
-            // userManagementToolStripMenuItem
-            // 
-            this.userManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
-            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(150, 25);
-            this.userManagementToolStripMenuItem.Text = "User Management";
-            this.userManagementToolStripMenuItem.Click += new System.EventHandler(this.userManagementToolStripMenuItem_Click);
+            this.btnCloseTicket.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCloseTicket.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed;
+            this.btnCloseTicket.FlatAppearance.BorderSize = 0;
+            this.btnCloseTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseTicket.ForeColor = System.Drawing.Color.White;
+            this.btnCloseTicket.Location = new System.Drawing.Point(329, 495);
+            this.btnCloseTicket.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCloseTicket.Name = "btnCloseTicket";
+            this.btnCloseTicket.Size = new System.Drawing.Size(96, 24);
+            this.btnCloseTicket.TabIndex = 7;
+            this.btnCloseTicket.Text = "Close Ticket";
+            this.btnCloseTicket.UseVisualStyleBackColor = false;
+            this.btnCloseTicket.Click += new System.EventHandler(this.btnCloseTicket_Click);
             // 
             // searchButton
             // 
             this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.searchButton.Location = new System.Drawing.Point(373, 75);
+            this.searchButton.Location = new System.Drawing.Point(336, 75);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(25, 24);
+            this.searchButton.Size = new System.Drawing.Size(62, 24);
             this.searchButton.TabIndex = 6;
+            this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
@@ -632,7 +561,7 @@
             this.searchbarTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.searchbarTextBox.Location = new System.Drawing.Point(73, 77);
             this.searchbarTextBox.Name = "searchbarTextBox";
-            this.searchbarTextBox.Size = new System.Drawing.Size(303, 21);
+            this.searchbarTextBox.Size = new System.Drawing.Size(257, 21);
             this.searchbarTextBox.TabIndex = 5;
             // 
             // deleteTicketButton
@@ -653,10 +582,10 @@
             // 
             // btnCreateTicket
             // 
-            this.btnCreateTicket.Location = new System.Drawing.Point(426, 80);
+            this.btnCreateTicket.Location = new System.Drawing.Point(433, 75);
             this.btnCreateTicket.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateTicket.Name = "btnCreateTicket";
-            this.btnCreateTicket.Size = new System.Drawing.Size(115, 19);
+            this.btnCreateTicket.Size = new System.Drawing.Size(115, 24);
             this.btnCreateTicket.TabIndex = 3;
             this.btnCreateTicket.Text = "Create Ticket";
             this.btnCreateTicket.UseVisualStyleBackColor = true;
@@ -736,7 +665,7 @@
             // 
             // deadlineDateTimePicker
             // 
-            this.deadlineDateTimePicker.Location = new System.Drawing.Point(250, 295);
+            this.deadlineDateTimePicker.Location = new System.Drawing.Point(274, 295);
             this.deadlineDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.deadlineDateTimePicker.Name = "deadlineDateTimePicker";
             this.deadlineDateTimePicker.Size = new System.Drawing.Size(237, 20);
@@ -745,7 +674,7 @@
             // submitButton
             // 
             this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitButton.Location = new System.Drawing.Point(396, 493);
+            this.submitButton.Location = new System.Drawing.Point(420, 493);
             this.submitButton.Margin = new System.Windows.Forms.Padding(2);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(91, 33);
@@ -757,7 +686,7 @@
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(250, 493);
+            this.cancelButton.Location = new System.Drawing.Point(274, 493);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(96, 33);
@@ -768,7 +697,7 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(250, 332);
+            this.descriptionTextBox.Location = new System.Drawing.Point(274, 332);
             this.descriptionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
@@ -818,7 +747,7 @@
             this.priorityComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.priorityComboBox.FormattingEnabled = true;
             this.priorityComboBox.IntegralHeight = false;
-            this.priorityComboBox.Location = new System.Drawing.Point(250, 259);
+            this.priorityComboBox.Location = new System.Drawing.Point(274, 259);
             this.priorityComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.priorityComboBox.Name = "priorityComboBox";
             this.priorityComboBox.Size = new System.Drawing.Size(237, 21);
@@ -841,7 +770,7 @@
             this.reportedByComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.reportedByComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.reportedByComboBox.FormattingEnabled = true;
-            this.reportedByComboBox.Location = new System.Drawing.Point(250, 227);
+            this.reportedByComboBox.Location = new System.Drawing.Point(274, 227);
             this.reportedByComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.reportedByComboBox.Name = "reportedByComboBox";
             this.reportedByComboBox.Size = new System.Drawing.Size(237, 21);
@@ -866,7 +795,7 @@
             this.incidentTypeComboBox.DataSource = this.ticketBindingSource;
             this.incidentTypeComboBox.DisplayMember = "IncidentType";
             this.incidentTypeComboBox.FormattingEnabled = true;
-            this.incidentTypeComboBox.Location = new System.Drawing.Point(250, 194);
+            this.incidentTypeComboBox.Location = new System.Drawing.Point(274, 194);
             this.incidentTypeComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.incidentTypeComboBox.MaxDropDownItems = 3;
             this.incidentTypeComboBox.Name = "incidentTypeComboBox";
@@ -891,7 +820,7 @@
             // 
             // subjectTextBox
             // 
-            this.subjectTextBox.Location = new System.Drawing.Point(250, 162);
+            this.subjectTextBox.Location = new System.Drawing.Point(274, 162);
             this.subjectTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.subjectTextBox.Name = "subjectTextBox";
             this.subjectTextBox.Size = new System.Drawing.Size(237, 20);
@@ -911,7 +840,7 @@
             // 
             // ticketDateTimePicker
             // 
-            this.ticketDateTimePicker.Location = new System.Drawing.Point(250, 129);
+            this.ticketDateTimePicker.Location = new System.Drawing.Point(274, 129);
             this.ticketDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.ticketDateTimePicker.Name = "ticketDateTimePicker";
             this.ticketDateTimePicker.Size = new System.Drawing.Size(237, 20);
@@ -931,7 +860,7 @@
             // btnSubmit2
             // 
             this.btnSubmit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit2.Location = new System.Drawing.Point(396, 490);
+            this.btnSubmit2.Location = new System.Drawing.Point(419, 490);
             this.btnSubmit2.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit2.Name = "btnSubmit2";
             this.btnSubmit2.Size = new System.Drawing.Size(91, 33);
@@ -943,7 +872,7 @@
             // btnCancel2
             // 
             this.btnCancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel2.Location = new System.Drawing.Point(250, 490);
+            this.btnCancel2.Location = new System.Drawing.Point(273, 490);
             this.btnCancel2.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel2.Name = "btnCancel2";
             this.btnCancel2.Size = new System.Drawing.Size(96, 33);
@@ -954,7 +883,7 @@
             // 
             // descriptionTextBox2
             // 
-            this.descriptionTextBox2.Location = new System.Drawing.Point(250, 328);
+            this.descriptionTextBox2.Location = new System.Drawing.Point(273, 328);
             this.descriptionTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.descriptionTextBox2.Multiline = true;
             this.descriptionTextBox2.Name = "descriptionTextBox2";
@@ -1001,7 +930,7 @@
             // priorityComboBox2
             // 
             this.priorityComboBox2.FormattingEnabled = true;
-            this.priorityComboBox2.Location = new System.Drawing.Point(250, 256);
+            this.priorityComboBox2.Location = new System.Drawing.Point(273, 256);
             this.priorityComboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.priorityComboBox2.Name = "priorityComboBox2";
             this.priorityComboBox2.Size = new System.Drawing.Size(237, 21);
@@ -1022,7 +951,7 @@
             // incidentTypeComboBox2
             // 
             this.incidentTypeComboBox2.FormattingEnabled = true;
-            this.incidentTypeComboBox2.Location = new System.Drawing.Point(250, 191);
+            this.incidentTypeComboBox2.Location = new System.Drawing.Point(273, 191);
             this.incidentTypeComboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.incidentTypeComboBox2.Name = "incidentTypeComboBox2";
             this.incidentTypeComboBox2.Size = new System.Drawing.Size(237, 21);
@@ -1042,7 +971,7 @@
             // 
             // subjectTextBox2
             // 
-            this.subjectTextBox2.Location = new System.Drawing.Point(250, 158);
+            this.subjectTextBox2.Location = new System.Drawing.Point(273, 158);
             this.subjectTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.subjectTextBox2.Name = "subjectTextBox2";
             this.subjectTextBox2.Size = new System.Drawing.Size(237, 20);
@@ -1062,7 +991,7 @@
             // 
             // ticketDateTimePicker2
             // 
-            this.ticketDateTimePicker2.Location = new System.Drawing.Point(250, 126);
+            this.ticketDateTimePicker2.Location = new System.Drawing.Point(273, 126);
             this.ticketDateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.ticketDateTimePicker2.Name = "ticketDateTimePicker2";
             this.ticketDateTimePicker2.Size = new System.Drawing.Size(237, 20);
@@ -1104,23 +1033,113 @@
             // 
             // deadlineDateTimePicker2
             // 
-            this.deadlineDateTimePicker2.Location = new System.Drawing.Point(250, 289);
+            this.deadlineDateTimePicker2.Location = new System.Drawing.Point(273, 289);
             this.deadlineDateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.deadlineDateTimePicker2.Name = "deadlineDateTimePicker2";
             this.deadlineDateTimePicker2.Size = new System.Drawing.Size(237, 20);
             this.deadlineDateTimePicker2.TabIndex = 17;
+            // 
+            // menuHeaderLabel
+            // 
+            this.menuHeaderLabel.AutoSize = true;
+            this.menuHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuHeaderLabel.ForeColor = System.Drawing.Color.White;
+            this.menuHeaderLabel.Location = new System.Drawing.Point(513, 9);
+            this.menuHeaderLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.menuHeaderLabel.Name = "menuHeaderLabel";
+            this.menuHeaderLabel.Size = new System.Drawing.Size(141, 39);
+            this.menuHeaderLabel.TabIndex = 6;
+            this.menuHeaderLabel.Text = "NoDesk";
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem,
+            this.incidentManagementToolStripMenuItem,
+            this.userManagementToolStripMenuItem});
+            this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip.Location = new System.Drawing.Point(71, 38);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(427, 29);
+            this.menuStrip.TabIndex = 7;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
+            // 
+            // incidentManagementToolStripMenuItem
+            // 
+            this.incidentManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.incidentManagementToolStripMenuItem.Name = "incidentManagementToolStripMenuItem";
+            this.incidentManagementToolStripMenuItem.Size = new System.Drawing.Size(173, 25);
+            this.incidentManagementToolStripMenuItem.Text = "Incident Management";
+            this.incidentManagementToolStripMenuItem.Click += new System.EventHandler(this.incidentManagementToolStripMenuItem_Click);
+            // 
+            // userManagementToolStripMenuItem
+            // 
+            this.userManagementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
+            this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(150, 25);
+            this.userManagementToolStripMenuItem.Text = "User Management";
+            this.userManagementToolStripMenuItem.Click += new System.EventHandler(this.userManagementToolStripMenuItem_Click);
+            // 
+            // menuLabel
+            // 
+            this.menuLabel.AutoSize = true;
+            this.menuLabel.ForeColor = System.Drawing.Color.White;
+            this.menuLabel.Location = new System.Drawing.Point(520, 48);
+            this.menuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.menuLabel.Name = "menuLabel";
+            this.menuLabel.Size = new System.Drawing.Size(135, 13);
+            this.menuLabel.TabIndex = 8;
+            this.menuLabel.Text = "Licensed to: Garden Group";
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.menuPanel.BackColor = System.Drawing.Color.SeaGreen;
+            this.menuPanel.Controls.Add(this.pictureBox);
+            this.menuPanel.Controls.Add(this.menuLabel);
+            this.menuPanel.Controls.Add(this.menuHeaderLabel);
+            this.menuPanel.Controls.Add(this.menuStrip);
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(656, 70);
+            this.menuPanel.TabIndex = 5;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.InitialImage = null;
+            this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(68, 70);
+            this.pictureBox.TabIndex = 9;
+            this.pictureBox.TabStop = false;
             // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 531);
-            this.Controls.Add(this.ticketViewPanel);
-            this.Controls.Add(this.editTicketPanel);
+            this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.dashBoardPanel);
-            this.Controls.Add(this.pnlCreateTicketByEmployee);
+            this.Controls.Add(this.ticketViewPanel);
             this.Controls.Add(this.pnlAddUser);
             this.Controls.Add(this.createTicketPanel);
+            this.Controls.Add(this.editTicketPanel);
+            this.Controls.Add(this.pnlCreateTicketByEmployee);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserInterface";
             this.Text = "NoDesk";
@@ -1134,16 +1153,16 @@
             this.editTicketPanel.PerformLayout();
             this.ticketViewPanel.ResumeLayout(false);
             this.ticketViewPanel.PerformLayout();
-            this.menuPanel.ResumeLayout(false);
-            this.menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.createTicketPanel.ResumeLayout(false);
             this.createTicketPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketBindingSource)).EndInit();
             this.pnlCreateTicketByEmployee.ResumeLayout(false);
             this.pnlCreateTicketByEmployee.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
+            this.menuPanel.ResumeLayout(false);
+            this.menuPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1240,5 +1259,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Button btnCloseTicket;
     }
 }
