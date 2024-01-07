@@ -25,6 +25,11 @@ For testing purposes, you can use the following credentials:
 - Email: employee@gmail.com
 - Password: 123456
 
+### Incident Employee
+
+- Email: incidentmanagement@gmail.com
+- Password: 123456
+
 ## Getting Started
 
 To get started with the project, follow the steps below:
