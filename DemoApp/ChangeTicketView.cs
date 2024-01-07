@@ -97,8 +97,11 @@ namespace DemoApp
                 // if the ticket status is "Sent to Incident Management."
                 incidentTypeEditComboBox.Enabled = true;
                 descriptionEditTextBox.Enabled = true;
+                deadlineEditDateTimePicker.Enabled = true;
+                statusEditComboBox.Enabled = true;
+                priorityEditComboBox.Enabled = true;
 
-                if (!canChangeDeadlineStatusPriority)
+                if (canChangeDeadlineStatusPriority)
                 {
                     deadlineEditDateTimePicker.Enabled = false;
                     statusEditComboBox.Enabled = false;
@@ -110,7 +113,7 @@ namespace DemoApp
         private bool CanChangeDeadlineStatusPriority(Ticket ticket)
         {
             // Logic to determine if the Deadline, Status, and Priority can be changed based on the ticket status.
-            return ticket.Status != Status.SentToIncidentManagement;
+            return ticket.Status == Status.SentToIncidentManagement;
         }
 
     }
